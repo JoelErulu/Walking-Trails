@@ -6,6 +6,7 @@ import '../interfaceSettings.css';
 //import { getUsers, updateUserRole } from '../../../actions/users';
 
 // Import global stylesheet
+import '../interfaceSettings.css';
 
 // README: 
 const AdminManager = () => {

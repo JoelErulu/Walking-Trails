@@ -15,10 +15,9 @@ import '../interfaceSettings.css';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
-// README: THIS WILL BE THE NEW Auth.js PAGE. Can be reached by editing url to 'http://localhost:3000/auth2'
+// README: THIS WILL BE THE NEW SIGN-IN/REGISTRATION PAGE.'
 // TODO: Fix ALL the logic & HTML/JSX
 // TODO: Style this PLEASE
-// TODO: Import global stylesheet
 const Auth = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
@@ -78,36 +77,41 @@ const Auth = () => {
     });
 
     return (
-        <div className="container mt-5">
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title text-center">{isSignup ? 'Sign Up' : 'Sign In'}</h5>
+        <div id="sign-in-container" className="container mt-5">
+            <div id="sign-in-card" className="card">
+                <div id="sign-in-card-body" className="card-body">
+                    <h5 id="sign-in-title" className="card-title text-center">
+                        {isSignup ? 'Sign Up' : 'Sign In'}
+                    </h5>
                     <form onSubmit={handleSubmit}>
-                        <div className="form-group">
+                        <div id="sign-in-form-group" className="form-group">
                             {isSignup && (
                                 <>
-                                    <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
-                                    <Input name="lastName" label="Last Name" handleChange={handleChange} half />
+                                    <Input id="first-name-input" name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
+                                    <Input id="last-name-input" name="lastName" label="Last Name" handleChange={handleChange} half />
                                 </>
                             )}
-                            <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
+                            <Input id="email-input" name="email" label="Email Address" handleChange={handleChange} type="email" />
                             <Input
+                                id="password-input"
                                 name="password"
                                 label="Password"
                                 handleChange={handleChange}
                                 type={showPassword ? "text" : "password"}
                                 handleShowPassword={handleShowPassword}
                             />
-                            {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
+                            {isSignup && <Input id="confirm-password-input" name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
                         </div>
-                        <button type="submit" className="btn btn-primary btn-block">
-                            {isSignup ? 'Sign Up' : 'Sign In'}
-                        </button>
-                        <button type="button" onClick={login} className="btn btn-outline-primary btn-block">
-                            Sign in with Google 🚀
-                        </button>
+                        <div>
+                            <button id="sign-in-submit-btn" type="submit" className="btn btn-primary btn-block btn-spacing">
+                                {isSignup ? 'Sign Up' : 'Sign In'}
+                            </button>
+                            <button id="google-signin-btn" type="button" onClick={login} className="btn btn-primary btn-block btn-spacing">
+                                Sign in with Google
+                            </button>
+                        </div>
                         <div className="text-center mt-3">
-                            <button type="button" onClick={switchMode} className="btn btn-link">
+                            <button id="switch-mode-btn" type="button" onClick={switchMode} className="btn btn-link">
                                 {isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
                             </button>
                         </div>
@@ -115,7 +119,7 @@ const Auth = () => {
                 </div>
             </div>
         </div>
-    );
+    );  
 };
 
 export default Auth;

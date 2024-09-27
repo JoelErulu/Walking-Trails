@@ -189,6 +189,7 @@
   border-color: var(--btn-border-color); 
   display:block;
   margin: var(--btn-margin);
+  margin-bottom: '10px';
 
 }
 
@@ -319,4 +320,68 @@ p.lead {
     background-color: var(--menu-button-bg-color); /* Green background */
     color: var(--menu-button-text-color); /* White text */
     display: block; /* Display on mobile */
+}
+
+
+
+/* Sign-In Page Styles */
+
+#sign-in-container {
+  max-width: 500px; /* Set a max width for the card */
+  margin: auto; /* Center the card horizontally */
+}
+
+#sign-in-card {
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevents overflow of child elements */
+}
+
+#sign-in-card-body {
+  padding: 20px; /* Add some padding */
+}
+
+#sign-in-title {
+  margin-bottom: 20px; /* Space below the title */
+  font-weight: bold; /* Make the title bold */
+}
+
+#sign-in-submit-btn,
+#google-signin-btn {
+  border-radius: 8px; /* Slightly rounded buttons */
+  padding: 10px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+#sign-in-submit-btn {
+  background-color: green;
+  color: white;
+  padding: 5px;
+}
+
+#google-signin-btn {
+  background-color: 1px solid green;
+  color: white;
+  padding: 5px;
+}
+
+#btn-spacing {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+#switch-mode-btn {
+  color: black; /* Primary text color for links */
+  text-decoration: none; /* Remove underline */
+}
+
+#switch-mode-btn:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+#sign-in-form-group {
+  margin-bottom: 15px; /* Space between form fields */
+  padding: 5px;
 }

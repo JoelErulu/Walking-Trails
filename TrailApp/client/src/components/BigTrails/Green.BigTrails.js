@@ -1,14 +1,18 @@
-import { Button, Grid, Typography, Container, Divider, TextField } from '@material-ui/core';
+// Import React components
 import React, { useEffect, useState } from 'react';
-import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api'
-import useStyles, { GreenTrailOptions, containerStyle, MapID } from '../../styles/BigTrailsstyles.js';
-import { createMarker, getMarkers } from '../../actions/markers.js';
 import { useDispatch, useSelector } from 'react-redux';
-import { GreenCoords } from './Coords.js';
-import FileBase from 'react-file-base64';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+// Import global stylesheet
+// TODO: Remove material-ui styling, remove videos, replace with global stylesheet
+import { Button, Grid, Typography, Container, Divider } from '@material-ui/core';
+import useStyles, { GreenTrailOptions, containerStyle, MapID } from '../../styles/BigTrailsstyles.js';
 import video5 from '../../assets/videos/ProjectVideo5.mp4';
 
+// Import components
+import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api'
+import { getMarkers } from '../../actions/markers.js';
+import { GreenCoords } from './Coords.js';
 
 const Green = () => {                   
 

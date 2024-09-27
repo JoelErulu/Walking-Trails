@@ -1,17 +1,20 @@
-import { Button, Grid, Typography, Container, Divider, TextField, Collapse, CardMedia, Hidden, ImageListItem, ImageList} from '@material-ui/core';
+// Import React components
 import React, { useEffect, useState } from 'react';
-import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api';
-import useStyles, { GoldTrailOptions, containerStyle, MapID } from '../../styles/BigTrailsstyles.js';
-import { createMarker, getMarkers, updateMarker, deleteMarker} from '../../actions/markers.js';
 import { useDispatch, useSelector } from 'react-redux';
+
+// Import global stylesheet
+// TODO: Remove material-ui styling, replace with global stylesheet
+import { Button, Grid, Typography, Container, Divider } from '@material-ui/core';
+import useStyles, { GoldTrailOptions, containerStyle, MapID } from '../../styles/BigTrailsstyles.js';
+
+
+// Import components
+import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
+import { getMarkers } from '../../actions/markers.js';
 import { GoldCords } from './Coords.js';
-import FileBase from 'react-file-base64';
-import { Link, useNavigate } from 'react-router-dom';
-import video1 from '../../assets/videos/ProjectVideo1.mp4';
-import video2 from '../../assets/videos/ProjectVideo2.mp4';
-import video3 from '../../assets/videos/ProjectVideo3.mp4'
 import axios from 'axios';
 
+// TODO:Remove pins. Remove video functions.
 const Gold = () => {
     const classes = useStyles();
     const dispatch = useDispatch();

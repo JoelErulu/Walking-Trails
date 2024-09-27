@@ -1,30 +1,30 @@
-import { Button, Grid, Typography, Container, Divider, TextField } from '@material-ui/core';
+// Import React components
 import React, { useEffect, useState } from 'react';
-import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api'
-import useStyles, { GreyTrailOptions, containerStyle, MapID } from '../../styles/BigTrailsstyles.js';
-import { createMarker, getMarkers } from '../../actions/markers.js';
 import { useDispatch, useSelector } from 'react-redux';
-import { GreyCoords } from './Coords.js';
-import FileBase from 'react-file-base64';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+// Import global stylesheet
+// TODO: Remove material-ui styling and replace with global stylesheet, remove videos
+import { Button, Grid, Typography, Container, Divider, TextField } from '@material-ui/core';
+import useStyles, { GreyTrailOptions, containerStyle, MapID } from '../../styles/BigTrailsstyles.js';
 import video4 from '../../assets/videos/ProjectVideo4.mp4';
 
+// Import components
+import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api'
+import { getMarkers } from '../../actions/markers.js';
+import { GreyCoords } from './Coords.js';
 
 const Gray = () => {
+
     const classes = useStyles();
     const dispatch = useDispatch();
-
-    
-    
     const initialState = { lat: '', lng: '', name: ''};
 
     //gets markers from store
     const {markers, isLoading} = useSelector((state) => state.markers);
-
     const [markerFormData, setMarkerFormData] = useState(initialState);
     const [center, setCenter] = useState('');
     const [selectedMarker, setSelectedMarker] = useState(null);
-
 
     const [isVideoOpen, setIsVideoOpen] = useState(false);//video opener
     const [videoSource, setVideoSource] = useState(null);
@@ -70,6 +70,7 @@ const Gray = () => {
 
 
     return (
+        
     <Container component="main" maxWidth="xl">
         <Grid className={classes.gridContainer} container justifyContent="space-between" alignItems="stretch" spacing={3}>
             <Grid item xs={12} sm={6} md={3} style={{ background: 'rgba(255, 255, 255, 1)' }}>

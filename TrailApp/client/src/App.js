@@ -30,7 +30,12 @@ import Exercises from './pages/Exercises.js';
 import About from './pages/About.js'
 import Privacy from './pages/Privacy.js'
 
+import Gold from './components/BigTrails/Gold.BigTrails';
+import Green from './components/BigTrails/Green.BigTrails';
+import Gray from './components/BigTrails/Gray.BigTrails';
+
 //Deprecated pages. If needed, uncomment and fix the filepath. Remember to route it too.
+{/*
 import NutritionDBOld from './oldDirectory/pages/NutritionDB.js';
 import BlogOld from './oldDirectory/pages/Blog.js';
 import NutritionAdminOld from './oldDirectory/components/NutritionAdmin/NutritionAdmin.js';
@@ -40,14 +45,9 @@ import AdminPrivilegeOld from './oldDirectory/components/Admin/AdminPrivilege.js
 import GoldAdminOld from './oldDirectory/components/BigTrailsAdmin/GoldAdmin';
 import GreenAdminOld from './oldDirectory/components/BigTrailsAdmin/GreenAdmin';
 import GrayAdminOld from './oldDirectory/components/BigTrailsAdmin/GrayAdmin';
-import AuthOld from './components/Auth/Auth.js';
-
-import ManageTrail from './components/ManageTrail/ManageTrail.js';
-import Gold from './components/BigTrails/Gold.BigTrails';
-import Green from './components/BigTrails/Green.BigTrails';
-import Gray from './components/BigTrails/Gray.BigTrails';
-
-
+import AuthOld from './oldDirectory/components/Auth/Auth.js'; //'./oldDirectory/components/Auth/Auth.js';
+import ManageTrailOld from './oldDirectory/components/ManageTrail/ManageTrail.js';
+*/}
 
 const App = () => {
 
@@ -61,15 +61,12 @@ const App = () => {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={< Landing />} />
-                    {/*  /> */}
                     <Route path="/authorization" element={< Authorization />} />
-
                     <Route path="/adminHome" element={< AdminHome />} />
                     <Route path="/adminManager" element={< AdminManager />} />
                     <Route path="/adminStatistics" element={< AdminStatistics />} />
                     <Route path="/userHome" element={< UserHome />} />
                     <Route path="/profileManagement" element={< ProfileManagement />} />
-
                     <Route path ="/trails" element = {< Trails />}/>
                     <Route path ="/climate" element = {< Climate />}/>
                     <Route path ="/hydration" element = {< Hydration />}/>
@@ -78,12 +75,12 @@ const App = () => {
                     <Route path="/about" element={< About />} />
                     <Route path="/privacy" element={< Privacy />} />
 
-                    <Route path="/gold" element={<Gold />} />
-                    <Route path="/green" element={<Green />} />
-                    <Route path="/gray" element={<Gray />} />
-                    <Route path="/manageTrail" element={<ManageTrail />} />
+                    <Route path="/gold" element={< Gold />} />
+                    <Route path="/green" element={< Green />} />
+                    <Route path="/gray" element={< Gray />} />
                     
                     {/* Deprecated page routing. Comment out/remove when transitioned out of use. */}
+                    {/*
                     <Route path="/adminOld" element={< AdminOld />} />
                     <Route path="/adminPrivilegeOld" element={< AdminPrivilegeOld />} />
                     <Route path="/authOld" element={< AuthOld />} />
@@ -94,6 +91,9 @@ const App = () => {
                     <Route path="/grayAdminOld" element={< GrayAdminOld />} />
                     <Route path="/nutritionAdminOld" element={< NutritionAdminOld />} />
                     <Route path="/homeOld" element={< HomeOld />} />
+                    <Route path="/manageTrailOld" element={< ManageTrailOld />} />
+                    */}
+
                 </Routes>
                 <Footer />
             </Container>

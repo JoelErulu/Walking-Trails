@@ -7,7 +7,7 @@ import { googleLogin } from '../api/index';
 import { GoogleLogin, googleLogout, useGoogleLogin } from '@react-oauth/google';
 
 // Import components & actions
-import Input from '../components/Auth/Input';
+import Input from '../components/Authorization/input';
 import { signin, signup } from '../actions/auth';
 
 // Import global stylesheet

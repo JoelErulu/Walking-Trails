@@ -3,13 +3,11 @@ import { Container, Grow, Grid, Paper } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
 import { getTrails } from '../../actions/trails.js';
-import Trails from '../Trails/Trails.js';
-import TrailForm from '../TrailForm/TrailForm.js';
-import useStyles from './styles.js';
+import Trails from '../../../components/Trails/Trails.js' //'../Trails/Trails.js';
+import TrailForm from '../TrailForm/TrailForm.js'; //'../TrailForm/TrailForm.js';
 
 const ManageTrail = (theme) => {
     const [currentId, setCurrentId] = useState(null);
-    const classes = useStyles();
     const dispatch = useDispatch();
 
     useEffect(() => {

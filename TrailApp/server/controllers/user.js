@@ -1,10 +1,12 @@
+// Import dependencies
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-
-import User from '../models/user.js';
-
 import {IdTokenClient, OAuth2Client} from 'google-auth-library';
 
+// Import model
+import User from '../models/user.js';
+
+// TODO: Hide this in .env
 const CLIENT_ID = '222736919095-8clp3t7ndllhnf6jt0n1buveh6a97i62.apps.googleusercontent.com';
         const clientSecret ='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';
         const client = new OAuth2Client(CLIENT_ID,clientSecret, 'postmessage'); 

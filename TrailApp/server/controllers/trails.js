@@ -1,4 +1,7 @@
+// Import dependency
 import mongoose from 'mongoose';
+
+// Import model
 import TrailDetail from '../models/trailDetail.js';
 
 export const getTrails = async (req, res) => {

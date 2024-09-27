@@ -1,3 +1,4 @@
+// Import dependencies
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
@@ -7,35 +8,28 @@ const Grid = require('gridfs-stream');
 import OAuth2Client from 'google-auth-library';
 import GoogleAuth from 'google-auth-library';
 import {auth} from 'google-auth-library'
-//import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
-import postRoutes from './routes/posts.js';
+// Import routes
 import userRoutes from './routes/users.js';
 import trailRoutes from './routes/trails.js';
 import markerRoutes from './routes/marker.js';
-import nutritionRoutes from './routes/nutrition.js';
-import videoRoutes from './routes/video.js';
-
 
 const path = ('path');
 const dotenv = ('dotenv');
-
 const app = express();
-//dotenv.config();
+dotenv.config();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 app.use('/trails', trailRoutes);
-// app.use('/googleLogin', trailRoutes);
 app.use('/marker', markerRoutes);
-app.use('/nutrition', nutritionRoutes);
-app.use('/videos', videoRoutes);
 
-//const PORT = process.env.PORT || 5000;
+// TODO: Hide the CONNECTION_URL in a .env
+// const PORT = process.env.PORT || 5000;
 const PORT = 5000;
 const CONNECTION_URL = 'mongodb+srv://gsmith32:Gregory1247@trails.uhojira.mongodb.net/?retryWrites=true&w=majority';
 

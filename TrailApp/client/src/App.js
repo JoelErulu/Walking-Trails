@@ -13,14 +13,14 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/Footer.js';
 import Auth from './components/Auth/Auth.js';
-import Auth2 from './pages/Auth.js';
+import Auth2 from './pages/Authorization.js';
 
 // Import pages
 import Landing from './pages/Landing.js';
 
 import AdminHome from './pages/AdminHome.js'
 import AdminManager from './pages/AdminManager.js'
-import Statistics from './pages/Statistics.js'
+import Statistics from './pages/AdminStatistics.js'
 
 import UserHome from './pages/UserHome.js'
 import Climate from './pages/Climate.js';

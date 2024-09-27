@@ -6,12 +6,12 @@ import { Link, useNavigate } from 'react-router-dom';
 // TODO: Contains Material-UI styling. Remove to unify styling under Bootstrap
 import { Grid, Typography, Container, Button, Divider, Collapse} from '@material-ui/core';
 import useStyles, {goldOptions, greenOptions, greyOptions, containerStyle, exampleMapStyles} from '../../styles/Homestyles.js';
-import '../interfaceSettings.css'; // Import the CSS file
+import '../../interfaceSettings.css'; // Import the CSS file
 
 // Image imports
-import gold from '../assets/images/gold.png';
-import green from '../assets/images/green.png';
-import gray from '../assets/images/gray.png';
+import gold from '../../assets/images/gold.png';
+import green from '../../assets/images/green.png';
+import gray from '../../assets/images/gray.png';
 
 // Google Maps components
 import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api';

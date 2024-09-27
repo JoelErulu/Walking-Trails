@@ -13,13 +13,14 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/Footer.js';
 import Auth from './components/Auth/Auth.js';
+import Auth2 from './pages/Authorization.js';
 
 // Import pages
 import Landing from './pages/Landing.js';
 
 import AdminHome from './pages/AdminHome.js'
 import AdminManager from './pages/AdminManager.js'
-import Statistics from './pages/Statistics.js'
+import Statistics from './pages/AdminStatistics.js'
 
 import UserHome from './pages/UserHome.js'
 import Climate from './pages/Climate.js';
@@ -30,22 +31,24 @@ import About from './pages/About.js'
 import Privacy from './pages/Privacy.js'
 
 //Deprecated pages. If needed, uncomment and fix the filepath. Remember to route it too.
-/*
-import Library from './pages/Library.js';
-import NutritionOld from './pages/NutritionDB - Old.js';
-import Blog from './pages/Blog.js';
+
+import LibraryOld from './oldDirectory/pages/Library.js';
+import NutritionDBOld from './oldDirectory/pages/NutritionDB.js';
+import BlogOld from './oldDirectory/pages/Blog.js';
+import NutritionAdminOld from './oldDirectory/components/NutritionAdmin/NutritionAdmin.js';
+import HomeOld from './oldDirectory/pages/Home.js';
+import AdminOld from './oldDirectory/components/Admin/Admin.js';
+import AdminPrivilegeOld from './oldDirectory/components/Admin/AdminPrivilege.js';
+import GoldAdminOld from './oldDirectory/components/BigTrailsAdmin/GoldAdmin';
+import GreenAdminOld from './oldDirectory/components/BigTrailsAdmin/GreenAdmin';
+import GrayAdminOld from './oldDirectory/components/BigTrailsAdmin/GrayAdmin';
+
 import ManageTrail from './components/ManageTrail/ManageTrail.js';
-import AdminPrivilege from './components/Admin/AdminPrivilege.js';
 import Gold from './components/BigTrails/Gold.BigTrails';
 import Green from './components/BigTrails/Green.BigTrails';
 import Gray from './components/BigTrails/Gray.BigTrails';
-import Admin from './components/Admin/Admin.js';
-import GoldAdmin from './components/BigTrailsAdmin/GoldAdmin';
-import GreenAdmin from './components/BigTrailsAdmin/GreenAdmin';
-import GrayAdmin from './components/BigTrailsAdmin/GrayAdmin';
-import NutritionAdmin from './components/NutritionAdmin/NutritionAdmin.js';
-import Home from './pages/Home.js';
-*/
+
+
 
 const App = () => {
 
@@ -59,32 +62,42 @@ const App = () => {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={< Landing />} />
-                    <Route path="/auth" element={<Auth />} />
+                    <Route path="/auth" element={< Auth />} />
+                    <Route path="/auth2" element={< Auth2 />} />
 
                     <Route path="/adminHome" element={< AdminHome />} />
                     <Route path="/adminManager" element={< AdminManager />} />
                     <Route path="/statistics" element={< Statistics />} />
 
                     <Route path="/userHome" element={< UserHome />} />
-                    <Route path ="/climate" element = {<Climate/>}/>
-                    <Route path ="/hydration" element = {<Hydration/>}/>
-                    <Route path ="/exercises" element = {<Exercises/>}/>
-                    <Route path="/nutrition" element={<Nutrition />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/privacy" element={<Privacy />} />
+                    <Route path ="/climate" element = {< Climate/>}/>
+                    <Route path ="/hydration" element = {< Hydration/>}/>
+                    <Route path ="/exercises" element = {< Exercises/>}/>
+                    <Route path="/nutrition" element={< Nutrition />} />
+                    <Route path="/about" element={< About />} />
+                    <Route path="/privacy" element={< Privacy />} />
 
-                    {/* 
-                    // Deprecated page routing. Uncomment if needed.
-                    <Route path="/admin" element={<Admin />} />
                     <Route path="/gold" element={<Gold />} />
                     <Route path="/green" element={<Green />} />
                     <Route path="/gray" element={<Gray />} />
-                    <Route path="/trails" element={<ManageTrail />} />
-                    <Route path="/adminPrivilege" element={<AdminPrivilege />} />
-                    <Route path ="/goldAdmin" element = {<GoldAdmin/>}/>
-                    <Route path ="/greenAdmin" element = {<GreenAdmin/>}/>
-                    <Route path ="/grayAdmin" element = {<GrayAdmin/>}/>
-                    <Route path="/nutritionAdmin" element={<NutritionAdmin />} />
+                    <Route path="/manageTrail" element={<ManageTrail />} />
+                    
+                    <Route path="/adminOld" element={< AdminOld />} />
+                    <Route path="/adminPrivilegeOld" element={< AdminPrivilegeOld />} />
+                    <Route path="/libraryOld" element={< LibraryOld />} />
+                    <Route path="/blogOld" element={< BlogOld />} />
+                    <Route path="/nutritionDBOld" element={< NutritionDBOld />} />
+                    <Route path="/adminOld" element={< AdminOld />} />
+                    <Route path="/goldAdminOld" element={< GoldAdminOld />} />
+                    <Route path="/greenAdminOld" element={< GreenAdminOld />} />
+                    <Route path="/grayAdminOld" element={< GrayAdminOld />} />
+                    <Route path="/nutritionAdminOld" element={<NutritionAdminOld />} />
+                    <Route path="/homeOld" element={<HomeOld />} />
+
+                    {/* 
+                    // Deprecated page routing. Uncomment if needed.
+                    
+
                     */}
                 </Routes>
                 <Footer />

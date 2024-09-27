@@ -8,6 +8,11 @@ import '../interfaceSettings.css';
 
 const AdminStatistics = () => {
 
+    return (
+        <div>
+            <h2>User Statistics Portal</h2>
+        </div>
+    )
 }
 
 export default AdminStatistics;

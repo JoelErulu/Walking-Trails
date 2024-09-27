@@ -1,11 +1,11 @@
 // Import React components
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch /*, useSelector */ } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 // Import global stylesheet
 // TODO: Remove material-ui styling and replace with global stylesheet, remove videos
-import { Button, Grid, Typography, Container, Divider, TextField } from '@material-ui/core';
+import { Button, Grid, Typography, Container, Divider } from '@material-ui/core';
 import useStyles, { GreyTrailOptions, containerStyle, MapID } from '../../styles/BigTrailsstyles.js';
 import video4 from '../../assets/videos/ProjectVideo4.mp4';
 
@@ -22,7 +22,7 @@ const Gray = () => {
     const initialState = { lat: '', lng: '', name: ''};
 
     //gets markers from store
-    const {markers, isLoading} = useSelector((state) => state.markers);
+    // const {markers, isLoading} = useSelector((state) => state.markers);
     const [markerFormData, setMarkerFormData] = useState(initialState);
     const [center, setCenter] = useState('');
     const [selectedMarker, setSelectedMarker] = useState(null);

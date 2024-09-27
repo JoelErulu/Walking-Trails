@@ -8,7 +8,7 @@ import React from 'react';
 // Import global stylesheet
 import '../interfaceSettings.css';
 
-{/* README: I suggest implementing a call to a 'RoleIdentifier.js' that determines whether an extra form appears regarding setting user roleType by searching through email */}
+// README: I suggest implementing a call to a 'RoleIdentifier.js' that determines whether an extra form appears regarding setting user roleType by searching through email
 const ProfileManagement = () => {
 
     return (

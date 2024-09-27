@@ -20,28 +20,28 @@ export default makeStyles((theme) => ({
     marginTop: "50px",
     marginBottom: "0px",
     marginLeft: "0px",
-    marginBottom: "0px",
+    //marginBottom: "0px",
   },
   title: {
     textAlign: "center",
     marginTop: "0px",
     marginBottom: "0px",
     marginLeft: "0px",
-    marginBottom: "0px",
+    //marginBottom: "0px",
   },
   workouts: {
     textAlign: "center",
     marginTop: "5px",
     marginBottom: "0px",
     marginLeft: "0px",
-    marginBottom: "0px",
+    //marginBottom: "0px",
   },
   card: {
     textAlign: "center",
     marginTop: "5px",
     marginBottom: "0px",
     marginLeft: "0px",
-    marginBottom: "0px",
+    //marginBottom: "0px",
   },
 }));
 

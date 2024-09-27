@@ -6,7 +6,7 @@ export const signin = (formData, navigate) => async (dispatch) => {
         const { data } = await api.signIn(formData);
         console.log(data);
         dispatch({ type: AUTH, data });
-        if(data.result.role == "admin" || data.result.role==="SuperAdmin"){
+        if(data.result.role === "admin" || data.result.role ==="SuperAdmin"){
             navigate('/admin');
         }else{
             navigate('/home');

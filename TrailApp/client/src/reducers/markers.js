@@ -1,6 +1,6 @@
 import { FETCH_ALL, CREATE, UPDATE, START_LOADING, END_LOADING, DELETE} from '../constants/actionTypes.js';
 
-export default (state = { isLoading: true, markers: [] }, action) => {
+const markers = (state = { isLoading: true, markers: [] }, action) => {
     switch (action.type) {
         case START_LOADING:
             return { ...state, isLoading: true };
@@ -18,3 +18,5 @@ export default (state = { isLoading: true, markers: [] }, action) => {
             return state;
     }
 }
+
+export default markers;

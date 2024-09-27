@@ -33,7 +33,6 @@ const Admin = () => {
     };
 
     return (
-        <>
 
         <Container component="main" maxWidth="xl">
         <Typography className={classes.paper} variant="h5">Admin</Typography>
@@ -65,7 +64,7 @@ const Admin = () => {
                         {userRole==="SuperAdmin"?<Button component={Link} to="/adminPrivilege" variant="contained" color="primary">Assign Admin Privilege</Button>:''}
                     </Grid>
                 </Paper>
-            </Container></>
+            </Container>
     );
 };
 

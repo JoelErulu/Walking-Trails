@@ -1,11 +1,16 @@
 ## Fanstatic 4 2022
 
-### Team Members 2022
+### Team Members Fall 2022
 
-1. Serena - Lead Programmer, Team Manager
-2. Jared - Database Model / Document
-3. Ti - UI/UX design / Testing
-4. Charlie - Testing lead / Client Liason
+1. **Serena** - _Lead Programmer, Team Manager_
+
+2. **Jared** - _Database Modeler / Documentation Lead_
+
+3. **Ti** - _UI/UX Design / Testing_
+
+4. **Charlie** - _Testing Lead / Client Liason_
+
+
 
 ## TTrail 2023
 
@@ -16,6 +21,8 @@
 2. **Peter** - _Data Modeler, Testing Lead_ :mage_man:
 
 3. **Daniel** - _UI/UX, Documentation Lead_ :bat:
+
+
 
 ## The W.A.L.K.E.R.S
 
@@ -29,6 +36,8 @@
 
 4. **Greg** - _UI/UX, Client Liason_
 
+
+
 ## Diamonds
 
 ### Team Members Spring 2024
@@ -39,14 +48,16 @@
 
 3. **Kiet Ly** - _Lead Programmer/Team Manager/UI and UX Design_
 
+
+
 ## Young Thugs
 
 ### Team Members Fall 2024
 
-1. **Joel** - _Lead Programmer, Team Manager_
+1. **Joel Erulu** - _Lead Programmer, Team Manager_
 
-2. **Mathews** - _Data Modeling Lead, Testing Lead_
+2. **Mathews Binny** - _Data Modeling Lead, Testing Lead_
 
-3. **Josiah** - _Code Architecture, Documentation Lead_
+3. **Josiah Haines** - _Code Architecture, Documentation Lead_
 
-4. **Ginette** - _UI/UX, Client Liason_
+4. **Ginette Wilson-Bahun** - _UI/UX, Client Liason_

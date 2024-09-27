@@ -1,15 +1,26 @@
+// Import React components
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Footer from '../components/Navbar/Footer.js';
+import { Link, useNavigate } from 'react-router-dom';
+
+// Import styling & images
+// TODO: Replace with GGC approved imagery
+import '../interfaceSettings.css'; // Import your global CSS file
 import pic1 from '../assets/images/ggcnew.jpg';
 import pic2 from '../assets/images/exercise1.jpg';
 import pic4 from '../assets/images/nutrition1.jpg';
 import pic5 from '../assets/images/hydration.jpg';
 import pic6 from '../assets/images/climate.jpg';
-import '../interfaceSettings.css'; // Import your global CSS file
 
 const Landing = () => {
+
+  const navigate = useNavigate();
+
+  const handleAuthRedirect = (path) => {
+    navigate(`/auth?redirect=${path}`);
+  };
+
   return (
+
     <div className="container-xl">
       {/* Showcase Section */}
       <section>
@@ -51,9 +62,14 @@ const Landing = () => {
                 <p className="lead">
                   Personalized workout tutorials and tailored workout spaces represent a revolution in the fitness world, a shift towards a more individualized approach to health and wellness.
                 </p>
-                <a href="/exercises" className="btn btn-primary mt-3">
+                <a href="/auth" className="btn btn-primary mt-3">
                   <i className="bi bi-chevron-right"></i> Exercises
                 </a>
+                {/*
+                  <button onClick={() => handleAuthRedirect("/exercise")} className="btn btn-primary mt-3">
+                    <i className="bi bi-chevron-right"></i> Exercises
+                  </button>
+                */}
               </div>
             </div>
           </div>
@@ -77,9 +93,14 @@ const Landing = () => {
                 <p className="lead">
                   Hydration is crucial for maintaining the body's balance, especially during physical activities. Proper hydration supports energy levels, helps regulate body temperature, and enhances overall physical performance.
                 </p>
-                <a href="/hydration" className="btn btn-primary mt-3">
+                <a href="/auth" className="btn btn-primary mt-3">
                   <i className="bi bi-chevron-right"></i> Hydration
                 </a>
+                {/*
+                  <button onClick={() => handleAuthRedirect("/hydration")} className="btn btn-primary mt-3">
+                    <i className="bi bi-chevron-right"></i> Hydration
+                  </button>
+                */}
               </div>
             </div>
           </div>
@@ -103,9 +124,14 @@ const Landing = () => {
                 <p className="lead">
                   Nutrition is the cornerstone of a healthy lifestyle, providing the essential nutrients needed to fuel your body. Proper nutrition can enhance performance, speed up recovery, and improve overall health.
                 </p>
-                <a href="/nutrition" className="btn btn-primary mt-3">
+                <a href="/auth" className="btn btn-primary mt-3">
                   <i className="bi bi-chevron-right"></i> Nutrition
                 </a>
+                {/*
+                  <button onClick={() => handleAuthRedirect("/nutrition")} className="btn btn-primary mt-3">
+                    <i className="bi bi-chevron-right"></i> Nutrition
+                  </button>
+                */}
               </div>
             </div>
           </div>
@@ -129,30 +155,19 @@ const Landing = () => {
                 <p className="lead">
                   Climate and environmental conditions play a significant role in outdoor physical activities. Understanding how weather affects your performance, from heat and humidity to cold and wind, allows you to adjust your workouts and take precautions for safe and effective exercise.
                 </p>
-                <a href="/climate" className="btn btn-primary mt-3">
+                <a href="/auth" className="btn btn-primary mt-3">
                   <i className="bi bi-chevron-right"></i> Climate
                 </a>
+                {/*
+                  <button onClick={() => handleAuthRedirect("/climate")} className="btn btn-primary mt-3">
+                    <i className="bi bi-chevron-right"></i> Climate
+                  </button>
+                */}
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Newsletter Section */}
-      <section>
-        <div className="container">
-          <div className="d-md-flex justify-content-between align-items-center">
-            <h3 className="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>
-            <div className="d-flex">
-              <input type="text" className="form-control me-2" placeholder="Enter Email" />
-              <button className="btn btn-primary mt-3" type="button">Submit</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      {/* <Footer /> */}
     </div>
   );
 };

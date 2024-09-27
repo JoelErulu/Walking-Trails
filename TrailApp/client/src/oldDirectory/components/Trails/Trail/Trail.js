@@ -7,7 +7,7 @@ import moment from 'moment';
 import useStyles from './styles.js';
 import { useDispatch } from 'react-redux';
 
-import { deleteTrail } from '../../../actions/trails.js';
+import { deleteTrail } from '../../../actions/trails.js'; //'../../../actions/trails.js';
  
 const Trail = ({ trail, setCurrentId }) => {
     const classes = useStyles();

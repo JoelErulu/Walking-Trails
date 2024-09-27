@@ -7,7 +7,7 @@ import moment from 'moment';
 import useStyles from './styles.js';
 import { useDispatch } from 'react-redux';
 
-import { deletePost, likePost } from '../../../actions/posts.js';
+import { deletePost, likePost } from '../../../actions/posts.js';//'../../../actions/posts.js';
  
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();

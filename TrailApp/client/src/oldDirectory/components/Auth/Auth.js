@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import icon from './icon.js';
-import useStyles from '../../styles/Authstyles.js';
+import useStyles from '../../../styles/Authstyles.js'
 import Input from './Input.js';
-import { signin, signup } from '../../actions/auth.js';
-import { googleLogin } from '../../api/index.js';
+import { signin, signup } from '../../../actions/auth.js';
+import { googleLogin } from '../../../api/index.js';
 
 
 

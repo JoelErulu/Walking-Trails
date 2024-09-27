@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Import components
-import { getTrails } from '../actions/trails';
+import { getTrails } from '../oldDirectory/actions/trails';
 
 // Import global stylesheet
 import '../interfaceSettings.css';

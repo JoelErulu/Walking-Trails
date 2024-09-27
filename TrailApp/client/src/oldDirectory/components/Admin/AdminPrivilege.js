@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsers, updateUserRole } from '../../../actions/users';
 import RoleCheckbox from './RoleCheckbox';
 import useStyles from '../../../styles/Adminstyles.js';
-import {
-  Button,
-  Card,
-  CardContent,
-  FormControlLabel,
-  Grid,
-  Typography,
-} from '@material-ui/core';
+import {Card, CardContent, FormControlLabel, Grid, Typography,} from '@material-ui/core';
 
 const AdminPrivilege = () => {
   const dispatch = useDispatch();

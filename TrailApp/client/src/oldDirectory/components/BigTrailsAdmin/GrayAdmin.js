@@ -1,7 +1,7 @@
 import { Button, Grid, Typography, Container, Divider, TextField } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api'
-import useStyles, { GreyTrailOptions, containerStyle, MapID } from '../../../styles/BigTrailsAdminstyles.js';
+import useStyles, { GreyTrailOptions, containerStyle, MapID } from '../../styles/BigTrailsAdminstyles.js';
 import { createMarker, getMarkers } from '../../../actions/markers.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { GreyCoords } from './Coords.js';

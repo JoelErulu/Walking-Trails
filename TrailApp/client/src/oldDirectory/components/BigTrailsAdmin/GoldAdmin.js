@@ -1,7 +1,7 @@
 import { Button, Grid, Typography, Container, Divider, TextField, Collapse, CardMedia, Hidden, ImageListItem, ImageList} from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api'
-import useStyles, { GoldTrailOptions, containerStyle, MapID } from '../../../styles/BigTrailsAdminstyles.js';
+import useStyles, { GoldTrailOptions, containerStyle, MapID } from '../../styles/BigTrailsAdminstyles.js';
 import { createMarker, getMarkers, updateMarker, deleteMarker} from '../../../actions/markers.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { GoldCords } from './Coords.js';

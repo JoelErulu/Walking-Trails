@@ -14,6 +14,8 @@ import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api'
 import { getMarkers } from '../../actions/markers.js';
 import { GreenCoords } from './Coords.js';
 
+
+//TODO: Remove video
 const Green = () => {                   
 
     const classes = useStyles();

@@ -1,12 +1,5 @@
-/* Global Variables */
+/* Global Stylesheet */
 /* Navbar Styles */
-.appBar {
-    background: transparent; /* Removes the black background */
-    box-shadow: none;
-    display: flex;
-    justify-content: space-between;
-    padding: 16px; /* Adjust padding as needed */
-}
 
 .toolbar {
     display: flex;
@@ -45,28 +38,10 @@
     background-color: #f5f5f5; /* Background color of dropdown */
 }
 
-.menu .MuiMenuItem-root {
-    color: #333; /* Text color in dropdown */
-}
-
-.menu .MuiMenuItem-root:hover {
-    background-color: green; /* Hover background color */
-    color: #fff; /* Hover text color */
-}
-
 .pic {
     width: 50px; /* Adjust the size as needed */
     height: 50px;
     margin-right: 16px; /* Space between the logo and text */
-}
-
-.newsletter {
-    position: absolute;
-    bottom: 0; /* Move the newsletter to the bottom of the page */
-    width: 100%;
-    text-align: center;
-    padding: 16px;
-    background-color: #f5f5f5; /* Adjust background color if necessary */
 }
 
 .trailsCollapseText {
@@ -107,17 +82,17 @@
 
   /* Heading Gradient */
   --heading-gradient: linear-gradient(#3e8c3e, #808080, #ffcc00); /* Green, gray, yellow */
-
-
 }
 
 /* Navbar Styles */
+
 .navbar {
   border: none;
   padding: 10px 20px;
 }
 
 /* Gwinnett logo styling */
+
 .logo {
   width: 150px;
   height: var(--image-height-auto); /* Using global image height */
@@ -125,6 +100,7 @@
 }
 
 /* "WALKING TRAILS" text styling */
+
 .heading {
   font-size: var(--font-size-large); /* Using global font size */
   font-weight: bold;
@@ -135,6 +111,7 @@
 }
 
 /* Navbar menu items */
+
 .navbar-nav .nav-link {
   font-size: var(--font-size-small); /* Using global font size */
   font-weight: bold;
@@ -158,6 +135,7 @@
 }
 
 /* Menu button styling */
+
 .navbar-toggler {
   border: none;
 }
@@ -168,6 +146,7 @@
 }
 
 /* Custom button for "Logout" */
+
 .btn-outline-danger {
   color: var(--menu-button-text-color);
   background-color: var(--primary-color);
@@ -181,6 +160,7 @@
 }
 
 /* General button styling */
+
 .btn-primary {
   background-color: var(--primary-color);
   padding: var(--btn-padding);
@@ -206,6 +186,7 @@
 }
 
 /* Heading and Paragraph Styling */
+
 h1, h2 {
   font-size: var(--font-size-heading); /* Using global heading size */
 }
@@ -219,28 +200,32 @@ p.lead {
 }
 
 /* Footer Styling */
-:root {
-  --footer-font-size: 14px;
-  --footer-font-color: #555555; /* Light gray */
-  /*--footer-font-family: 'Roboto', sans-serif;*/
 
-  --appBar-background: #fff;
-  --appBar-border-radius: 15px;
-  --appBar-margin: 30px 0;
+.footer-card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-top: 40px;
 }
 
-.appBar {
-  border-radius: var(--appBar-border-radius);
-  margin: var(--appBar-margin);
+.footer-card .card-text {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.footer-links {
   display: flex;
+  gap: 15px;
 }
 
-.footerText {
-  flex-grow: 1;
-  text-align: center;
-  font-size: var(--footer-font-size);
-  color: var(--footer-font-color);
-  font-family: var(--footer-font-family);
+.footer-links .nav-link {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.footer-links .nav-link:hover {
+  text-decoration: underline;
+  color: green; 
 }
 
 /* Image Styling */
@@ -252,7 +237,7 @@ p.lead {
 /* Adjust image sizes for smaller screens */
 @media (max-width: 900px) {
   .img-fluid {
-    max-width: 95%; /* Adjusted for better responsiveness */
+    max-width: 95%;
   }
 }
 
@@ -324,7 +309,7 @@ p.lead {
 
 
 
-/* Sign-In Page Styles */
+/* Authorization Page Styles */
 
 #sign-in-container {
   max-width: 500px; /* Set a max width for the card */

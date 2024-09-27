@@ -27,7 +27,7 @@ const LandingNavbar = () => {
 
                 {/* Navbar menu toggle button & handler for mobile */}
                 <button
-                    className="navbar-toggler"
+                    className="navbar-toggler ms-auto align-items-right"
                     type="button"
                     onClick={handleMenuToggle}
                     aria-controls="navbarNav"

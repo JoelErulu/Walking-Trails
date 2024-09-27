@@ -85,13 +85,27 @@ const Auth = () => {
                     </h5>
                     <form onSubmit={handleSubmit}>
                         <div id="sign-in-form-group" className="form-group">
-                            {isSignup && (
-                                <>
-                                    <Input id="first-name-input" name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
-                                    <Input id="last-name-input" name="lastName" label="Last Name" handleChange={handleChange} half />
-                                </>
-                            )}
-                            <Input id="email-input" name="email" label="Email Address" handleChange={handleChange} type="email" />
+                            {isSignup && (<>
+                                <Input 
+                                    id="first-name-input" 
+                                    name="firstName" 
+                                    label="First Name" 
+                                    handleChange={handleChange} 
+                                    autoFocus 
+                                    half />
+                                <Input 
+                                    id="last-name-input" 
+                                    name="lastName" 
+                                    label="Last Name" 
+                                    handleChange={handleChange} 
+                                    half />
+                            </>)}
+                            <Input 
+                                id="email-input" 
+                                name="email" 
+                                label="Email Address" 
+                                handleChange={handleChange} 
+                                type="email" />
                             <Input
                                 id="password-input"
                                 name="password"
@@ -100,18 +114,36 @@ const Auth = () => {
                                 type={showPassword ? "text" : "password"}
                                 handleShowPassword={handleShowPassword}
                             />
-                            {isSignup && <Input id="confirm-password-input" name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
+                            {isSignup && 
+                                <Input id="confirm-password-input" 
+                                name="confirmPassword" 
+                                label="Repeat Password" 
+                                handleChange={handleChange} 
+                                type="password" />}
                         </div>
+
+                        {/* The submit buttons and form switcher */}
                         <div>
-                            <button id="sign-in-submit-btn" type="submit" className="btn btn-primary btn-block btn-spacing">
+                            <button 
+                                id="sign-in-submit-btn" 
+                                type="submit" 
+                                className="btn btn-primary btn-block btn-spacing">
                                 {isSignup ? 'Sign Up' : 'Sign In'}
                             </button>
-                            <button id="google-signin-btn" type="button" onClick={login} className="btn btn-primary btn-block btn-spacing">
+                            <button 
+                                id="google-signin-btn" 
+                                type="button" 
+                                onClick={login} 
+                                className="btn btn-primary btn-block btn-spacing">
                                 Sign in with Google
                             </button>
                         </div>
                         <div className="text-center mt-3">
-                            <button id="switch-mode-btn" type="button" onClick={switchMode} className="btn btn-link">
+                            <button 
+                                id="switch-mode-btn" 
+                                type="button" 
+                                onClick={switchMode} 
+                                className="btn btn-link">
                                 {isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
                             </button>
                         </div>
@@ -119,7 +151,7 @@ const Auth = () => {
                 </div>
             </div>
         </div>
-    );  
+    );
 };
 
 export default Auth;

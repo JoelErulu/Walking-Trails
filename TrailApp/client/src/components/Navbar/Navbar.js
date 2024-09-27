@@ -8,10 +8,12 @@ import AdminNavbar from './AdminNavbar';
 const Navbar = () => {
     const [navbar, setNavbar] = useState(null);
 
-    // Function to check if the user is signed in
+    // Function to check the user is of Admin/User roleType before generating their Navbars
+    //TODO: Revise this JSON check once schemas redone
     const checkUserStatus = () => {
         const userProfile = JSON.parse(localStorage.getItem('profile'));
 
+        // 
         if (userProfile) {
             const userRole = userProfile.result.role;
             if (userRole === 'Admin') {
@@ -20,7 +22,7 @@ const Navbar = () => {
                 setNavbar(<UserNavbar />);
             }
         } else {
-            setNavbar(<LandingNavbar />); // Default navbar if not signed in
+            setNavbar(<LandingNavbar />);
         }
     };
 

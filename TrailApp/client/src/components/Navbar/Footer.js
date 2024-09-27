@@ -2,25 +2,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Styling elements. This includes Bootstrap and Material-Ui
-//TODO: Unify the styling with Bootstrap and remove all Material-UI components
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import '../../interfaceSettings.css'; // Import the CSS file
+// Styling elements. This includes Bootstrap
+import '../../interfaceSettings.css';
 
 const Footer = () => {
 
     return (
-        <AppBar position="static" color="inherit" className="appBar">
-            <Toolbar classname='footer-toolbar'>
-                <Typography variant="body1" className="footerText">
-                    &copy; Walking Trails, Fall 2024 
-                </Typography>
-                <div classname='footer-links'>
-                    <Link className="nav-link" to="/about">About </Link>
+        <div className="card footer-card">
+            <div className="card-body text-center">
+                <p className="card-text mb-2">
+                    &copy; Walking Trails, Fall 2024
+                </p>
+                <div className="footer-links d-flex justify-content-center">
+                    <Link className="nav-link" to="/about">About</Link>
                     <Link className="nav-link" to="/privacy">Privacy</Link>
                 </div>
-            </Toolbar>
-        </AppBar>
+            </div>
+        </div>
     );
 };
 

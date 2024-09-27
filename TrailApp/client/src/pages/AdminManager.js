@@ -2,7 +2,6 @@
 import React from 'react';
 
 // Import components
-import '../interfaceSettings.css';
 //import { getUsers, updateUserRole } from '../../../actions/users';
 
 // Import global stylesheet

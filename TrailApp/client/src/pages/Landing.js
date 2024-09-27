@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 // Import global stylesheet & images
 // TODO: Replace with GGC approved imagery
 import '../interfaceSettings.css';
-import pic1 from '../assets/images/ggc-campus.jpg';
-import pic2 from '../assets/images/exercise.jpg';
-import pic4 from '../assets/images/nutrition.jpg';
-import pic5 from '../assets/images/hydration.jpg';
-import pic6 from '../assets/images/climate.jpg';
+import pic1 from '../assets/images/Landing1.jpg';
+import pic2 from '../assets/images/Landing2.jpg';
+import pic3 from '../assets/images/Landing3.jpg';
+import pic4 from '../assets/images/Landing4.jpg';
+import pic5 from '../assets/images/Landing5.jpg';
 
 const Landing = () => {
 
@@ -82,7 +82,7 @@ const Landing = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <img
-                src={pic5}
+                src={pic3}
                 alt="Hydration"
                 className="img-fluid"
               />
@@ -144,7 +144,7 @@ const Landing = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <img
-                src={pic6}
+                src={pic5}
                 alt="Climate"
                 className="img-fluid"
               />

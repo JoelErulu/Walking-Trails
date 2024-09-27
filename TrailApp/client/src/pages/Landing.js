@@ -26,14 +26,14 @@ const Landing = () => {
       <section>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-6 p-3">
+            <div className="col-lg-6 col-md-12 p-3">
               <h1>Fitness/Walking Trails App</h1>
               <p className="lead my-4">
                 The Walking Trails App is a mobile application designed to enhance the walking experience on Georgia Gwinnett College (GGC) trails through interactive and educational content focused on fitness, health, and wellness. This project is a collaborative effort between ITEC students, who are responsible for app development, and EXSC students, who create the content.
               </p>
               <Link to="/auth" className="btn btn-primary">Sign In</Link>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-md-12">
               <img
                 src={pic1}
                 alt="GGC Trails"
@@ -56,7 +56,7 @@ const Landing = () => {
                 className="img-fluid"
               />
             </div>
-            <div className="col-md-6 p-5">
+            <div className="col-md-6 p-3 p-md-5">
               <div className="card-body">
                 <h2>Exercises</h2>
                 <p className="lead">
@@ -87,9 +87,9 @@ const Landing = () => {
                 className="img-fluid"
               />
             </div>
-            <div className="col-md-6 p-5">
+            <div className="col-md-6 p-3 p-md-5">
               <div className="card-body">
-                <h2 className>Hydration</h2>
+                <h2>Hydration</h2>
                 <p className="lead">
                   Hydration is crucial for maintaining the body's balance, especially during physical activities. Proper hydration supports energy levels, helps regulate body temperature, and enhances overall physical performance.
                 </p>
@@ -118,7 +118,7 @@ const Landing = () => {
                 className="img-fluid"
               />
             </div>
-            <div className="col-md-6 p-5">
+            <div className="col-md-6 p-3 p-md-5">
               <div className="card-body">
                 <h2>Nutrition</h2>
                 <p className="lead">
@@ -149,7 +149,7 @@ const Landing = () => {
                 className="img-fluid"
               />
             </div>
-            <div className="col-md-6 p-5">
+            <div className="col-md-6 p-3 p-md-5">
               <div className="card-body">
                 <h2>Climate and Environment</h2>
                 <p className="lead">

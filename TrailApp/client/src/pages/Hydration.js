@@ -1,5 +1,8 @@
+// Import React components
 import React, { useState } from 'react';
-import '../interfaceSettings.css'; // Import the CSS file
+
+// Import global stylesheet
+import '../interfaceSettings.css';
 
 const Hydration = () => {
     const [likeCount, setLikeCount] = useState(0); // Track likes for the video

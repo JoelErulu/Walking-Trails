@@ -2,9 +2,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-// Import styling & images
+// Import global stylesheet & images
 // TODO: Replace with GGC approved imagery
-import '../interfaceSettings.css'; // Import your global CSS file
+import '../interfaceSettings.css';
 import pic1 from '../assets/images/ggcnew.jpg';
 import pic2 from '../assets/images/exercise1.jpg';
 import pic4 from '../assets/images/nutrition1.jpg';

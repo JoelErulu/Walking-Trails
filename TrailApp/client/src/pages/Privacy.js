@@ -1,4 +1,8 @@
-import '../interfaceSettings.css'; // Import the CSS file
+// Import React components
+import React from 'react';
+
+// Import global stylesheet
+import '../interfaceSettings.css';
 
 /* This is copied over from the GGC.edu privacy policy as a temporary placeholder. */
 const Privacy = () => {

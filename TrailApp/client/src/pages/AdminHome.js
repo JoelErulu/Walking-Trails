@@ -1,3 +1,4 @@
+// Import React components
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -5,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // Import components
 import { getTrails } from '../actions/trails';
 
-// Import styling
-import '../interfaceSettings.css'; // Import your global CSS file
+// Import global stylesheet
+import '../interfaceSettings.css';
 
 const AdminHome = () => {
     const [trail, setTrail] = useState('');

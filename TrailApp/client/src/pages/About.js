@@ -1,5 +1,8 @@
+// Import React component
 import React from 'react';
-import '../interfaceSettings.css'; // Import the CSS file
+
+// Import global stylesheet
+import '../interfaceSettings.css';
 
 const About = () => {
     return (

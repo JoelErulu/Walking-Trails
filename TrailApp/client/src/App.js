@@ -13,6 +13,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/Footer.js';
 import Auth from './components/Auth/Auth.js';
+import Auth2 from './pages/Auth.js';
 
 // Import pages
 import Landing from './pages/Landing.js';
@@ -60,6 +61,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={< Landing />} />
                     <Route path="/auth" element={<Auth />} />
+                    <Route path="/auth2" element={<Auth2 />} />
 
                     <Route path="/adminHome" element={< AdminHome />} />
                     <Route path="/adminManager" element={< AdminManager />} />

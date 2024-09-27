@@ -50,7 +50,7 @@ const LandingNavbar = () => {
                             <Link className="nav-link" to="/privacy">Privacy Policy</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link underline-link" to="/auth">Sign in/Sign up</Link>
+                            <Link className="nav-link underline-link" to="/authorization">Sign in/Sign up</Link>
                         </li>
                     </ul>
                 </div>

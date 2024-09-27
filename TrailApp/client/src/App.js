@@ -9,15 +9,13 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 // These imports are for page elements and routing purposes for the browser. Some of these are not needed by the client anymore
 // TODO: Remove deprecated pages to clean up repo & better meet customer requirements.
 
-// Import components
+// Import page components
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/Footer.js';
-import Auth from './components/Auth/Auth.js';
-import Auth2 from './pages/Authorization.js';
 
 // Import pages
 import Landing from './pages/Landing.js';
-
+import Authorization from './pages/Authorization.js';
 import AdminHome from './pages/AdminHome.js'
 import AdminManager from './pages/AdminManager.js'
 import AdminStatistics from './pages/AdminStatistics.js'
@@ -33,7 +31,6 @@ import About from './pages/About.js'
 import Privacy from './pages/Privacy.js'
 
 //Deprecated pages. If needed, uncomment and fix the filepath. Remember to route it too.
-
 import NutritionDBOld from './oldDirectory/pages/NutritionDB.js';
 import BlogOld from './oldDirectory/pages/Blog.js';
 import NutritionAdminOld from './oldDirectory/components/NutritionAdmin/NutritionAdmin.js';
@@ -43,6 +40,7 @@ import AdminPrivilegeOld from './oldDirectory/components/Admin/AdminPrivilege.js
 import GoldAdminOld from './oldDirectory/components/BigTrailsAdmin/GoldAdmin';
 import GreenAdminOld from './oldDirectory/components/BigTrailsAdmin/GreenAdmin';
 import GrayAdminOld from './oldDirectory/components/BigTrailsAdmin/GrayAdmin';
+import AuthOld from './components/Auth/Auth.js';
 
 import ManageTrail from './components/ManageTrail/ManageTrail.js';
 import Gold from './components/BigTrails/Gold.BigTrails';
@@ -63,8 +61,8 @@ const App = () => {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={< Landing />} />
-                    <Route path="/auth" element={< Auth />} />
-                    <Route path="/auth2" element={< Auth2 />} />
+                    {/*  /> */}
+                    <Route path="/authorization" element={< Authorization />} />
 
                     <Route path="/adminHome" element={< AdminHome />} />
                     <Route path="/adminManager" element={< AdminManager />} />
@@ -88,6 +86,7 @@ const App = () => {
                     {/* Deprecated page routing. Comment out/remove when transitioned out of use. */}
                     <Route path="/adminOld" element={< AdminOld />} />
                     <Route path="/adminPrivilegeOld" element={< AdminPrivilegeOld />} />
+                    <Route path="/authOld" element={< AuthOld />} />
                     <Route path="/blogOld" element={< BlogOld />} />
                     <Route path="/nutritionDBOld" element={< NutritionDBOld />} />
                     <Route path="/goldAdminOld" element={< GoldAdminOld />} />

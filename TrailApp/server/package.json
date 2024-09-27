@@ -21,6 +21,7 @@
     "express": "^4.21.0",
     "force": "^0.0.3",
     "google-auth-library": "^8.9.0",
+    "gridfs-stream": "^1.1.1",
     "i": "^0.3.7",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.13.3",

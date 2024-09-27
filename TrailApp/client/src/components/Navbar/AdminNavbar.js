@@ -9,14 +9,15 @@ import GwinnettLogo from '../../assets/images/gwinnett.png';
 
 const AdminNavbar = () => {
 
-    // State to handle mobile menu visibility
+    // State to handle mobile menu visibility 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     // User profile detection
     // TODO: Inspect & correct this code to serve the purpose of checking that user is logged in, and is of admin roleType
     const profile = JSON.parse(localStorage.getItem('profile'));
     const [user, setUser] = useState(profile?.payload);
-    const [userRole, setUserRole] = useState('');
+    const  [userRole, setUserRole] = useState('');
+    /* [userRole, setUserRole] */
 
     // TODO: Inspect & describe code behavior, I believe some of these are generic React functions
     const dispatch = useDispatch();

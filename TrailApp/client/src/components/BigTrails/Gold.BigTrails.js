@@ -1,6 +1,6 @@
 // Import React components
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 // Import global stylesheet
 // TODO: Remove material-ui styling, replace with global stylesheet
@@ -18,13 +18,13 @@ import axios from 'axios';
 const Gold = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const initialState = { lat: '', lng: '', name: '', exercise: '', img: '', };
+    // const initialState = { lat: '', lng: '', name: '', exercise: '', img: '', };
     const [isVideoOpen, setIsVideoOpen] = useState(false);
-    const { markers, isLoading } = useSelector((state) => state.markers);
-    const [markerFormData, setMarkerFormData] = useState(initialState);
+    // const { markers, isLoading } = useSelector((state) => state.markers);
+    //const setMarkerFormData = useState(initialState);
     const [center, setCenter] = useState('');
     const [selectedMarker, setSelectedMarker] = useState(null);
-    const [videoSource, setVideoSource] = useState(null);
+    const [videoSource /*}, setVideoSource */ ] = useState(null);
     const [likes, setLikes] = useState(0);
     const [dislikes, setDislikes] = useState(0);
     const [videoFile, setVideoFile] = useState(null);
@@ -38,6 +38,7 @@ const Gold = () => {
         dispatch(getMarkers());
     }, [dispatch])
 
+    /*
     const handleMarkerClick = (marker) => {
         if (selectedMarker && selectedMarker.key === marker.key) {
             setSelectedMarker(null);
@@ -56,6 +57,7 @@ const Gold = () => {
             setIsVideoOpen(true);
         }
     };
+    */
 
     const handleVideoChange = (file) => {
         setVideoFile(file);

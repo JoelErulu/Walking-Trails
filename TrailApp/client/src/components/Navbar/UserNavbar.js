@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-//Import styling & header logo
+// Import styling & header logo
 import '../../interfaceSettings.css';
 import GwinnettLogo from '../../assets/images/gwinnett.png';
 
 const UserNavbar = () => {
+
     // State to handle mobile menu visibility
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 

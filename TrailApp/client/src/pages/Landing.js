@@ -1,6 +1,6 @@
 // Import React components
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Import global stylesheet & images
 // TODO: Replace with GGC approved imagery
@@ -13,11 +13,11 @@ import pic6 from '../assets/images/climate.jpg';
 
 const Landing = () => {
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
-  const handleAuthRedirect = (path) => {
-    navigate(`/auth?redirect=${path}`);
-  };
+  //const handleAuthRedirect = (path) => {
+  //  navigate(`/auth?redirect=${path}`);
+  //};
 
   return (
 

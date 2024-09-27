@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // Styling components
-// TODO: Contains Material-UI styling. Remove to unify styling under Bootstrap
+// TODO: Contains Material-UI styling. Remove to unify styling under global stylesheet
 import { Typography, Container, Divider, Collapse} from '@material-ui/core';
-import useStyles, {goldOptions, greenOptions, greyOptions, containerStyle, exampleMapStyles} from '../styles/Homestyles.js';
+import useStyles, { goldOptions, greenOptions, greyOptions, containerStyle } from '../styles/Homestyles.js';
 import '../interfaceSettings.css'; // Import the CSS file
 
 // Image imports
@@ -14,8 +14,8 @@ import green from '../assets/images/green.png';
 import gray from '../assets/images/gray.png';
 
 // Google Maps components
-import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api';
-import { GoldCords, GreenCoords, GreyCoords} from '../components/BigTrails/Coords.js'
+import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
+import { GoldCords, GreenCoords, GreyCoords } from '../components/BigTrails/Coords.js'
 
 //README: This entire page needs to be restyled.
 const Home = () => {

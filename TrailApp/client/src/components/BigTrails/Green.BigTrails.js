@@ -1,6 +1,6 @@
 // Import React components
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch /*, useSelector */ } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 // Import global stylesheet
@@ -24,7 +24,7 @@ const Green = () => {
     const initialState = { lat: '', lng: '', name: ''};
 
     //gets markers from store
-    const {markers, isLoading} = useSelector((state) => state.markers);
+    // const {markers, isLoading} = useSelector((state) => state.markers);
 
     const [markerFormData, setMarkerFormData] = useState(initialState);
     const [center, setCenter] = useState('');

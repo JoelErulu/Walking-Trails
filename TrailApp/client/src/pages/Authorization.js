@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
+// Import jwt_decode from 'jwt-decode';
 import { googleLogin } from '../api/index';
-import { GoogleLogin, googleLogout, useGoogleLogin } from '@react-oauth/google';
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 
 // Import components & actions
 import Input from '../components/Authorization/input';
@@ -48,6 +48,7 @@ const Auth = () => {
         setShowPassword(false);
     };
 
+    /*
     const googleSuccess = async (res) => {
         const result = jwt_decode(res?.credential);
         const token = res?.credential;
@@ -60,6 +61,7 @@ const Auth = () => {
             console.error(error);
         }
     };
+    */
 
     const login = useGoogleLogin({
         flow: 'auth-code',

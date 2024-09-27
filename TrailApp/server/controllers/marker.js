@@ -1,4 +1,7 @@
+// Import dependency
 import mongoose from 'mongoose';
+
+// Import model
 import Marker from '../models/marker.js';
 
 export const getMarkers = async (req, res) => {

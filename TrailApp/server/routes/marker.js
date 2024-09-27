@@ -1,4 +1,7 @@
+// Import dependency
 import express from 'express';
+
+// Import controller
 import { createMarker, getMarkers, updateMarker, deleteMarker} from '../controllers/marker.js';
 
 

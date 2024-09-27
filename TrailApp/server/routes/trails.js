@@ -1,7 +1,8 @@
+// Import dependency
 import express from 'express';
 
+// Import controller
 import { getTrails, createTrail, updateTrail, deleteTrail } from '../controllers/trails.js';
-import auth from '../middleware/auth.js';
 
 const router = express.Router();
 

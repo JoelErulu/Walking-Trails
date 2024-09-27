@@ -1,3 +1,4 @@
+// Import dependency
 import jwt, { decode } from 'jsonwebtoken';
 
 const auth = async (req, res, next) => {

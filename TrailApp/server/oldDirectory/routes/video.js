@@ -1,6 +1,7 @@
+{/*
 // videoRoutes.js
 import express from 'express';
-import multer from 'multer'; //  multer for file uploads
+//import multer from 'multer'; //  multer for file uploads
 import { createVideo, getVideos, deleteVideo } from '../controllers/video.js';
 
 const router = express.Router();
@@ -33,3 +34,4 @@ router.post('/', upload.single('video'), async (req, res) => {
 // ... other routes for getVideos and deleteVideo
 
 export default router;
+*/}

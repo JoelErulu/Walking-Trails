@@ -1,5 +1,7 @@
+// Import dependency
 import mongoose from 'mongoose';
 
+// Design schema
 const MarkerSchema = mongoose.Schema({
     sTrail: String,
     lat: Number,

@@ -1,5 +1,7 @@
+// Import dependency
 import express from 'express';
 
+// Import controller
 import { signin, signup, googleSignIn, getUsers, updateUserRole, logout } from '../controllers/user.js';
 
 const router = express.Router();

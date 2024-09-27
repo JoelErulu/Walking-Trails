@@ -87,7 +87,10 @@ const AdminNavbar = () => {
                             <Link className="nav-link" to="/statistics">User Statistics</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/adminManager">Media Manager</Link>
+                            <Link className="nav-link" to="/profileManagement">Manage Profile</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/adminManager">Admin Management</Link>
                         </li>
                         <li className="nav-item">
                             <button className="btn btn-outline-danger" onClick={logout}>Logout</button>

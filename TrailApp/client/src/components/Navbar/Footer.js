@@ -19,7 +19,6 @@ const Footer = () => {
                 <div classname='footer-links'>
                     <Link className="nav-link" to="/about">About </Link>
                     <Link className="nav-link" to="/privacy">Privacy</Link>
-                    {/* Create links for miscellaneous pages if needed*/}
                 </div>
             </Toolbar>
         </AppBar>

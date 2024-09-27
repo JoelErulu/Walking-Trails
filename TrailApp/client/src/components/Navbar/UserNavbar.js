@@ -90,7 +90,7 @@ const UserNavbar = () => {
                             <Link className="nav-link" to="/privacy">Privacy Policy</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/userProfileManager">Manage Profile</Link>
+                            <Link className="nav-link" to="/profileManagement">Manage Profile</Link>
                         </li>
                         <li className="nav-item">
                             <button className="btn btn-outline-danger" onClick={logout}>Logout</button>

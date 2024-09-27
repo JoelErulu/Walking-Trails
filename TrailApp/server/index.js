@@ -2,13 +2,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+mongoose.set('strictQuery', false);
 import cors from 'cors';
-const Grid = require('gridfs-stream');
+import Grid  from 'gridfs-stream';
 
 import OAuth2Client from 'google-auth-library';
 import GoogleAuth from 'google-auth-library';
 import {auth} from 'google-auth-library'
 import dotenv from 'dotenv';
+dotenv.config();
 
 // Import routes
 import userRoutes from './routes/users.js';
@@ -16,9 +18,7 @@ import trailRoutes from './routes/trails.js';
 import markerRoutes from './routes/marker.js';
 
 const path = ('path');
-const dotenv = ('dotenv');
 const app = express();
-dotenv.config();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));

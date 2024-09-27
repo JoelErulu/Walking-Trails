@@ -1,49 +1,43 @@
+// Import React components
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
+// Styling components
+// TODO: Contains Material-UI styling. Remove to unify styling under Bootstrap
 import { Grid, Typography, Container, Button, Divider, Collapse} from '@material-ui/core';
-import useStyles, {goldOptions, greenOptions, greyOptions, containerStyle, exampleMapStyles} from '../styles/Homestyles.js';
-import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api';
-import { GoldCords, GreenCoords, GreyCoords} from '../components/BigTrails/Coords.js'
+import useStyles, {goldOptions, greenOptions, greyOptions, containerStyle, exampleMapStyles} from '../../styles/Homestyles.js';
 import '../interfaceSettings.css'; // Import the CSS file
+
+// Image imports
 import gold from '../assets/images/gold.png';
 import green from '../assets/images/green.png';
 import gray from '../assets/images/gray.png';
-import { red } from '@material-ui/core/colors';
 
+// Google Maps components
+import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api';
+import { GoldCords, GreenCoords, GreyCoords} from '../../components/BigTrails/Coords.js'
+
+//README: This entire page may be deprecated since we need 2 home pages and not a generic one.
 const Home = () => {
 
     const classes = useStyles();
     const navigate = useNavigate();
 
+    //This is related to Trails implementation
     const [center, setCenter] = useState('');
     const [openGold, setOpenGold] = useState(false);
     const [openGreen, setOpenGreen] = useState(false);
     const [openGrey, setOpenGrey] = useState(false);
 
-    // };
-    //Keep this in mind
     useEffect(() => {
-        // navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+        //  navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
             setCenter({ lat: 33.9804327949268, lng: -84.00527240759934 });
-        // });
     }, []);
 
-    const goGold = (e) => {
-        navigate('/gold')
-    };
-
-    const goGreen = (e) => {
-        navigate('/green')
-    };
-
-    const goGrey = (e) => {
-        navigate('/gray')
-    };
-
-    const mapID = {
-        mapId: "1ed395dbcf77ef66"
-    };
-
+    const goGold = (e) => {navigate('/gold')};
+    const goGreen = (e) => {navigate('/green')};
+    const goGrey = (e) => {navigate('/gray')};
+    const mapID = {mapId: "1ed395dbcf77ef66"};
 
     return (
         <Container component="main" maxWidth="xl">
@@ -55,23 +49,26 @@ const Home = () => {
           <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
             rel="stylesheet"
-            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-            crossorigin="anonymous"
+
+            // Is this an API key/Secret token??
+            // TODO: Why is this here? Remove.
+            //
+            //    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            //    crossorigin="anonymous"
           />
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
           />
           <link
+            // Why is this here? We don't use mapbox. Remove.
             href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
             rel="stylesheet"
           />
-          <link rel="stylesheet" href="" />
 
           <title>WALKERS</title>
         </head>
         <body>
-
         <div class="container" style={{ background: '#ffffff' }}>
             <div class="col-xl text-center pb-3">
                 <div class="col-sm trailsCollapseText">              
@@ -168,5 +165,4 @@ const Home = () => {
 };
 
 export default Home;
-
 // https://react-google-maps-api-docs.netlify.app/#data

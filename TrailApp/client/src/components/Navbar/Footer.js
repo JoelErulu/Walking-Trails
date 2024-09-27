@@ -1,7 +1,11 @@
+// Import React components
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Typography, makeStyles } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+
+// Styling elements. This includes Bootstrap and Material-Ui
+//TODO: Unify the styling with Bootstrap and remove all Material-UI components
+import { AppBar, Toolbar, Typography, makeStyles } from '@material-ui/core';
 import '../../interfaceSettings.css'; // Import the CSS file
 
 const Footer = () => {

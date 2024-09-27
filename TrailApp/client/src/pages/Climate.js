@@ -4,16 +4,15 @@ import React, { useState } from 'react';
 // Import global stylesheet
 import '../interfaceSettings.css';
 
+//README: Proposal for redesign, where all videos appear in YouTube-style grid
 const Climate = () => {
     const [likeCount, setLikeCount] = useState(0); // Track likes for the video
     const [dislikeCount, setDislikeCount] = useState(0); // Track dislikes for the video
 
-    // Handler for thumbs up
+    // Functions for like/dislike
     const handleLike = () => {
         setLikeCount(likeCount + 1);
     };
-
-    // Handler for thumbs down
     const handleDislike = () => {
         setDislikeCount(dislikeCount + 1);
     };

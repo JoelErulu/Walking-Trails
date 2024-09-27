@@ -29,6 +29,7 @@ app.use('/trails', trailRoutes);
 app.use('/marker', markerRoutes);
 
 // TODO: Hide the CONNECTION_URL in a .env
+// TODO: Update the CONNECTION_URL as well
 // const PORT = process.env.PORT || 5000;
 const PORT = 5000;
 const CONNECTION_URL = 'mongodb+srv://gsmith32:Gregory1247@trails.uhojira.mongodb.net/?retryWrites=true&w=majority';

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Grid, Typography, Container, Button, Paper, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import { useDispatch, useSelector} from 'react-redux';
-import { getTrails } from '../../actions/trails.js';
-import useStyles from '../../styles/Adminstyles.js';
-import gold from '../../assets/images/gold.png';
-import green from '../../assets/images/green.png';
-import gray from '../../assets/images/gray.png';
+import { getTrails } from '../../../actions/trails.js';
+import useStyles from '../../../styles/Adminstyles.js';
+import gold from '../../../assets/images/gold.png';
+import green from '../../../assets/images/green.png';
+import gray from '../../../assets/images/gray.png';
 
 
 const Admin = () => {

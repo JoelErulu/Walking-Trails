@@ -1,6 +1,5 @@
 // Import React components
 import React from 'react';
-import { Container } from '@material-ui/core';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Import the GoogleAuthProvider for OAuth functionality
@@ -18,7 +17,6 @@ import AdminManager from './pages/AdminManager.js'
 import AdminStatistics from './pages/AdminStatistics.js'
 import UserHome from './pages/UserHome.js'
 import ProfileManagement from './pages/ProfileManagement.js';
-
 import Trails from './pages/Trails.js';
 import Climate from './pages/Climate.js';
 import Hydration from './pages/Hydration.js';
@@ -26,7 +24,6 @@ import Nutrition from './pages/Nutrition.js';
 import Exercises from './pages/Exercises.js';
 import About from './pages/About.js'
 import Privacy from './pages/Privacy.js'
-
 import Gold from './components/BigTrails/Gold.BigTrails';
 import Green from './components/BigTrails/Green.BigTrails';
 import Gray from './components/BigTrails/Gray.BigTrails';
@@ -39,7 +36,6 @@ const App = () => {
     //const oldIdclientId='115519328455-e14hf6515mt6qkkvuvuhnkuv3jdd1059.apps.googleusercontent.com';
     <GoogleOAuthProvider clientId='222736919095-8clp3t7ndllhnf6jt0n1buveh6a97i62.apps.googleusercontent.com'>
         <BrowserRouter>
-            <Container maxWidth="xl">
                 <Navbar />
                 <Routes>
                     <Route path="/" element={< Landing />} />
@@ -62,7 +58,6 @@ const App = () => {
                     <Route path="/gray" element={< Gray />} />
                 </Routes>
                 <Footer />
-            </Container>
         </BrowserRouter>
     </GoogleOAuthProvider>
     );

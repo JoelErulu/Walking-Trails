@@ -21,9 +21,9 @@ import Landing from './pages/Landing.js';
 import AdminHome from './pages/AdminHome.js'
 import AdminManager from './pages/AdminManager.js'
 import AdminStatistics from './pages/AdminStatistics.js'
-
 import UserHome from './pages/UserHome.js'
-import UserProfileManager from './pages/UserProfileManager.js';
+import ProfileManagement from './pages/ProfileManagement.js';
+
 import Trails from './pages/Trails.js';
 import Climate from './pages/Climate.js';
 import Hydration from './pages/Hydration.js';
@@ -69,9 +69,8 @@ const App = () => {
                     <Route path="/adminHome" element={< AdminHome />} />
                     <Route path="/adminManager" element={< AdminManager />} />
                     <Route path="/adminStatistics" element={< AdminStatistics />} />
-
                     <Route path="/userHome" element={< UserHome />} />
-                    <Route path="/userProfileManager" element={< UserProfileManager />} />
+                    <Route path="/profileManagement" element={< ProfileManagement />} />
 
                     <Route path ="/trails" element = {< Trails />}/>
                     <Route path ="/climate" element = {< Climate />}/>

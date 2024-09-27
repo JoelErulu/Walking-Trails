@@ -4,6 +4,7 @@ import React from 'react';
 // Import global stylesheet
 import '../interfaceSettings.css';
 
+// TODO: Communicate with clients for details on this.
 const About = () => {
     return (
         <section id="about" className="container mt-5">

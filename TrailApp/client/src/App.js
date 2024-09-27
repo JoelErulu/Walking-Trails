@@ -20,9 +20,11 @@ import Landing from './pages/Landing.js';
 
 import AdminHome from './pages/AdminHome.js'
 import AdminManager from './pages/AdminManager.js'
-import Statistics from './pages/AdminStatistics.js'
+import AdminStatistics from './pages/AdminStatistics.js'
 
 import UserHome from './pages/UserHome.js'
+import UserProfileManager from './pages/UserProfileManager.js';
+import Trails from './pages/Trails.js';
 import Climate from './pages/Climate.js';
 import Hydration from './pages/Hydration.js';
 import Nutrition from './pages/Nutrition.js';
@@ -32,7 +34,6 @@ import Privacy from './pages/Privacy.js'
 
 //Deprecated pages. If needed, uncomment and fix the filepath. Remember to route it too.
 
-import LibraryOld from './oldDirectory/pages/Library.js';
 import NutritionDBOld from './oldDirectory/pages/NutritionDB.js';
 import BlogOld from './oldDirectory/pages/Blog.js';
 import NutritionAdminOld from './oldDirectory/components/NutritionAdmin/NutritionAdmin.js';
@@ -67,12 +68,15 @@ const App = () => {
 
                     <Route path="/adminHome" element={< AdminHome />} />
                     <Route path="/adminManager" element={< AdminManager />} />
-                    <Route path="/statistics" element={< Statistics />} />
+                    <Route path="/adminStatistics" element={< AdminStatistics />} />
 
                     <Route path="/userHome" element={< UserHome />} />
-                    <Route path ="/climate" element = {< Climate/>}/>
-                    <Route path ="/hydration" element = {< Hydration/>}/>
-                    <Route path ="/exercises" element = {< Exercises/>}/>
+                    <Route path="/userProfileManager" element={< UserProfileManager />} />
+
+                    <Route path ="/trails" element = {< Trails />}/>
+                    <Route path ="/climate" element = {< Climate />}/>
+                    <Route path ="/hydration" element = {< Hydration />}/>
+                    <Route path ="/exercises" element = {< Exercises />}/>
                     <Route path="/nutrition" element={< Nutrition />} />
                     <Route path="/about" element={< About />} />
                     <Route path="/privacy" element={< Privacy />} />
@@ -82,23 +86,16 @@ const App = () => {
                     <Route path="/gray" element={<Gray />} />
                     <Route path="/manageTrail" element={<ManageTrail />} />
                     
+                    {/* Deprecated page routing. Comment out/remove when transitioned out of use. */}
                     <Route path="/adminOld" element={< AdminOld />} />
                     <Route path="/adminPrivilegeOld" element={< AdminPrivilegeOld />} />
-                    <Route path="/libraryOld" element={< LibraryOld />} />
                     <Route path="/blogOld" element={< BlogOld />} />
                     <Route path="/nutritionDBOld" element={< NutritionDBOld />} />
-                    <Route path="/adminOld" element={< AdminOld />} />
                     <Route path="/goldAdminOld" element={< GoldAdminOld />} />
                     <Route path="/greenAdminOld" element={< GreenAdminOld />} />
                     <Route path="/grayAdminOld" element={< GrayAdminOld />} />
-                    <Route path="/nutritionAdminOld" element={<NutritionAdminOld />} />
-                    <Route path="/homeOld" element={<HomeOld />} />
-
-                    {/* 
-                    // Deprecated page routing. Uncomment if needed.
-                    
-
-                    */}
+                    <Route path="/nutritionAdminOld" element={< NutritionAdminOld />} />
+                    <Route path="/homeOld" element={< HomeOld />} />
                 </Routes>
                 <Footer />
             </Container>

@@ -69,6 +69,9 @@ const UserNavbar = () => {
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
+                            <Link className="nav-link" to="/trails">Trails</Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link" to="/exercises">Workout</Link>
                         </li>
                         <li className="nav-item">
@@ -85,6 +88,9 @@ const UserNavbar = () => {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/privacy">Privacy Policy</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/userProfileManager">Manage Profile</Link>
                         </li>
                         <li className="nav-item">
                             <button className="btn btn-outline-danger" onClick={logout}>Logout</button>

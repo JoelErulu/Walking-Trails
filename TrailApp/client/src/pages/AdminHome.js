@@ -9,6 +9,8 @@ import { getTrails } from '../actions/trails';
 // Import global stylesheet
 import '../interfaceSettings.css';
 
+// README: This page is incorrect. We do NOT need to have the functionality for an admin to create/delete trails and pins anymore.
+// TODO: Redo whole page. Make it super simple and essentially show descriptive cards for the different functionalities specific to admins.
 const AdminHome = () => {
     const [trail, setTrail] = useState('');
     const trails = useSelector((state) => state.trails);

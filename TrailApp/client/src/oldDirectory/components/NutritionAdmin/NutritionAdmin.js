@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AppBar, Grid, Typography, Container, Button, Paper, FormControl, InputLabel, Select, TextField, ListItem, ListItemText, List, Link, Box} from '@material-ui/core';
 import { useDispatch, useSelector} from 'react-redux';
-import useStyles from '../../../styles/NutritionAdminstyles.js';
+import useStyles from '../../styles/NutritionAdminstyles.js';
 import { createNutrition, getNutrition, updateNutrition, deleteNutrition} from '../../../actions/nutritions.js';
 import FileBase from 'react-file-base64';
 

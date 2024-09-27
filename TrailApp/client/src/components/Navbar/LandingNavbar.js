@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 // Import styling & header logo
 import '../../interfaceSettings.css';
-import GwinnettLogo from './gwinnett.png';
+import GwinnettLogo from '../../assets/images/gwinnett.png';
 
 const LandingNavbar = () => {
 

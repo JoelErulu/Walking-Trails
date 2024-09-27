@@ -5,9 +5,9 @@ import { Link, useNavigate } from 'react-router-dom';
 // Import global stylesheet & images
 // TODO: Replace with GGC approved imagery
 import '../interfaceSettings.css';
-import pic1 from '../assets/images/ggcnew.jpg';
-import pic2 from '../assets/images/exercise1.jpg';
-import pic4 from '../assets/images/nutrition1.jpg';
+import pic1 from '../assets/images/ggc-campus.jpg';
+import pic2 from '../assets/images/exercise.jpg';
+import pic4 from '../assets/images/nutrition.jpg';
 import pic5 from '../assets/images/hydration.jpg';
 import pic6 from '../assets/images/climate.jpg';
 

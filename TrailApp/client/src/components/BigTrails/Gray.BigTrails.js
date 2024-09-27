@@ -14,6 +14,7 @@ import { GoogleMap, LoadScript, Polyline, Marker} from '@react-google-maps/api'
 import { getMarkers } from '../../actions/markers.js';
 import { GreyCoords } from './Coords.js';
 
+//TODO: Remove video
 const Gray = () => {
 
     const classes = useStyles();
@@ -70,7 +71,7 @@ const Gray = () => {
 
 
     return (
-        
+
     <Container component="main" maxWidth="xl">
         <Grid className={classes.gridContainer} container justifyContent="space-between" alignItems="stretch" spacing={3}>
             <Grid item xs={12} sm={6} md={3} style={{ background: 'rgba(255, 255, 255, 1)' }}>

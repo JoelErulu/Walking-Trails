@@ -3,7 +3,7 @@ import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
 
-import useStyles from '../../../styles/TrailFormstyles.js';
+import useStyles from '../../styles/TrailFormstyles.js';
 import { createTrail, updateTrail } from '../../actions/trails.js';
 
 const initialState = { creator: '', title: '', location: '', distance: '', qr: '' };

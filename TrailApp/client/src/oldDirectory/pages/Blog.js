@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { getPostPreview } from '../actions/posts.js';
 import Posts from '../../oldDirectory/components/Posts/Posts.js';
 import Form from '../components/Form/Form.js';
-import useStyles from '../../styles/Blogstyles.js';
+import useStyles from '../styles/Blogstyles.js';
 
 const Home = (theme) => {
     const [currentId, setCurrentId] = useState(null);

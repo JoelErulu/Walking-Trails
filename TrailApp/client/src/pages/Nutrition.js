@@ -9,14 +9,12 @@ const Nutrition = () => {
     const [likeCounts, setLikeCounts] = useState([0, 0]); // Track likes for two videos
     const [dislikeCounts, setDislikeCounts] = useState([0, 0]); // Track dislikes for two videos
 
-    // Handler for thumbs up
+    // Functions for like/dislike
     const handleLike = (index) => {
         const newLikes = [...likeCounts];
         newLikes[index]++;
         setLikeCounts(newLikes);
     };
-
-    // Handler for thumbs down
     const handleDislike = (index) => {
         const newDislikes = [...dislikeCounts];
         newDislikes[index]++;

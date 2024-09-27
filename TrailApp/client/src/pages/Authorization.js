@@ -18,7 +18,7 @@ const initialState = { firstName: '', lastName: '', email: '', password: '', con
 // README: THIS WILL BE THE NEW SIGN-IN/REGISTRATION PAGE.'
 // TODO: Fix ALL the logic & HTML/JSX
 // TODO: Style this PLEASE
-const Auth = () => {
+const Authorization = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
     const [formData, setFormData] = useState(initialState);
@@ -60,8 +60,7 @@ const Auth = () => {
             console.error(error);
         }
     };
-    */
-
+    
     const login = useGoogleLogin({
         flow: 'auth-code',
         onSuccess: async (tokenResponse) => {
@@ -75,6 +74,7 @@ const Auth = () => {
         },
         onError: (error) => console.error(error),
     });
+    */
 
     return (
         <div id="sign-in-container" className="container mt-5">
@@ -123,13 +123,15 @@ const Auth = () => {
                         </div>
 
                         {/* The submit buttons and form switcher */}
-                        <div>
+                        <div className="d-flex justify-content-center align-items-center">
                             <button 
                                 id="sign-in-submit-btn" 
                                 type="submit" 
                                 className="btn btn-primary btn-block btn-spacing">
                                 {isSignup ? 'Sign Up' : 'Sign In'}
                             </button>
+                            {/*
+                            // Hidden for now until we decide later
                             <button 
                                 id="google-signin-btn" 
                                 type="button" 
@@ -137,6 +139,7 @@ const Auth = () => {
                                 className="btn btn-primary btn-block btn-spacing">
                                 Sign in with Google
                             </button>
+                            */}
                         </div>
                         <div className="text-center mt-3">
                             <button 
@@ -146,6 +149,16 @@ const Auth = () => {
                                 className="btn btn-link">
                                 {isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
                             </button>
+                            <div className="text-center mt-2">
+                                <button 
+                                    id="forgot-mode-btn"
+                                    type="button" 
+                                    className="btn btn-link" 
+                                    data-toggle="modal" 
+                                    data-target="#forgotPasswordModal">
+                                    Forgot Password?
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -154,4 +167,4 @@ const Auth = () => {
     );
 };
 
-export default Auth;
+export default Authorization;

@@ -312,28 +312,28 @@ p.lead {
 /* Authorization Page Styles */
 
 #sign-in-container {
-  max-width: 500px; /* Set a max width for the card */
-  margin: auto; /* Center the card horizontally */
+  max-width: 500px;
+  margin: auto;
 }
 
 #sign-in-card {
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Prevents overflow of child elements */
 }
 
 #sign-in-card-body {
-  padding: 20px; /* Add some padding */
+  padding: 20px;
 }
 
 #sign-in-title {
-  margin-bottom: 20px; /* Space below the title */
-  font-weight: bold; /* Make the title bold */
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 #sign-in-submit-btn,
 #google-signin-btn {
-  border-radius: 8px; /* Slightly rounded buttons */
+  border-radius: 8px;
   padding: 10px;
   font-weight: 600;
   padding-bottom: 5px;
@@ -358,15 +358,24 @@ p.lead {
 }
 
 #switch-mode-btn {
-  color: black; /* Primary text color for links */
-  text-decoration: none; /* Remove underline */
+  color: black;
+  text-decoration: none;
 }
 
 #switch-mode-btn:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
+}
+
+#forgot-mode-btn {
+  color: black;
+  text-decoration: none;
+}
+
+#forgot-mode-btn:hover {
+  text-decoration: underline;
 }
 
 #sign-in-form-group {
-  margin-bottom: 15px; /* Space between form fields */
+  margin-bottom: 15px;
   padding: 5px;
 }

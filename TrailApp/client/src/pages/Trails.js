@@ -35,14 +35,14 @@ const Home = () => {
 
     return (
         <div className="container" style={{ background: '#ffffff' }}>
-            <h1 className="text-center">WALKERS</h1>
+            <h2 className="text-center">TRAILS</h2>
             <div className="pb-3 text-center">
                 <div className="col-sm">
                     <h5 className="trailsCollapseText" onClick={() => setOpenGold(!openGold)}>
                         Gold Trail
                     </h5>
                     {openGold && (
-                        <Link to="/gold">
+                        <Link to="/goldTrail">
                             <img className="image" src={gold} alt="Gold Trail" />
                         </Link>
                     )}
@@ -53,7 +53,7 @@ const Home = () => {
                         Green Trail
                     </h5>
                     {openGreen && (
-                        <Link to="/green">
+                        <Link to="/greenTrail">
                             <img className="image" src={green} alt="Green Trail" />
                         </Link>
                     )}
@@ -64,7 +64,7 @@ const Home = () => {
                         Gray Trail
                     </h5>
                     {openGrey && (
-                        <Link to="/gray">
+                        <Link to="/grayTrail">
                             <img className="image" src={gray} alt="Gray Trail" />
                         </Link>
                     )}

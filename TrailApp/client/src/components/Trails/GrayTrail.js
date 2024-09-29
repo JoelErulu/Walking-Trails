@@ -83,7 +83,7 @@ const Gray = () => {
                 </Col>
                 <Col xs={12} sm={6} md={9} className="bg-light">
                     <div style={{ height: '80vh', width: '100%' }}>
-                        <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+                        <LoadScript googleMapsApiKey="AIzaSyCKEd9gY2vA4IAZdBmZkhvrrfofT2KZfyU">
                             <GoogleMap
                                 mapContainerStyle={{ height: '100%', width: '100%' }}
                                 center={center}

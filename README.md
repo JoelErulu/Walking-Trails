@@ -65,11 +65,11 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 - React
   https://reactjs.org/
 
-- Google Map Api
+- Google Maps API
 - https://developers.google.com/maps
 - (IMPORTANT)
-- The google map api needs key access from goolge through paid access.
-  Either a renewal of a access is needed or use a new google account to obtain another key for a new free trial for the map to work.
+- The Google Maps API needs key access from Google through paid access.
+  Either a renewal of a access is needed or use a new Google account to obtain another key through free trial for the map to work.
 
 ### Installation Steps
 

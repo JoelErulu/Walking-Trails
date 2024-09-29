@@ -62,8 +62,8 @@ const Home = () => {
           />
           <link
             // Why is this here? We don't use mapbox. Remove.
-            href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
-            rel="stylesheet"
+            //href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+            //rel="stylesheet"
           />
 
           <title>WALKERS</title>

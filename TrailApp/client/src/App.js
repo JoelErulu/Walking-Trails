@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // Import the GoogleAuthProvider for OAuth functionality
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
-// Import page components
+// Import page components & styling
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/Footer.js';
 

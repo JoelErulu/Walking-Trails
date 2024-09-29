@@ -1,6 +1,6 @@
 // Import React components
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 
 // Import Bootstrap and global stylesheet
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
@@ -8,13 +8,13 @@ import '../../interfaceSettings.css';
 
 // Import components
 import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
-import { getMarkers } from '../../actions/markers.js';
+//import { getMarkers } from '../../actions/markers.js';
 import { GoldCords } from './Coords.js';
 import axios from 'axios';
 
 // TODO: Redesign page: remove trail markers and videos, keep trail overlay
 const Gold = () => {
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
     const [isVideoOpen, setIsVideoOpen] = useState(false);
     const [center, setCenter] = useState('');
     const [selectedMarker, setSelectedMarker] = useState(null);
@@ -28,9 +28,9 @@ const Gold = () => {
     }, []);
 
     // Get markers from db
-    useEffect(() => {
-        dispatch(getMarkers());
-    }, [dispatch]);
+    //useEffect(() => {
+    //    dispatch(getMarkers());
+    //}, [dispatch]);
 
     const handleVideoChange = (file) => {
         setVideoFile(file);
@@ -103,7 +103,7 @@ const Gold = () => {
                 </Col>
                 <Col xs={12} sm={6} md={9} className="bg-light">
                     <div style={{ height: '80vh', width: '100%' }}>
-                        <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+                        <LoadScript googleMapsApiKey="AIzaSyCKEd9gY2vA4IAZdBmZkhvrrfofT2KZfyU">
                             <GoogleMap
                                 mapContainerStyle={{ height: '100%', width: '100%' }}
                                 center={center}

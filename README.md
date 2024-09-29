@@ -77,18 +77,14 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 
 1. Open the terminal
 2. Move to the "client" directory (cd C:/../WalkingTrailApp/TrailApp/client)
-3. Enter the following commands:  
-   npm i @material-ui/core  
-   npm i @material-ui/icons  
-   npm i @material-ui/lab  
+3. Enter the following commands:    
    npm i @react-oauth/google  
-   npm i axios  
+   npm i axios
+   npm i bootstrap
    npm i jwt-decode  
-   npm i material-ui-chip-input  
-   npm i moment  
-   npm i react  
+   npm i react
+   npm i react-bootstrap
    npm i react-dom  
-   npm i react-file-base64  
    npm i react-redux  
    npm i react-router-dom  
    npm i react-scripts  
@@ -96,9 +92,9 @@ The Walking Trails App is a mobile application designed to enhance the walking e
    npm i redux-thunk  
    npm i --legacy-peer-deps  
    npm i -S @react-google-maps/api
-4. Move to the "server" directory (cd C:/../WalkingTrailApp/TrailApp/server)
-5. Enter the following commands:  
-   npm i bcryptjs  
+5. Move to the "server" directory (cd C:/../WalkingTrailApp/TrailApp/server)
+6. Enter the following commands:  
+   npm i bcrypt
    npm i body-parser  
    npm i cors  
    npm i express  
@@ -106,8 +102,6 @@ The Walking Trails App is a mobile application designed to enhance the walking e
    npm i mongoose  
    npm i nodemon
    npm i google-auth-library
-   npm i gridfs-stream
-
 
 ### How to Run
 

@@ -18,8 +18,8 @@ import {auth} from 'google-auth-library'
 import trailRoutes from './routes/trails.js';
 import markerRoutes from './routes/marker.js';
 
-import userRoutes from './routes/user.js'
-import videoRoutes from './routes/video.js'
+import userRoutes from './routes/userRoutes.js'
+import videoRoutes from './routes/videoRoutes.js'
 
 // Creates object app that contains Express framework API by calling createApplication() in node_modules/express/lib/express.js
 const app = express();

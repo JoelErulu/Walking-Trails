@@ -1,22 +1,14 @@
-// Import React components
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-// Import jwt_decode from 'jwt-decode';
-import { googleLogin } from '../api/index';
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
-
-// Import components & actions
-import Input from '../components/Authorization/input';
-import { signin, signup } from '../actions/auth';
-
-// Import global stylesheet
+import { googleLogout } from '@react-oauth/google';
+import Input from '../components/Authorization/input.js';
+import { signin, signup } from '../actions/auth.js';
 import '../interfaceSettings.css';
+import { Row, Col } from 'react-bootstrap';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
-// README: THIS WILL BE THE NEW SIGN-IN/REGISTRATION PAGE.'
-// TODO: Fix ALL the logic & HTML/JSX
 const Authorization = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
@@ -25,7 +17,6 @@ const Authorization = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Optional: Clean up on component unmount
         return () => googleLogout();
     }, []);
 
@@ -46,35 +37,6 @@ const Authorization = () => {
         setShowPassword(false);
     };
 
-    /*
-    const googleSuccess = async (res) => {
-        const result = jwt_decode(res?.credential);
-        const token = res?.credential;
-
-        try {
-            const { data } = await googleLogin(token);
-            dispatch({ type: 'AUTH', data: { result, token } });
-            navigate(data.result.role === "admin" ? '/admin' : '/home');
-        } catch (error) {
-            console.error(error);
-        }
-    };
-    
-    const login = useGoogleLogin({
-        flow: 'auth-code',
-        onSuccess: async (tokenResponse) => {
-            try {
-                const response = await googleLogin({ token: tokenResponse.code });
-                dispatch({ type: 'AUTH', data: { payload: response.data.result, token: response.data.jwtToken } });
-                navigate(response.data.result.role === "admin" ? '/admin' : '/home');
-            } catch (error) {
-                console.error(error);
-            }
-        },
-        onError: (error) => console.error(error),
-    });
-    */
-
     return (
         <div id="sign-in-container" className="container mt-5">
             <div id="sign-in-card" className="card">
@@ -84,21 +46,27 @@ const Authorization = () => {
                     </h5>
                     <form onSubmit={handleSubmit}>
                         <div id="sign-in-form-group" className="form-group">
-                            {isSignup && (<>
-                                <Input 
-                                    id="first-name-input" 
-                                    name="firstName" 
-                                    label="First Name" 
-                                    handleChange={handleChange} 
-                                    autoFocus 
-                                    half />
-                                <Input 
-                                    id="last-name-input" 
-                                    name="lastName" 
-                                    label="Last Name" 
-                                    handleChange={handleChange} 
-                                    half />
-                            </>)}
+                            {isSignup && (
+                                <Row className="mb-2"> {/* Adjust margin-bottom here */}
+                                    <Col xs={12} sm={6} className="pr-0"> {/* Reduce padding-right */}
+                                        <Input 
+                                            id="first-name-input" 
+                                            name="firstName" 
+                                            label="First Name" 
+                                            handleChange={handleChange} 
+                                            autoFocus 
+                                            type="text" />
+                                    </Col>
+                                    <Col xs={12} sm={6} className="pl-0"> {/* Reduce padding-left */}
+                                        <Input 
+                                            id="last-name-input" 
+                                            name="lastName" 
+                                            label="Last Name" 
+                                            handleChange={handleChange} 
+                                            type="text" />
+                                    </Col>
+                                </Row>
+                            )}
                             <Input 
                                 id="email-input" 
                                 name="email" 
@@ -114,14 +82,14 @@ const Authorization = () => {
                                 handleShowPassword={handleShowPassword}
                             />
                             {isSignup && 
-                                <Input id="confirm-password-input" 
-                                name="confirmPassword" 
-                                label="Repeat Password" 
-                                handleChange={handleChange} 
-                                type="password" />}
+                                <Input 
+                                    id="confirm-password-input" 
+                                    name="confirmPassword" 
+                                    label="Repeat Password" 
+                                    handleChange={handleChange} 
+                                    type="password" />}
                         </div>
 
-                        {/* The submit buttons and form switcher */}
                         <div className="d-flex justify-content-center align-items-center">
                             <button 
                                 id="sign-in-submit-btn" 
@@ -129,16 +97,6 @@ const Authorization = () => {
                                 className="btn btn-primary btn-block btn-spacing">
                                 {isSignup ? 'Sign Up' : 'Sign In'}
                             </button>
-                            {/*
-                            // Hidden for now until we decide later
-                            <button 
-                                id="google-signin-btn" 
-                                type="button" 
-                                onClick={login} 
-                                className="btn btn-primary btn-block btn-spacing">
-                                Sign in with Google
-                            </button>
-                            */}
                         </div>
                         <div className="text-center mt-3">
                             <button 

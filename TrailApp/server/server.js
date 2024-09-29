@@ -6,7 +6,8 @@ mongoose.set('strictQuery', false);
 import dotenv from 'dotenv';
 dotenv.config();
 import cors from 'cors';
-import Grid  from 'gridfs-stream';
+// TODO: Could possible reuse this if we store videos on Mongo
+//import Grid  from 'gridfs-stream';
 
 // README: May need later.
 import OAuth2Client from 'google-auth-library';
@@ -45,7 +46,7 @@ app.use('/api/video', videoRoutes)
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
                 const db = mongoose.connection;
-                const grid = new Grid(db.db, mongoose.mongo);
+                //const grid = new Grid(db.db, mongoose.mongo);
                 // Listen for requests
                 app.listen(process.env.PORT, () => 
                     console.log('Connected to DB, server running on port:', process.env.PORT));

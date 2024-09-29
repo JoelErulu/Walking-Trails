@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 // Import Bootstrap and global stylesheet
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
-import '../../interfaceSettings.css'; // Ensure your global stylesheet is imported
+import '../../interfaceSettings.css';
 
 // Import components
 import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
@@ -12,6 +12,7 @@ import { getMarkers } from '../../actions/markers.js';
 import { GoldCords } from './Coords.js';
 import axios from 'axios';
 
+// TODO: Redesign page: remove trail markers and videos, keep trail overlay
 const Gold = () => {
     const dispatch = useDispatch();
     const [isVideoOpen, setIsVideoOpen] = useState(false);

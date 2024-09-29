@@ -2,12 +2,17 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import { GoogleMap, LoadScript, Polyline, Marker } from '@react-google-maps/api';
-import { getMarkers } from '../../actions/markers';
-import { GreenCoords } from './Coords.js';
+
+// Import styling
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import video5 from '../../assets/videos/ProjectVideo5.mp4';
 
+// Import components
+import { GoogleMap, LoadScript, Polyline, Marker } from '@react-google-maps/api';
+import { getMarkers } from '../../actions/markers.js';
+import { GreenCoords } from './Coords.js';
+
+// TODO: Redesign page: remove trail markers and videos, keep trail overlay
 const Green = () => {
     const dispatch = useDispatch();
     const initialState = { lat: '', lng: '', name: '' };

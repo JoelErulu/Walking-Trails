@@ -1,6 +1,10 @@
+// Import React component
 import React from 'react';
-import { TextField, Grid, InputAdornment, IconButton } from '@material-ui/core';
 
+// Import styling
+// TODO: Remove material-UI styling.
+// README: I have NO idea what this even does tbh
+import { TextField, Grid, InputAdornment, IconButton } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 

@@ -12,7 +12,7 @@ import gray from '../assets/images/gray.png';
 
 // Google Maps components
 import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
-import { GoldCords, GreenCoords, GreyCoords } from '../components/BigTrails/Coords.js';
+import { GoldCords, GreenCoords, GreyCoords } from '../components/Trails/Coords.js';
 
 // README: This entire page needs to be restyled.
 const Home = () => {

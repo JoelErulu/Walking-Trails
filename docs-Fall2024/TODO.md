@@ -11,7 +11,6 @@ SERVER
 CLIENT
 - (Priority: High) Redesign page layouts to conform with requirements and mobile user experience -> components/Trails/
                                      -> AdminHome.js | AdminManager.js | AdminStatistics.js | UserHome.js | Authorization.js | ProfileManagement.js | Trails.js
-- (Priority: High) Remove material-ui components -> Authorization/input.js |
 - (Priority: High) Add checks for logged-in & roleType -> NavBar/Navbar.js | ProfileManagement.js | pages/
 - (Priority: High) Fix Google Maps API connection & replace key -> Trails/
 - (Priority: High) Fix logic -> Authorization.js

@@ -2,34 +2,31 @@
 import React from 'react';
 
 // Import styling
-// TODO: Remove material-UI styling.
-// README: I have NO idea what this even does tbh
-import { TextField, Grid, InputAdornment, IconButton } from '@material-ui/core';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import { Form, InputGroup, Button, Col } from 'react-bootstrap';
 
 const Input = ({ name, handleChange, label, half, autoFocus, type, handleShowPassword }) => (
-    <Grid item xs={12} sm={half ? 6 : 12}>
-        <TextField 
-            name={name}
-            onChange={handleChange}
-            variant="outlined"
-            required
-            fullWidth
-            label={label}
-            autoFocus={autoFocus}
-            type={type}
-            InputProps={name === 'password' ? {
-                endAdornment: (
-                    <InputAdornment position="end">
-                        <IconButton onClick={handleShowPassword}>
-                            {type === "password" ? <Visibility /> : <VisibilityOff />}
-                        </IconButton>
-                    </InputAdornment>
-                ),
-            } : null}
-        />
-    </Grid>
+    <Col xs={12} sm={half ? 6 : 12}>
+        <Form.Group controlId={name}>
+            <Form.Label>{label}</Form.Label>
+            <InputGroup>
+                <Form.Control
+                    name={name}
+                    onChange={handleChange}
+                    required
+                    autoFocus={autoFocus}
+                    type={type}
+                    placeholder={label}
+                />
+                {name === 'password' && (
+                    <InputGroup.Append>
+                        <Button variant="outline-secondary" onClick={handleShowPassword}>
+                            {type === "password" ? 'Show' : 'Hide'}
+                        </Button>
+                    </InputGroup.Append>
+                )}
+            </InputGroup>
+        </Form.Group>
+    </Col>
 );
 
 export default Input;

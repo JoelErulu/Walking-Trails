@@ -21,10 +21,10 @@ router.get('/:id', getVideo)
 // POST a new video || ADMIN ONLY
 router.post('/', createVideo)
 
-// DELETE a video
+// DELETE a video || ADMIN ONLY
 router.delete('/:id', deleteVideo)
 
-// UPDATE a video
+// UPDATE a video || ADMIN ONLY
 router.patch('/:id', updateVideo)
 
 export default router;

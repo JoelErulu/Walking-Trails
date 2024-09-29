@@ -18,6 +18,10 @@ const videoSchema = mongoose.Schema({
         type: String, 
         required: true 
     },
+    subCategory: {
+        type: String,
+        required: true
+    },
     totLikes: { 
         type: String 
     },

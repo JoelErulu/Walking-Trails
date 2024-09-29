@@ -17,7 +17,6 @@ const initialState = { firstName: '', lastName: '', email: '', password: '', con
 
 // README: THIS WILL BE THE NEW SIGN-IN/REGISTRATION PAGE.'
 // TODO: Fix ALL the logic & HTML/JSX
-// TODO: Style this PLEASE
 const Authorization = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);

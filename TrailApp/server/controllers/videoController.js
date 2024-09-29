@@ -26,11 +26,11 @@ export const getVideo = async (req, res) => {
 
 // CREATE a new video
 export const createVideo = async (req, res) => {
-    const { title, url, category, totLikes, totDislikes } = req.body
+    const { title, url, category, subCategory, totLikes, totDislikes } = req.body
     
     //Add document to MongoDB collection
     try {
-        const videos = await Videos.create({ title, url, category, totLikes, totDislikes })
+        const videos = await Videos.create({ title, url, category, subCategory, totLikes, totDislikes })
         res.status(200).json(videos)
     } catch (error) {
         res.status(400).json({ mssg: error.message })

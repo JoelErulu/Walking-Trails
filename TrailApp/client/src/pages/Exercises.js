@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 // Import global stylesheet
 import '../interfaceSettings.css';
 
-//README: Proposal for redesign, where all videos appear in YouTube-style grid, but they have different tags and can be filtered by checkboxes
+//README: Proposal for redesign, where all videos appear in YouTube-style grid, but they have subcategory and can be filtered by select-box
 const Exercises = () => {
     const [likeCounts, setLikeCounts] = useState([0, 0, 0]); // Track likes for three videos
     const [dislikeCounts, setDislikeCounts] = useState([0, 0, 0]); // Track dislikes for three videos

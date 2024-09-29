@@ -35,7 +35,6 @@ app.use((req, res, next)  => {
 app.use(express.json())
 
 // Routes for API functions
-//app.use('/api/user', userRoutes)
 app.use('/api/trails', trailRoutes)
 app.use('/api/marker', markerRoutes)
 

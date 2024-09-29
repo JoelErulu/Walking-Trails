@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Row, Col, Button, InputGroup } from 'react-bootstrap';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Using  icons for visibility toggle
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Correct import for react-icons
 
 const Input = ({ name, handleChange, label, half, autoFocus, type, handleShowPassword }) => (
     <Form.Group as={Row} className="mb-3">

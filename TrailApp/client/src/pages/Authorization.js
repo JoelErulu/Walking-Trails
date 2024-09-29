@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+// Import React components
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { googleLogout } from '@react-oauth/google';
+
 import Input from '../components/Authorization/input.js';
 import { signin, signup } from '../actions/auth.js';
 import '../interfaceSettings.css';
 import { Row, Col } from 'react-bootstrap';
 
+//TODO: Fill out rest of form details
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 const Authorization = () => {
@@ -15,10 +17,6 @@ const Authorization = () => {
     const [formData, setFormData] = useState(initialState);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    useEffect(() => {
-        return () => googleLogout();
-    }, []);
 
     const handleShowPassword = () => setShowPassword((prev) => !prev);
 
@@ -76,7 +74,7 @@ const Authorization = () => {
                             <Input
                                 id="password-input"
                                 name="password"
-                                label="Password"
+                                label="New Password"
                                 handleChange={handleChange}
                                 type={showPassword ? "text" : "password"}
                                 handleShowPassword={handleShowPassword}
@@ -87,7 +85,10 @@ const Authorization = () => {
                                     name="confirmPassword" 
                                     label="Repeat Password" 
                                     handleChange={handleChange} 
-                                    type="password" />}
+                                    type={showPassword ? "text" : "password"}
+                                    handleShowPassword={handleShowPassword}
+                                />
+                            }
                         </div>
 
                         <div className="d-flex justify-content-center align-items-center">

@@ -19,10 +19,18 @@ export const signin = (formData, navigate) => async (dispatch) => {
 export const signup = (formData, navigate) => async (dispatch) => {
     try {
         const { data } = await api.signUp(formData);
-
         dispatch({ type: AUTH, data });
-
         navigate('/home');
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export const updateProfile = (formData, navigate) => async (dispatch) => {
+    try {
+        const { data } = await api.updateProfile(formData);
+        dispatch({ type: AUTH, data });
+        navigate('/userHome');
     } catch (err) {
         console.log(err);
     }

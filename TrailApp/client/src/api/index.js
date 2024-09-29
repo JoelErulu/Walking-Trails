@@ -8,6 +8,8 @@ export const logout = (token) => API.post('user/logout', token);
 export const fetchUsers = () => API.get('/user/users');
 export const updateUserRole = (id, role) => API.patch(`/user/${id}`, role);
 export const googleLogin = (token) => API.post('user/googleLogin', token);
+// Testing purposes
+export const updateProfile = (formData) => API.post('/user/updateProfile', formData);
 
 export const fetchTrails = () => API.get('/trails');
 export const createTrail = (newTrail) => API.post('/trails', newTrail);

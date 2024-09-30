@@ -84,6 +84,8 @@ The Walking Trails App is a mobile application designed to enhance the walking e
    npm i redux-thunk  
    npm i --legacy-peer-deps  
    npm i -S @react-google-maps/api
+   npm install react-bootstrap bootstrap
+
 5. Move to the "server" directory (cd C:/../WalkingTrailApp/TrailApp/server)
 6. Enter the following commands:  
    npm i bcrypt

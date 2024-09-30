@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // Import styling
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import video4 from '../../assets/videos/ProjectVideo4.mp4';
+import TrailNavbar from '../Navbar/TrailNavbar.js'
 
 // Import components
 import { GoogleMap, LoadScript, Polyline, Marker } from '@react-google-maps/api';
@@ -60,6 +61,7 @@ const Gray = () => {
             <Row className="mt-4">
                 <Col xs={12} sm={6} md={3} className="bg-white p-4">
                     <h6>Grey Trail</h6>
+                    <TrailNavbar />
                     {!selectedMarker && !isVideoOpen && (
                         <p>CLICK MARKER TO VIEW VIDEO</p>
                     )}

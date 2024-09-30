@@ -37,6 +37,7 @@ const App = () => {
     //const oldIdclientId='115519328455-e14hf6515mt6qkkvuvuhnkuv3jdd1059.apps.googleusercontent.com';
     <GoogleOAuthProvider clientId='222736919095-8clp3t7ndllhnf6jt0n1buveh6a97i62.apps.googleusercontent.com'>
         <BrowserRouter>
+            <div className="pages">
                 <Navbar />
                 <Routes>
                     <Route path="/" element={< Landing />} />
@@ -53,12 +54,12 @@ const App = () => {
                     <Route path="/nutrition" element={< Nutrition />} />
                     <Route path="/about" element={< About />} />
                     <Route path="/privacy" element={< Privacy />} />
-
                     <Route path="/goldTrail" element={< GoldTrail />} />
                     <Route path="/greenTrail" element={< GreenTrail />} />
                     <Route path="/grayTrail" element={< GrayTrail />} />
                 </Routes>
                 <Footer />
+            </div>
         </BrowserRouter>
     </GoogleOAuthProvider>
     );

@@ -1,3 +1,4 @@
+/*
 // uploadMiddleware.js
 
 import multer from 'multer';
@@ -8,4 +9,4 @@ const upload = multer({ storage });
 
 // Middleware function to handle video uploads
 export const handleVideoUpload = upload.single('video');
-
+*/

@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 // Import Bootstrap and global stylesheet
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import '../../interfaceSettings.css';
+import TrailNavbar from '../Navbar/TrailNavbar.js'
 
 // Import components
 import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
@@ -66,6 +67,7 @@ const Gold = () => {
             <Row className="justify-content-between align-items-stretch" style={{ padding: '20px' }}>
                 <Col xs={12} sm={6} md={3} className="bg-light">
                     <h4 className="text-center">Gold Trail</h4>
+                    <TrailNavbar />
                     {!selectedMarker && !isVideoOpen && (
                         <p className="text-center">CLICK MARKER TO VIEW VIDEO</p>
                     )}

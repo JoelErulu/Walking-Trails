@@ -1,11 +1,11 @@
 import express from 'express';
-import { handleVideoUpload } from '../middleware/upload.js';
+//import { handleVideoUpload } from '../middleware/upload.js';
 import { uploadVideo, getVideoById, likeVideo, dislikeVideo } from '../controllers/video.js';
 
 const router = express.Router();
 
 // Route for uploading a video
-router.post('/upload-video', handleVideoUpload, uploadVideo);
+router.post('/upload-video', uploadVideo); //handleVideoUpload was second argument
 
 // Route for retrieving a specific video by its ID
 router.get('/:videoId', getVideoById);

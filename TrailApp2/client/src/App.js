@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+//import { Container } from '@material-ui/core';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import Navbar from './components/Navbar/Navbar.js';
@@ -26,7 +26,7 @@ const App = () => (
     
     <GoogleOAuthProvider clientId='222736919095-8clp3t7ndllhnf6jt0n1buveh6a97i62.apps.googleusercontent.com'>
         <BrowserRouter>
-            <Container maxWidth="xl">
+            
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Landing />} />
@@ -47,7 +47,7 @@ const App = () => (
                     <Route path="/nutritionAdmin" element={<NutritionAdmin />} />
                 </Routes>
                 {/* <Footer /> */}
-            </Container>
+            
         </BrowserRouter>
     </GoogleOAuthProvider>
 );

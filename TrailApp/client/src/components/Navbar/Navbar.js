@@ -9,9 +9,10 @@ const Navbar = () => {
     const [navbar, setNavbar] = useState(null);
 
     // Function to check the user is of Admin/User roleType before generating their Navbars
-    //TODO: Revise this JSON check once schemas redone
+    // TODO: Revise this JSON check once schemas redone
+    // TODO: Revise this with a try/catch block instead of if-else
     const checkUserStatus = () => {
-        const userProfile = JSON.parse(localStorage.getItem('profile'));
+        const userProfile = JSON.parse(localStorage.getItem('roleType'));
 
         // 
         if (userProfile) {

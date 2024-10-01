@@ -8,17 +8,14 @@ import '../../interfaceSettings.css';
 import GwinnettLogo from '../../assets/images/gwinnett.png';
 
 const UserNavbar = () => {
-
     // State to handle mobile menu visibility
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     // User profile detection
-    //TODO: Inspect & correct this code to serve the purpose of checking that user is logged in, and is of user roleType
     const profile = JSON.parse(localStorage.getItem('profile'));
     const [user, setUser] = useState(profile?.payload);
     const [userRole, setUserRole] = useState('');
 
-    //TODO: Inspect & describe code behavior, I believe some of these are generic React functions
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
@@ -40,8 +37,6 @@ const UserNavbar = () => {
         setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]);
 
-    //HTML/JSX web page
-    //TODO: Redesign page with necessary links for user portals with front end for video handler/profile management REST APIs
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
             <div className="container-fluid">
@@ -59,7 +54,6 @@ const UserNavbar = () => {
                     aria-controls="navbarNav"
                     aria-expanded={isMenuOpen ? "true" : "false"}
                     aria-label="Toggle navigation">
-
                     <span className="navbar-toggler-icon"></span>
                 </button>
 

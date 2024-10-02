@@ -23,20 +23,19 @@ const Hydration = () => {
             <p>Welcome to the Hydration section! Discover the importance of staying hydrated and tips to improve your water intake.</p>
 
             {/* Video */}
-            <div className="video-section">
+            <div className="video-section mb-4">
                 <h3>Stay Hydrated - Tips and Tricks</h3>
-                <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/2iccTWJ2dmU" 
-                    title="Stay Hydrated - Tips and Tricks"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                ></iframe>
-                <div className="feedback">
-                    <button onClick={handleLike}>👍 {likeCount}</button>
-                    <button onClick={handleDislike}>👎 {dislikeCount}</button>
+                <div className="ratio ratio-16x9">
+                    <iframe
+                        src="https://drive.google.com/file/d/1_QIxJW7dO5AX7NbPeV01UP7Arhrcm8YO/preview"
+                        title="Stay Hydrated - Tips and Tricks"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+                <div className="feedback mt-2">
+                    <button className="btn btn-outline-success" onClick={handleLike}>👍 {likeCount}</button>
+                    <button className="btn btn-outline-danger" onClick={handleDislike}>👎 {dislikeCount}</button>
                 </div>
             </div>
         </section>

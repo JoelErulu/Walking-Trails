@@ -49,6 +49,7 @@
 }
 
 
+
 /* Reusable Styles */
 
 :root {
@@ -404,4 +405,32 @@ p.lead {
 .input-toggle {
   /* Style for the show/hide password button */
   border-radius: 0 0.25rem 0.25rem 0;  /* Round only right side */
+}
+
+@media (min-width: 360px) and (max-width: 992px) {
+  .btn-responsive {
+    padding:10px;
+    font-size:font-size-medium;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 161px) and (max-width: 359px) {
+  .btn-responsive {
+    padding:8px;
+    font-size:--font-size-small;
+    line-height: 1;
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 160px) {
+  .btn-responsive {
+    padding:4px;
+    font-size:70%;
+    line-height: 1;
+    text-align: center;
+    width: 140px;
+  }
 }

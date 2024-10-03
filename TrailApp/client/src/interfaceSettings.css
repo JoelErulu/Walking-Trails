@@ -407,6 +407,10 @@ p.lead {
   border-radius: 0 0.25rem 0.25rem 0;  /* Round only right side */
 }
 
+/* Responsive Elements */
+
+/* Responsive Buttons */
+
 @media (min-width: 360px) and (max-width: 992px) {
   .btn-responsive {
     padding:10px;
@@ -416,7 +420,7 @@ p.lead {
 }
 
 @media (min-width: 161px) and (max-width: 359px) {
-  .btn-responsive {
+  .btn-responsive, .footer-card, .collapse.navbar-collapse, .textContainer {
     padding:8px;
     font-size:--font-size-small;
     line-height: 1;
@@ -426,11 +430,79 @@ p.lead {
 
 
 @media (max-width: 160px) {
-  .btn-responsive {
+  .btn-responsive, .footer-card, .collapse.navbar-collapse, .textContainer {
     padding:4px;
     font-size:70%;
     line-height: 1;
     text-align: center;
     width: 140px;
+  }
+}
+
+/*Responsive Headers*/
+
+@media (min-width: 161px) and (max-width: 359px) {
+  .h1, .h2, h3 {
+    padding:8px;
+    font-size:--font-size-small;
+    line-height: 1;
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 160px) {
+  .h1, .h2, h3 {
+    padding:4px;
+    font-size:70%;
+    line-height: 1;
+  }
+}
+
+/* Responsive Paragraphs */
+
+@media (min-width: 161px) and (max-width: 359px) {
+  .p, .p-lead, .card-text, .navbar-nav, .nav-link, #sign-in-card, #sign-in-container {
+    padding:8px;
+    font-size:--font-size-small;
+    line-height: 1;
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 160px) {
+  .p, .lead, .card-text, .navbar-nav, .nav-link, #sign-in-card, #sign-in-container {
+    padding:2px;
+    font-size:50%;
+    line-height: 1;
+    text-overflow: clip;
+  }
+}
+
+@media (min-width: 161px) and (max-width: 359px) {
+  #sign-in-card, #sign-in-container {
+    padding:8px;
+    font-size:--font-size-small;
+    line-height: 1;
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 160px) {
+  #sign-in-card, #sign-in-container {
+    padding:4px;
+    font-size:70%;
+    line-height: 1;
+    text-align: center;
+    width: 190px;
+    text-overflow: clip; 
+  }
+}
+
+@media (max-width: 160px) {
+  .section {
+    width: 100%;
   }
 }

@@ -43,25 +43,14 @@ const ProfileManagement = () => {
             {/* GET user detail by email search, then UPDATE roleType */}
             <form onSubmit={handleSubmit}>
                 <div>
-                    <Row> {/* Adjust margin-bottom here */}
-                        <Col xs={12} sm={6} className="pr-0"> {/* Reduce padding-right */}
-                            <Input 
-                                id="first-name-input" 
-                                name="firstName" 
-                                label="First Name" 
-                                handleChange={handleChange} 
-                                autoFocus 
-                                type="text" />
-                        </Col>
-                        <Col xs={12} sm={6} className="pl-0"> {/* Reduce padding-left */}
-                            <Input 
-                                id="last-name-input" 
-                                name="lastName" 
-                                label="Last Name" 
-                                handleChange={handleChange} 
-                                type="text" />
-                        </Col>
-                    </Row>
+                    <Input 
+                        id="username-input" 
+                        name="username" 
+                        label="Username" 
+                        handleChange={handleChange} 
+                        autoFocus 
+                        type="text" 
+                    />
                     <Input 
                         id="email-input" 
                         name="email" 
@@ -80,24 +69,44 @@ const ProfileManagement = () => {
                         name="confirmPassword" 
                         label="Repeat Password" 
                         handleChange={handleChange} 
-                        handleShowPassword={handleShowPassword}
-                        type={showPassword ? "text" : "password"} />
+                        type={showPassword ? "text" : "password"}
+                        handleShowPassword={handleShowPassword} />
                     {/* TODO: COMPLETE REST OF USER FORM */}
                     <Input 
-                        id="ethnicity" 
-                        name="ethn" 
-                        label="Ethnicity CHANGE TO SELECT BOX" 
+                        id="gender-input" 
+                        name="gender" 
+                        label="Gender" 
                         handleChange={handleChange} 
-                        type="text" />
+                        type="text"
+                    />
+                    <Input 
+                        id="ethnicity-input" 
+                        name="ethnicity" 
+                        label="Ethnicity" 
+                        handleChange={handleChange} 
+                        type="text"
+                    />
+                    <Input 
+                        id="age-input" 
+                        name="age" 
+                        label="Age" 
+                        handleChange={handleChange} 
+                        type="text"
+                    />
+                    <Input 
+                        id="community-input" 
+                        name="community" 
+                        label="Community" 
+                        handleChange={handleChange} 
+                        type="text"
+                    />
                 </div>
                 <div>
                     <div>
                         <button 
                             id="forgot-mode-btn"
                             type="button" 
-                            className="btn btn-link" 
-                            data-toggle="modal" 
-                            data-target="#forgotPasswordModal">
+                            className="btn btn-link" >
                             Forgot Password?
                         </button>
                     </div>

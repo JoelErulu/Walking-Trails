@@ -28,12 +28,12 @@ export const getUser = async (req, res) => {
 
 // CREATE a new user
 export const createUser = async (req, res) => {
-    const { name, email, password, roleType, id, gender, age, ethnicity, community } = req.body
+    const { username, email, password, roleType, id, gender, age, ethnicity, community } = req.body
     
     //Add document to MongoDB collection
     try {
-        const users = await Users.create({ name, email, password, roleType, id, gender, age, ethnicity, community })
-        res.status(200).json(user)
+        const users = await Users.create({ username, email, password, roleType, id, gender, age, ethnicity, community })
+        res.status(200).json(users)
     } catch (error) {
         res.status(400).json({ mssg: error.message })
     }
@@ -57,8 +57,28 @@ export const deleteUser = async (req, res) => {
     res.status(200).json(users)
 }
 
-// UPDATE a user
+// UPDATE a user by profile manager
 export const updateUser = async (req, res) => {
+    const { id } = req.params
+    
+    //Check to see if id valid
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No such user.'})
+    } 
+
+    const users = await Users.findOneAndUpdate({_id: id}, {
+        ...req.body
+    })
+
+    if (!users) {
+        return res.status(404).json({ error: 'No such user.' })
+    }
+
+    res.status(200).json(users)
+}
+
+// UPDATE a user by admin manager
+export const updateUserRole = async (req, res) => {
     const { id } = req.params
     
     //Check to see if id valid

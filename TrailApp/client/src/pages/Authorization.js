@@ -9,7 +9,7 @@ import '../interfaceSettings.css';
 import { Row, Col } from 'react-bootstrap';
 
 //TODO: Fill out rest of form details
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
+const initialState = { username: '', email: '', password: '', confirmPassword: '' };
 
 const Authorization = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -45,32 +45,22 @@ const Authorization = () => {
                     <form onSubmit={handleSubmit}>
                         <div id="sign-in-form-group" className="form-group">
                             {isSignup && (
-                                <Row className="mb-2"> {/* Adjust margin-bottom here */}
-                                    <Col xs={12} sm={6} className="pr-0"> {/* Reduce padding-right */}
-                                        <Input 
-                                            id="first-name-input" 
-                                            name="firstName" 
-                                            label="First Name" 
-                                            handleChange={handleChange} 
-                                            autoFocus 
-                                            type="text" />
-                                    </Col>
-                                    <Col xs={12} sm={6} className="pl-0"> {/* Reduce padding-left */}
-                                        <Input 
-                                            id="last-name-input" 
-                                            name="lastName" 
-                                            label="Last Name" 
-                                            handleChange={handleChange} 
-                                            type="text" />
-                                    </Col>
-                                </Row>
+                                <Input 
+                                    id="username-input" 
+                                    name="username" 
+                                    label="Username" 
+                                    handleChange={handleChange} 
+                                    autoFocus 
+                                    type="text" 
+                                />
                             )}
                             <Input 
                                 id="email-input" 
                                 name="email" 
                                 label="Email Address" 
                                 handleChange={handleChange} 
-                                type="email" />
+                                type="email" 
+                            />
                             <Input
                                 id="password-input"
                                 name="password"
@@ -89,8 +79,40 @@ const Authorization = () => {
                                     handleShowPassword={handleShowPassword}
                                 />
                             }
+                            {isSignup && 
+                            <Row className="mb-2"> {/* Adjust margin-bottom here */}
+                            {/* TODO: CHANGE THE INPUT TYPES */}
+                                <Input 
+                                    id="gender-input" 
+                                    name="gender" 
+                                    label="Gender" 
+                                    handleChange={handleChange} 
+                                    type="text"
+                                />
+                                <Input 
+                                    id="ethnicity-input" 
+                                    name="ethnicity" 
+                                    label="Ethnicity" 
+                                    handleChange={handleChange} 
+                                    type="text"
+                                />
+                                <Input 
+                                    id="age-input" 
+                                    name="age" 
+                                    label="Age" 
+                                    handleChange={handleChange} 
+                                    type="text"
+                                />
+                                <Input 
+                                    id="community-input" 
+                                    name="community" 
+                                    label="Community" 
+                                    handleChange={handleChange} 
+                                    type="text"
+                                />
+                            </Row>
+                            }
                         </div>
-
                         <div className="d-flex justify-content-center align-items-center">
                             <button 
                                 id="sign-in-submit-btn" 
@@ -108,12 +130,11 @@ const Authorization = () => {
                                 {isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
                             </button>
                             <div className="text-center mt-2">
+                                {/* TODO: Figure out how to set up password recovery through email identity verification. */}
                                 <button 
                                     id="forgot-mode-btn"
                                     type="button" 
-                                    className="btn btn-link" 
-                                    data-toggle="modal" 
-                                    data-target="#forgotPasswordModal">
+                                    className="btn btn-link" >
                                     Forgot Password?
                                 </button>
                             </div>

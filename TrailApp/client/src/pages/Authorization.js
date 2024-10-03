@@ -8,8 +8,17 @@ import { signin, signup } from '../actions/auth.js';
 import '../interfaceSettings.css';
 import { Row, Col } from 'react-bootstrap';
 
-//TODO: Fill out rest of form details
-const initialState = { username: '', email: '', password: '', confirmPassword: '' };
+// Initial state with updated fields
+const initialState = { 
+    username: '', 
+    email: '', 
+    password: '', 
+    confirmPassword: '', 
+    gender: '', 
+    age: '', 
+    ethnicity: '', 
+    ggcCommunity: '' 
+};
 
 const Authorization = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -45,14 +54,64 @@ const Authorization = () => {
                     <form onSubmit={handleSubmit}>
                         <div id="sign-in-form-group" className="form-group">
                             {isSignup && (
-                                <Input 
-                                    id="username-input" 
-                                    name="username" 
-                                    label="Username" 
-                                    handleChange={handleChange} 
-                                    autoFocus 
-                                    type="text" 
-                                />
+                                <>
+                                    <Input 
+                                        id="username-input" 
+                                        name="username" 
+                                        label="Username" 
+                                        handleChange={handleChange} 
+                                        autoFocus 
+                                        type="text" 
+                                    />
+                                    <div className="form-group">
+                                        <label htmlFor="gender-input"><strong>Gender</strong></label>
+                                        <select 
+                                            id="gender-input" 
+                                            name="gender" 
+                                            value={formData.gender} 
+                                            onChange={handleChange} 
+                                            className="form-control">
+                                            <option value="">Select Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                    <Input 
+                                        id="age-input" 
+                                        name="age" 
+                                        label="Age" 
+                                        handleChange={handleChange} 
+                                        type="number" 
+                                    />
+                                    <div className="form-group">
+                                        <label htmlFor="ethnicity-input"><strong>Ethnicity</strong></label>
+                                        <select 
+                                            id="ethnicity-input" 
+                                            name="ethnicity" 
+                                            value={formData.ethnicity} 
+                                            onChange={handleChange} 
+                                            className="form-control">
+                                            <option value="">Select Ethnicity</option>
+                                            <option value="hispanic">Hispanic</option>
+                                            <option value="white">White</option>
+                                            <option value="black">Black American or African</option>
+                                            <option value="asian">Asian</option>
+                                        </select>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="ggc-community-input"><strong>Part of GGC Community</strong></label>
+                                        <select 
+                                            id="ggc-community-input" 
+                                            name="ggcCommunity" 
+                                            value={formData.ggcCommunity} 
+                                            onChange={handleChange} 
+                                            className="form-control">
+                                            <option value="">Select Yes or No</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </>
                             )}
                             <Input 
                                 id="email-input" 
@@ -76,43 +135,10 @@ const Authorization = () => {
                                     label="Repeat Password" 
                                     handleChange={handleChange} 
                                     type={showPassword ? "text" : "password"}
-                                    handleShowPassword={handleShowPassword}
                                 />
-                            }
-                            {isSignup && 
-                            <Row className="mb-2"> {/* Adjust margin-bottom here */}
-                            {/* TODO: CHANGE THE INPUT TYPES */}
-                                <Input 
-                                    id="gender-input" 
-                                    name="gender" 
-                                    label="Gender" 
-                                    handleChange={handleChange} 
-                                    type="text"
-                                />
-                                <Input 
-                                    id="ethnicity-input" 
-                                    name="ethnicity" 
-                                    label="Ethnicity" 
-                                    handleChange={handleChange} 
-                                    type="text"
-                                />
-                                <Input 
-                                    id="age-input" 
-                                    name="age" 
-                                    label="Age" 
-                                    handleChange={handleChange} 
-                                    type="text"
-                                />
-                                <Input 
-                                    id="community-input" 
-                                    name="community" 
-                                    label="Community" 
-                                    handleChange={handleChange} 
-                                    type="text"
-                                />
-                            </Row>
                             }
                         </div>
+
                         <div className="d-flex justify-content-center align-items-center">
                             <button 
                                 id="sign-in-submit-btn" 
@@ -130,11 +156,12 @@ const Authorization = () => {
                                 {isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
                             </button>
                             <div className="text-center mt-2">
-                                {/* TODO: Figure out how to set up password recovery through email identity verification. */}
                                 <button 
                                     id="forgot-mode-btn"
                                     type="button" 
-                                    className="btn btn-link" >
+                                    className="btn btn-link" 
+                                    data-toggle="modal" 
+                                    data-target="#forgotPasswordModal">
                                     Forgot Password?
                                 </button>
                             </div>

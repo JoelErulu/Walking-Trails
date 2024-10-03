@@ -5,9 +5,10 @@ import mongoose from 'mongoose';
 // README: This schema is meant for USERS to GET, POST, UPDATE
 // README: This schema is also meant for ADMINS to UPDATE roleType
 const userSchema = mongoose.Schema({
-    name: { 
+    username: { 
         type: String, 
-        required: true 
+        required: true, 
+        unique: true
     },
     email: { 
         type: String, 

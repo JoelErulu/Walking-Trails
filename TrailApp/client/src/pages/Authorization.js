@@ -23,7 +23,9 @@ const initialState = {
 const Authorization = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
+    const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [formData, setFormData] = useState(initialState);
+    const [resetEmail, setResetEmail] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -31,7 +33,13 @@ const Authorization = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        isSignup ? dispatch(signup(formData, navigate)) : dispatch(signin(formData, navigate));
+        if (showForgotPassword) {
+            // Handle forgot password submit
+            alert(`Password reset link has been sent to ${resetEmail}`);
+            setShowForgotPassword(false); // Go back to Sign In after submission
+        } else {
+            isSignup ? dispatch(signup(formData, navigate)) : dispatch(signin(formData, navigate));
+        }
     };
 
     const handleChange = (e) => {
@@ -42,6 +50,13 @@ const Authorization = () => {
     const switchMode = () => {
         setIsSignup((prev) => !prev);
         setShowPassword(false);
+        setShowForgotPassword(false); // Ensure forgot password form is hidden when switching modes
+    };
+
+    const showForgotPasswordForm = () => {
+        setShowForgotPassword(true);
+        setIsSignup(false); // Ensure it exits sign-up mode
+        setShowPassword(false); // Hide password visibility toggle
     };
 
     return (
@@ -49,11 +64,12 @@ const Authorization = () => {
             <div id="sign-in-card" className="card">
                 <div id="sign-in-card-body" className="card-body">
                     <h5 id="sign-in-title" className="card-title text-center">
-                        {isSignup ? 'Sign Up' : 'Sign In'}
+                        {showForgotPassword ? 'Reset Password' : (isSignup ? 'Sign Up' : 'Sign In')}
                     </h5>
+                    
                     <form onSubmit={handleSubmit}>
                         <div id="sign-in-form-group" className="form-group">
-                            {isSignup && (
+                            {!showForgotPassword && isSignup && (
                                 <>
                                     <Input 
                                         id="username-input" 
@@ -113,30 +129,51 @@ const Authorization = () => {
                                     </div>
                                 </>
                             )}
-                            <Input 
-                                id="email-input" 
-                                name="email" 
-                                label="Email Address" 
-                                handleChange={handleChange} 
-                                type="email" 
-                            />
-                            <Input
-                                id="password-input"
-                                name="password"
-                                label="New Password"
-                                handleChange={handleChange}
-                                type={showPassword ? "text" : "password"}
-                                handleShowPassword={handleShowPassword}
-                            />
-                            {isSignup && 
-                                <Input 
-                                    id="confirm-password-input" 
-                                    name="confirmPassword" 
-                                    label="Repeat Password" 
-                                    handleChange={handleChange} 
-                                    type={showPassword ? "text" : "password"}
-                                />
-                            }
+
+                            {/* Sign In / Sign Up form */}
+                            {!showForgotPassword && (
+                                <>
+                                    <Input 
+                                        id="email-input" 
+                                        name="email" 
+                                        label="Email Address" 
+                                        handleChange={handleChange} 
+                                        type="email" 
+                                    />
+                                    <Input
+                                        id="password-input"
+                                        name="password"
+                                        label={isSignup ? "New Password" : "Password"}
+                                        handleChange={handleChange}
+                                        type={showPassword ? "text" : "password"}
+                                        handleShowPassword={handleShowPassword}
+                                    />
+                                    {isSignup && 
+                                        <Input 
+                                            id="confirm-password-input" 
+                                            name="confirmPassword" 
+                                            label="Repeat Password" 
+                                            handleChange={handleChange} 
+                                            type={showPassword ? "text" : "password"}
+                                        />
+                                    }
+                                </>
+                            )}
+
+                            {/* Forgot Password form */}
+                            {showForgotPassword && (
+                                <div className="form-group">
+                                    <label htmlFor="reset-email"><strong>Enter your email to reset password</strong></label>
+                                    <input 
+                                        id="reset-email" 
+                                        type="email" 
+                                        className="form-control" 
+                                        value={resetEmail} 
+                                        onChange={(e) => setResetEmail(e.target.value)} 
+                                        required 
+                                    />
+                                </div>
+                            )}
                         </div>
 
                         <div className="d-flex justify-content-center align-items-center">
@@ -144,28 +181,43 @@ const Authorization = () => {
                                 id="sign-in-submit-btn" 
                                 type="submit" 
                                 className="btn btn-primary btn-block btn-spacing">
-                                {isSignup ? 'Sign Up' : 'Sign In'}
+                                {showForgotPassword ? 'Send Reset Link' : (isSignup ? 'Sign Up' : 'Sign In')}
                             </button>
                         </div>
-                        <div className="text-center mt-3">
-                            <button 
-                                id="switch-mode-btn" 
-                                type="button" 
-                                onClick={switchMode} 
-                                className="btn btn-link">
-                                {isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
-                            </button>
-                            <div className="text-center mt-2">
+                        
+                        {!showForgotPassword && (
+                            <div className="text-center mt-3">
                                 <button 
-                                    id="forgot-mode-btn"
+                                    id="switch-mode-btn" 
+                                    type="button" 
+                                    onClick={switchMode} 
+                                    className="btn btn-link">
+                                    {isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
+                                </button>
+                                <div className="text-center mt-2">
+                                    <button 
+                                        id="forgot-mode-btn"
+                                        type="button" 
+                                        className="btn btn-link" 
+                                        onClick={showForgotPasswordForm}>
+                                        Forgot Password?
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Option to go back to Sign In from Forgot Password form */}
+                        {showForgotPassword && (
+                            <div className="text-center mt-3">
+                                <button 
+                                    id="back-to-signin-btn"
                                     type="button" 
                                     className="btn btn-link" 
-                                    data-toggle="modal" 
-                                    data-target="#forgotPasswordModal">
-                                    Forgot Password?
+                                    onClick={() => setShowForgotPassword(false)}>
+                                    Back to Sign In
                                 </button>
                             </div>
-                        </div>
+                        )}
                     </form>
                 </div>
             </div>

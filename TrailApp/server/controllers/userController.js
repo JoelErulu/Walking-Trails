@@ -28,11 +28,11 @@ export const getUser = async (req, res) => {
 
 // CREATE a new user
 export const createUser = async (req, res) => {
-    const { username, email, password, roleType, id, gender, age, ethnicity, community } = req.body
+    const { username, email, password, roleType, gender, age, ethnicity, community } = req.body
     
     //Add document to MongoDB collection
     try {
-        const users = await Users.create({ username, email, password, roleType, id, gender, age, ethnicity, community })
+        const users = await Users.create({ username, email, password, roleType, gender, age, ethnicity, community })
         res.status(200).json(users)
     } catch (error) {
         res.status(400).json({ mssg: error.message })

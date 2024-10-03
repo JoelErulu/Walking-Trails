@@ -24,6 +24,24 @@ export const getVideo = async (req, res) => {
     res.status(200).json(videos)
 }
 
+// GET a single video by category
+export const getVideoByCategory = async (req, res) => {
+    const { category } = req.params;
+
+    try {
+        // Find videos by category (if category is a string, no need to check ObjectId)
+        const videos = await Videos.find({ category: category });
+
+        if (!videos || videos.length === 0) {
+            return res.status(404).json({ error: 'No such video.' });
+        }
+
+        res.status(200).json(videos);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error occurred.' });
+    }
+};
+
 // CREATE a new video
 export const createVideo = async (req, res) => {
     const { title, url, category, subCategory, totLikes, totDislikes } = req.body

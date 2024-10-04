@@ -12,7 +12,7 @@ import gray from '../assets/images/gray.png';
 
 // Google Maps components
 import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
-import { GoldCords, GreenCoords, GreyCoords } from '../components/Trails/Coords.js';
+import { GoldCoords, GreenCoords, GreyCoords } from '../components/Trails/Coords.js';
 
 // README: This entire page needs to be restyled.
 const Home = () => {
@@ -81,7 +81,7 @@ const Home = () => {
                         zoom={16}
                         options={mapID}
                     >
-                        <Polyline path={GoldCords} options={{ strokeColor: "#FFD700", strokeWeight: 4 }} onClick={goGold} />
+                        <Polyline path={GoldCoords} options={{ strokeColor: "#FFD700", strokeWeight: 4 }} onClick={goGold} />
                         <Polyline path={GreenCoords} options={{ strokeColor: "#008000", strokeWeight: 4 }} onClick={goGreen} />
                         <Polyline path={GreyCoords} options={{ strokeColor: "#808080", strokeWeight: 4 }} onClick={goGrey} />
                     </GoogleMap>

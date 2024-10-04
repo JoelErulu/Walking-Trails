@@ -1,51 +1,54 @@
 // Import React components
 import React, { useEffect, useState } from 'react';
-//import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // Import Bootstrap and global stylesheet
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
-import '../../interfaceSettings.css';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import video1 from '../../assets/videos/ProjectVideo1.mp4';
 import TrailNavbar from '../Navbar/TrailNavbar.js'
 
 // Import components
-import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
-//import { getMarkers } from '../../actions/markers.js';
-import { GoldCords } from './Coords.js';
-import axios from 'axios';
+import { GoogleMap, LoadScript, Polyline, Marker } from '@react-google-maps/api';
+import { getMarkers } from '../../actions/markers.js';
+import { GoldCoords } from './Coords.js';
 
 // TODO: Redesign page: remove trail markers and videos, keep trail overlay
 const Gold = () => {
-    //const dispatch = useDispatch();
-    const [isVideoOpen, setIsVideoOpen] = useState(false);
+    const dispatch = useDispatch();
+    const initialState = { lat: '', lng: '', name: '' };
+
+    const [markerFormData, setMarkerFormData] = useState(initialState);
     const [center, setCenter] = useState('');
     const [selectedMarker, setSelectedMarker] = useState(null);
-    const [videoSource] = useState(null);
-    const [likes, setLikes] = useState(0);
-    const [dislikes, setDislikes] = useState(0);
-    const [videoFile, setVideoFile] = useState(null);
+    const [isVideoOpen, setIsVideoOpen] = useState(false);
+    const [videoSource, setVideoSource] = useState(null);
+
 
     useEffect(() => {
-        setCenter({ lat: 33.9804327949268, lng: -84.00527240759934 });
+        setCenter({ lat: 33.98251828102669, lng: -84.00032686036535 });
     }, []);
 
-    // Get markers from db
-    //useEffect(() => {
-    //    dispatch(getMarkers());
-    //}, [dispatch]);
+    useEffect(() => {
+        dispatch(getMarkers());
+    }, [dispatch]);
 
-    const handleVideoChange = (file) => {
-        setVideoFile(file);
-    };
-
-    const handleVideoUpload = async () => {
-        const formData = new FormData();
-        formData.append('video', videoFile);
-
-        try {
-            const response = await axios.post('/api/upload', formData);
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
+    const handleMarkerClick = (marker) => {
+        if (selectedMarker && selectedMarker.key === marker.key) {
+            setSelectedMarker(null);
+            setIsVideoOpen(false);
+        } else {
+            setSelectedMarker(marker);
+            setMarkerFormData({
+                lat: marker.lat,
+                lng: marker.lng,
+                name: marker.name,
+                exercise: marker.exercise,
+                img: marker.img,
+                text: marker.text,
+            });
+            setVideoSource(marker.videoSource);
+            setIsVideoOpen(true);
         }
     };
 
@@ -54,54 +57,32 @@ const Gold = () => {
         setIsVideoOpen(false);
     };
 
-    const handleLike = () => {
-        setLikes(likes + 1);
-    };
-
-    const handleDislike = () => {
-        setDislikes(dislikes + 1);
-    };
-
     return (
         <Container fluid>
-            <Row className="justify-content-between align-items-stretch" style={{ padding: '20px' }}>
-                <Col xs={12} sm={6} md={3} className="bg-light">
-                    <h4 className="text-center">Gold Trail</h4>
+            <Row className="mt-4">
+                <Col xs={12} sm={6} md={3} className="bg-white p-4">
+                    <h6>Grey Trail</h6>
                     <TrailNavbar />
                     {!selectedMarker && !isVideoOpen && (
-                        <p className="text-center">CLICK MARKER TO VIEW VIDEO</p>
+                        <p>CLICK MARKER TO VIEW VIDEO</p>
                     )}
+
                     {selectedMarker && isVideoOpen && (
-                        <div className="text-center">
+                        <div>
                             <video width="325px" height="auto" controls autoPlay>
                                 <source src={videoSource} type="video/mp4" />
                             </video>
                             <h5>{selectedMarker.name}</h5>
                             <p>{selectedMarker.exercise}</p>
-                            <Button onClick={closeVideo} variant="primary" className="mt-2">
+                            <Button onClick={closeVideo} variant="primary">
                                 Close Video
-                            </Button>
-                            <div className="mt-3">
-                                <Button onClick={handleLike} variant="success" className="me-2">
-                                    Like ({likes})
-                                </Button>
-                                <Button onClick={handleDislike} variant="danger">
-                                    Dislike ({dislikes})
-                                </Button>
-                            </div>
-                            <Form.Group controlId="videoUpload" className="mt-4">
-                                <Form.Label>Upload Video</Form.Label>
-                                <Form.Control
-                                    type="file"
-                                    accept="video/*"
-                                    onChange={(e) => handleVideoChange(e.target.files[0])}
-                                />
-                            </Form.Group>
-                            <Button onClick={handleVideoUpload} variant="primary" className="mt-2">
-                                Upload
                             </Button>
                         </div>
                     )}
+                    <hr />
+                    <Link to="/nutrition">
+                        <Button variant="success">Nutrition</Button>
+                    </Link>
                 </Col>
                 <Col xs={12} sm={6} md={9} className="bg-light">
                     <div style={{ height: '80vh', width: '100%' }}>
@@ -110,9 +91,21 @@ const Gold = () => {
                                 mapContainerStyle={{ height: '100%', width: '100%' }}
                                 center={center}
                                 zoom={16}
-                                options={{ mapId: '1ed395dbcf77ef66' }}
+                                options={{ /* map options */ }}
                             >
-                                <Polyline path={GoldCords} options={{ strokeColor: '#FFD700', strokeWeight: 4 }} />
+                                <Marker
+                                    position={{ lat: 33.9804327949268, lng: -84.00527240759934 }}
+                                    onClick={() =>
+                                        handleMarkerClick({
+                                            key: 1,
+                                            lat: 33.9804327949268,
+                                            lng: -84.00527240759934,
+                                            name: "B Building Marker",
+                                            videoSource: video1,
+                                        })
+                                    }
+                                />
+                                <Polyline path={GoldCoords} options={{ /* polyline options */ }} />
                             </GoogleMap>
                         </LoadScript>
                     </div>

@@ -93,7 +93,7 @@ export const GreenCoords = [
     { lat: 33.97809098899297, lng: -84.00006969125516}, //56
 ];
 
-export const GoldCords = [
+export const GoldCoords = [
     { lat: 33.9804327949268, lng: -84.00527240759934}, //1
     { lat: 33.980353575203154, lng: -84.005425507664}, //2 
     { lat: 33.980258836069275, lng: -84.00544404063348}, //3

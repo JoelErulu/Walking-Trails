@@ -47,11 +47,6 @@ const ProfileManagement = () => {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const switchMode = () => {
-        setShowPassword(false);
-        setShowForgotPassword(false); // Ensure forgot password form is hidden when switching modes
-    };
-
     const showForgotPasswordForm = () => {
         setShowForgotPassword(true);
         setShowPassword(false); // Hide password visibility toggle

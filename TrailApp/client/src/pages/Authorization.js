@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../components/Authorization/input.js';
 import { signin, signup } from '../actions/auth.js';
 import '../interfaceSettings.css';
-import { Row, Col } from 'react-bootstrap';
 
 // Initial state with updated fields
 const initialState = { 

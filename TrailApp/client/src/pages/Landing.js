@@ -13,12 +13,6 @@ import pic5 from '../assets/images/Landing5.jpg';
 
 const Landing = () => {
 
-  //const navigate = useNavigate();
-
-  //const handleAuthRedirect = (path) => {
-  //  navigate(`/auth?redirect=${path}`);
-  //};
-
   return (
 
     <div className="container-xl">
@@ -45,14 +39,14 @@ const Landing = () => {
         <hr />
       </section>
 
-      {/* Workout Section */}
-      <section id="workout">
+      {/* Exercise Section */}
+      <section id="Exercise">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
               <img
                 src={pic2}
-                alt="Workout"
+                alt="Exercise"
                 className="img-fluid"
               />
             </div>

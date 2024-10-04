@@ -41,7 +41,7 @@ const UserNavbar = () => {
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
             <div className="container-fluid">
                 {/* Logo and "WALKING TRAILS" Header */}
-                <Link className="navbar-brand d-flex align-items-center" to={user ? "/home" : "/"}>
+                <Link className="navbar-brand d-flex align-items-center" to={user ? "/userHome" : "/"}>
                     <img src={GwinnettLogo} alt="Gwinnett Logo" className="logo me-2" />
                     <span className="heading">WALKING TRAILS</span>
                 </Link>
@@ -61,7 +61,7 @@ const UserNavbar = () => {
                 <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">Home</Link>
+                            <Link className="nav-link" to="/userHome">Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/trails">Trails</Link>

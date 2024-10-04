@@ -120,11 +120,13 @@ export const signin = async (req, res) => {
     const { email, password } = req.body;
     console.log(email);
     try {
-        const existingUser = await User.findOne({ email });
+        const existingUser = await Users.findOne({ email });
+        console.log('User found:', existingUser); // Log the found user
 
         if(!existingUser) return res.status(404).json({ message: "User doesn't exist." });
 
         const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
+        console.log('Password match:', isPasswordCorrect); // Log the password check result
 
         if(!isPasswordCorrect) return res.status(400).json({ message: "Invalid credentials." });
 

@@ -6,7 +6,7 @@ import UserNavbar from './UserNavbar';
 import AdminNavbar from './AdminNavbar';
 
 const Navbar = () => {
-    const [navbar, setNavbar] = useState(null);
+    const [navbar, setNavbar] = useState(<LandingNavbar />);
 
     // Function to check the user is of Admin/User roleType before generating their Navbars
     // TODO: Revise this JSON check once schemas redone
@@ -16,7 +16,7 @@ const Navbar = () => {
 
         // 
         if (userProfile) {
-            const userRole = userProfile.result.role;
+            const userRole = userProfile.result.roleType;
             if (userRole === 'Admin') {
                 setNavbar(<AdminNavbar />);
             } else if (userRole === 'User') {

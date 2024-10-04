@@ -7,8 +7,10 @@ export const signin = (formData, navigate) => async (dispatch) => {
         console.log(data);
         dispatch({ type: AUTH, data });
         if(data.result.roleType === "Admin"){
+            localStorage.setItem('roleType', JSON.stringify(data));
             navigate('/adminHome');
         } else if(data.result.roleType === "User"){
+            localStorage.setItem('roleType', JSON.stringify(data));
             navigate('/userHome');
         } else {
             navigate('/');
@@ -23,7 +25,7 @@ export const signup = (formData, navigate) => async (dispatch) => {
         const { data } = await api.signUp(formData);
         dispatch({ type: AUTH, data });
         signin();
-        navigate('/userHome');
+        //navigate('/userHome');
     } catch (err) {
         console.log(err);
     }

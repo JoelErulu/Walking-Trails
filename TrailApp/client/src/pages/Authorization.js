@@ -13,11 +13,12 @@ const initialState = {
     username: '', 
     email: '', 
     password: '', 
-    confirmPassword: '', 
+    confirmPassword: '',
+    roleType: 'User', 
     gender: '', 
     age: '', 
     ethnicity: '', 
-    ggcCommunity: '' 
+    community: '' 
 };
 
 const Authorization = () => {
@@ -99,11 +100,11 @@ const Authorization = () => {
                                         </select>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="ggc-community-input"><strong>Part of GGC Community</strong></label>
+                                        <label htmlFor="community-input"><strong>Part of GGC Community</strong></label>
                                         <select 
-                                            id="ggc-community-input" 
-                                            name="ggcCommunity" 
-                                            value={formData.ggcCommunity} 
+                                            id="community-input" 
+                                            name="community" 
+                                            value={formData.dommunity} 
                                             onChange={handleChange} 
                                             className="form-control">
                                             <option value="">Select Yes or No</option>
@@ -135,6 +136,7 @@ const Authorization = () => {
                                     label="Repeat Password" 
                                     handleChange={handleChange} 
                                     type={showPassword ? "text" : "password"}
+                                    handleShowPassword={handleShowPassword}
                                 />
                             }
                         </div>

@@ -18,7 +18,7 @@ const Navbar = () => {
         if (userProfile) {
             const userRole = userProfile.result.role;
             if (userRole === 'Admin') {
-                setNavbar(<LandingNavbar />);
+                setNavbar(<AdminNavbar />);
             } else if (userRole === 'User') {
                 setNavbar(<UserNavbar />);
             }

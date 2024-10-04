@@ -2,14 +2,14 @@ import axios from 'axios';
 
 const API = axios.create({ baseURL: 'http://localhost:5000' });
 
-export const signIn = (formData) => API.post('/user/signin', formData);
-export const signUp = (formData) => API.post('/user/signup', formData);
-export const logout = (token) => API.post('user/logout', token);
-export const fetchUsers = () => API.get('/user/users');
-export const updateUserRole = (id, role) => API.patch(`/user/${id}`, role);
-export const googleLogin = (token) => API.post('user/googleLogin', token);
-// Testing purposes
-export const updateProfile = (formData) => API.post('/user/updateProfile', formData);
+export const signUp = (formData) => API.post('/api/user/signup', formData);
+// TODO: Integrate with pages & test for functionality
+export const updateUserRole = (id, role) => API.patch(`/api/user/${id}`, role);
+export const updateProfile = (id, formData) => API.patch(`/api/user/${id}`, formData);
+export const signIn = (formData) => API.post('/api/user/signin', formData);
+export const logOut = (token) => API.post('/api/user/logout', token);
+export const fetchUsers = () => API.get('/api/user/users');
+export const googleLogin = (token) => API.post('/api/user/googleLogin', token);
 
 export const fetchTrails = () => API.get('/trails');
 export const createTrail = (newTrail) => API.post('/trails', newTrail);

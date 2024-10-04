@@ -12,9 +12,9 @@ export const getUsers = () => async (dispatch) => {
         console.log(err);
     }
 }
-export const updateUserRole = (id, role) => async (dispatch) => {
+export const updateUserRole = (id, roleType) => async (dispatch) => {
     try {
-        const { data } = await api.updateUserRole(id, role);
+        const { data } = await api.updateUserRole(id, roleType);
         console.log(data);
         dispatch({ type: UPDATE, payload: data });
     } catch (err) {

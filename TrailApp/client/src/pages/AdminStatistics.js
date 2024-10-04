@@ -10,7 +10,7 @@ const AdminStatistics = () => {
 
     return (
         <div>
-            <h2>User Statistics Portal</h2>
+            <h2>Statistics Portal</h2>
         </div>
     )
 }

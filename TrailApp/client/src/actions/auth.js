@@ -6,10 +6,12 @@ export const signin = (formData, navigate) => async (dispatch) => {
         const { data } = await api.signIn(formData);
         console.log(data);
         dispatch({ type: AUTH, data });
-        if(data.result.role === "admin" || data.result.role ==="SuperAdmin"){
-            navigate('/admin');
-        }else{
-            navigate('/home');
+        if(data.result.roleType === "Admin"){
+            navigate('/adminHome');
+        } else if(data.result.roleType === "User"){
+            navigate('/userHome');
+        } else {
+            navigate('/');
         }
     } catch (err) {
         console.log(err);
@@ -20,7 +22,8 @@ export const signup = (formData, navigate) => async (dispatch) => {
     try {
         const { data } = await api.signUp(formData);
         dispatch({ type: AUTH, data });
-        navigate('/home');
+        signin();
+        navigate('/userHome');
     } catch (err) {
         console.log(err);
     }
@@ -30,7 +33,7 @@ export const updateProfile = (formData, navigate) => async (dispatch) => {
     try {
         const { data } = await api.updateProfile(formData);
         dispatch({ type: AUTH, data });
-        navigate('/userHome');
+        navigate('/profileManagement');
     } catch (err) {
         console.log(err);
     }

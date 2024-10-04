@@ -2,8 +2,6 @@
 import mongoose from 'mongoose';
 
 // Schema
-// README: This schema is meant for USERS to GET, POST, UPDATE
-// README: This schema is also meant for ADMINS to UPDATE roleType
 const userSchema = mongoose.Schema({
     username: { 
         type: String, 
@@ -23,16 +21,20 @@ const userSchema = mongoose.Schema({
         type: String 
     },
     gender: { 
-        type: String 
+        type: String,
+        required: true
     },
     age: { 
-        type: Number 
+        type: String,
+        required: true
     },
     ethnicity: { 
-        type: String 
+        type: String,
+        required: true
     },
     community: { 
-        type: String 
+        type: String,
+        required: true
     },
 }, { timestamps: true }); 
 

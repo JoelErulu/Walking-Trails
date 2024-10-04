@@ -24,7 +24,7 @@ export const getVideo = async (req, res) => {
     res.status(200).json(videos)
 }
 
-// GET a single video by category
+// GET videos by category
 export const getVideoByCategory = async (req, res) => {
     const { category } = req.params;
 

@@ -1,6 +1,7 @@
 import { FETCH_ALL, START_LOADING, END_LOADING, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes.js';
 import * as api from '../api/index.js';
 
+// TODO: Add DELETE user function
 export const getUsers = () => async (dispatch) => {
     try {
         dispatch({ type: START_LOADING });

@@ -1,6 +1,8 @@
 import Videos from '../models/videoModel.js'
 import mongoose from 'mongoose'
 
+// TODO: Add and test API functions for like/dislike
+// TODO: Add the form validity checks from UserController.js
 // GET all video
 export const getAllVideos = async (req, res) => {
     const videos = await Videos.find({}).sort({createdAt: -1})
@@ -75,6 +77,46 @@ export const deleteVideo = async (req, res) => {
 
 // UPDATE a video
 export const updateVideo = async (req, res) => {
+    const { id } = req.params
+    
+    //Check to see if id valid
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No such video.'})
+    } 
+
+    const videos = await Videos.findOneAndUpdate({_id: id}, {
+        ...req.body
+    })
+
+    if (!videos) {
+        return res.status(404).json({ error: 'No such video.' })
+    }
+
+    res.status(200).json(videos)
+}
+
+// LIKE a video
+export const likeVideo = async (req, res) => {
+    const { id } = req.params
+    
+    //Check to see if id valid
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No such video.'})
+    } 
+
+    const videos = await Videos.findOneAndUpdate({_id: id}, {
+        ...req.body
+    })
+
+    if (!videos) {
+        return res.status(404).json({ error: 'No such video.' })
+    }
+
+    res.status(200).json(videos)
+}
+
+// DISLIKE a video
+export const dislikeVideo = async (req, res) => {
     const { id } = req.params
     
     //Check to see if id valid

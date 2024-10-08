@@ -1,5 +1,7 @@
-import { FETCH_ALL, START_LOADING, END_LOADING, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes.js';
+import { FETCH_ALL, START_LOADING, END_LOADING, CREATE, UPDATE, DELETE } from '../constants/actionTypes.js';
 import * as api from '../api/index.js';
+
+// TODO: Possibly create LIKE() DISLIKE() functions in actionTypes? Not sure how to handle that
 
 export const getVideos = () => async (dispatch) => {
     try {

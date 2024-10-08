@@ -5,14 +5,12 @@ import React from 'react';
 import '../interfaceSettings.css';
 import { Card, Row, Col } from 'react-bootstrap';
 
+// TODO: Change link on Role Manager & Media Manager to direct to particular sections on AdminManager page. Or create separate components for both.
 const AdminHome = () => {
     return (
         <div className="container mt-5">
             <h2 className="text-center mb-4">Administrator Dashboard</h2>
-
-            {/* Row of Admin Functionality Cards */}
             <Row>
-                {/* User Management Card */}
                 <Col md={4} className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
@@ -27,7 +25,6 @@ const AdminHome = () => {
                     </Card>
                 </Col>
 
-                {/* Content Management Card */}
                 <Col md={4} className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
@@ -42,7 +39,6 @@ const AdminHome = () => {
                     </Card>
                 </Col>
 
-                {/* Settings Card */}
                 <Col md={4} className="mb-4">
                     <Card className="h-100">
                         <Card.Body>

@@ -1,14 +1,16 @@
 // Import React components
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import Input from '../components/Authorization/input.js';
 import { updateProfile } from '../actions/auth.js';
+import { getUser } from '../actions/users.js';
 import '../interfaceSettings.css';
 
 // Initial state with updated fields
-// TODO: change initial state to a GET request by ID
+// TODO: Make it so that form is prefilled with user profile data, connect to getUser() in actions/users.js
+// TODO: Create a delete account button, that brings up a prompt asking the user to input their username or password for confirmation
 const initialState = { 
     username: '', 
     email: '', 

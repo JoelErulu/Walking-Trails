@@ -11,8 +11,10 @@ export const updateUserRole = (id, roleType) => API.patch(`/api/user/updateRole/
 export const updateProfile = (id, formData) => API.patch(`/api/user/updateProfile/${id}`, formData);
 export const deleteUser = (id) => API.delete(`/api/user/${id}`);
 export const fetchUsers = () => API.get('/api/user/users');
+export const fetchUser = (id) => API.get(`/api/user/${id}`)
 export const googleLogin = (token) => API.post('/api/user/googleLogin', token);
 
+// README: May not need. Keep anyway for now.
 export const fetchTrails = () => API.get('/trails');
 export const createTrail = (newTrail) => API.post('/trails', newTrail);
 export const updateTrail = (id, updatedTrail) => API.patch(`/trails/${id}`, updatedTrail);

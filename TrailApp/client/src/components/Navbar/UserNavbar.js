@@ -84,9 +84,6 @@ const UserNavbar = () => {
                             <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/privacy">Privacy Policy</Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link" to="/profileManagement">Manage Profile</Link>
                         </li>
                         <li className="nav-item">

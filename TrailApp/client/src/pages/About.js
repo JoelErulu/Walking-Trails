@@ -12,7 +12,16 @@ const About = () => {
     return (
         <section id="about" className="container mt-5">
             <center><h1>About Us</h1>
-            <p>This app was created as joint collaboration between Georgia Gwinnett College's ITEC students and EXCS students, at the request of faculty.</p>
+            <p>About Us
+            Welcome to Grizzly Fitness at Your Fingertips.
+            The origin of this software application is the result of a Georgia Gwinnett College (GGC) experiential 
+            learning collaborative project in the Department of Exercise Science and the Department of Information 
+            Technology. The application itself was created by software development undergraduate students while e
+            xercise science clinical and health promotion students created the fitness video content. The content
+             presented in the application is based upon scientific evidence and principles supported by the
+              American College of Sports Medicine (ACSM). This project was supported, in part through GGC STEC 
+              4500 research mini grant and a GGC Research SEED grant funds.
+            </p>
             {/* List out credits of all participants? */}
             <h3>Dr. Karen Lee Perell-Gerson</h3>
             <img

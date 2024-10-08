@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import SignInForm from '../components/Form/SignInForm.js'; // Correct relative path
+import SignInForm from '../components/Form/SignInForm.js';
 import SignUpForm from '../components/Form/SignUpForm.js';
 import ForgotPasswordForm from '../components/Form/ForgotPasswordForm.js'; 
 import { signin, signup } from '../actions/auth.js';

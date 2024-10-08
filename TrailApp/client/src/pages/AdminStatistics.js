@@ -6,6 +6,7 @@ import React from 'react';
 // Import global stylesheet
 import '../interfaceSettings.css';
 
+// TODO: Figure out way to track and analyze user data. Create custom queries serverside?
 const AdminStatistics = () => {
 
     return (

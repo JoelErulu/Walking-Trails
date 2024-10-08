@@ -1,19 +1,17 @@
 // Import React components
-//import React from 'react';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUsers, updateUserRole } from '../actions/users';
-import { getVideos, updateVideo } from '../actions/videos';
 
 // Import components
-//import { getUsers, updateUserRole } from '../../../actions/users';
+import { getUsers, updateUserRole } from '../actions/users';
+import { getVideos, postVideo, deleteVideo, updateVideo } from '../actions/videos';
 
 // Import global stylesheet
 import '../interfaceSettings.css';
-import { useState } from "react";
-import {useRef} from 'react';
 
-// README: 
+// TODO: Need to have form to handle video CRUD functionalities
+// TODO: Need to have form to handle user role management
+// TODO: Testing 
 const AdminManager = () => {
 
     const dispatch = useDispatch();

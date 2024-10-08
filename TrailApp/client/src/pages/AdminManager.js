@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsers, updateUserRole } from '../actions/users';
-import { fetchUserById } from '../api/index.js';
+import { getVideos, updateVideo } from '../actions/videos';
 
 // Import components
 //import { getUsers, updateUserRole } from '../../../actions/users';
@@ -11,7 +11,6 @@ import { fetchUserById } from '../api/index.js';
 // Import global stylesheet
 import '../interfaceSettings.css';
 import { useState } from "react";
-import { fetchUsers } from '../api/index.js';
 import {useRef} from 'react';
 
 // README: 
@@ -19,12 +18,18 @@ const AdminManager = () => {
 
     const dispatch = useDispatch();
     const users = useSelector((state) => state.users.users);
+    const videos = getVideos();
 
     useEffect(() => {
         dispatch(getUsers());
     }, [dispatch]);
 
+    useEffect(() => {
+        dispatch(getVideos());
+    }, [dispatch]);
+
     const handleCheckboxChange = (userId, isChecked) => {
+        console.log(userId);
         dispatch(updateUserRole(userId, {role: isChecked ? 'admin' : 'user'}));
         console.log(users);
         //click on checkbox
@@ -33,112 +38,71 @@ const AdminManager = () => {
         //checkbox? ==> dispatch 
         };
 
-    const Rolecheckbox = ({ checked, onChange }) => {
-        return (
-            /*
-            <input class="form-check-input" type="checkbox" value="Admin" id="RoleCheckbox"
-                          color="secondary"
-              checked={checked}
-              onChange={(e) => onChange(e.target.checked)}
-            >*/
-            <select class="form-control" type="checkbox" value="Admin" id="RoleCheckbox"
-            color="secondary"
-              checked={checked}
-              onChange={(e) => onChange(e.target.checked)}>
-                
-            <label className="input-label" for="selectRole">Assign Admin Privileges</label>
-                <option>User Role</option>
-                <option>Admin Role</option>
-            </select>
-            
-        );
-    }
-
-    const Checkbox = ({ label }) => {
-        const [isChecked, setIsChecked ] = useState(false); 
-        return (
-                <input className="p-4" type="checkbox" checked={isChecked}
-                onChange={() => setIsChecked((prev) => !prev)}/>
-
-        );
-    }
-
     
     const emailRef = useRef(null);
     const [message, setMessage] = useState('');
 
-    const handleSubmit = event => {
-        console.log('handleSubmit ran');
-        event.preventDefault();
-    
-        console.log('email 👉️', emailRef.current.value);
-    
-        setMessage(
-          `${emailRef.current.value}`,
-        );
-    
-        event.target.reset();
-      };
-    
 
-    const Emailselector = () => {    
-
-        return (
-          <div>
-            <form onSubmit={handleSubmit}>
-            <div class="form-group">
-            <label className="input-label" for="exampleInputEmail1">Email Address</label>
-              <input
-                class="form-control"
-                ref={emailRef}
-                id="email_select"
-                name="email_select"
-                type="text"
-                placeholder="Email"
-              />
-              <small id="emailHelp" class="form-text text-muted">Must enter a valid user email registered in our database.</small>
-
-              <br />
-              </div>      
-              <button type="submit" class="btn btn-primary btn-responsive btn-block mt-4">Select Profile</button>
+    const [inputEmail, setInputEmail] = useState('');
+    const [matchedProfile, setMatchedProfile] = useState(null);
+   
+    const handleInputChange = (event) => {
+      setInputEmail(event.target.value);
+    };
+ 
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      const targetProfile = users.find(profile => profile.email === inputEmail);
       
-              
-            </form>
-          </div>
-        );
+      if (targetProfile) {
+        setMatchedProfile(targetProfile); // Set the matched profile to state
+        console.log('Matched Profile:', targetProfile);
+      } else {
+        setMatchedProfile(null); // Clear the matched profile if no match is found
+        console.log('No matching profile found.');
+      }
     };
 
-    const Displayprofileinformation = () => {
-        
+    const [videoFiles, setVideoFiles] = useState([]);
+    
+    const handleFileChange = (event) => {
+        const files = Array.from(event.target.files); // Convert FileList to an array
+        setVideoFiles(prevFiles => [...prevFiles, ...files]); // Add new files to the existing array
+    };
+
+    const handleVideoSubmit = (event) => {
+        event.preventDefault();
+
+        console.log('Uploaded Video Files:', videos);
+    };
+
+    const Videocomponent = () => {
         return(
-            <div>
-                <h2>Profile Information</h2>
-                <p className="lead">Current selected profile: <b>{message}</b>
-                </p>
-                <h3>User Roles:</h3>
-                <div className="container">
-                    <p className='lead'>{<Checkbox label="User" />} User</p>
-                    <p className='lead'>{<Checkbox label="Admin"/>} Admin</p>
-                </div>
-                {/*
-                <select class="form-control" id="exampleFormControlSelect1">
-                <label className="input-label" for="exampleInputEmail1">Assign Admin Privileges</label>
-                    <option>User Role</option>
-                    <option>Admin Role</option>
-                </select>*/}
-                <button type="submit" class="btn btn-primary btn-responsive btn-block mt-4">Update Profile</button>
+        <div>
+            <p className="lead my-4">Here you will be able to upload, delete, and update videos! Just fill out the form below.</p>
+            <form onSubmit={handleVideoSubmit}>
+                <input
+                type="file"
+                className="form-control"
+                accept="video/*"
+                multiple
+                onChange={handleFileChange}
+                />
+                <br />
+                <button type="submit" className="btn btn-primary btn-responsive btn-block">Upload Videos</button>
+            </form>
+            <br />
+            <h3>Uploaded Videos:</h3>
+            <ul>
+                {videoFiles.map((file, index) => (
+                <li key={index}>{file.name}</li>
+                ))}
+            </ul>
 
-            </div>
-        )
+         </div>
+        );
     }
-
-    const Updateprofile = () => {
-        //get user by email
-
-        //update user role by id
-    }
-
-
+  
     return (
         <div className="container-xl">
         <div className="container">
@@ -149,24 +113,78 @@ const AdminManager = () => {
             {/* Insert input form that takes in user email & searches for them in database to update their roleType */}
             {/* Reuse code from oldDirectory/admin/AdminPrivilege*/}
 
-            {<Emailselector />}
+        <h1>Email Search</h1>
+        <label className="input-label" htmlFor="exampleInputEmail1">Email Address:</label>
+
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            className="form-control"
+            value={inputEmail}
+            onChange={handleInputChange}
+            placeholder="Enter email"
+            required
+          />
+        <small id="emailHelp" className="form-text text-muted">Must enter a valid user email registered in our database.</small>
+
+          <button type="submit" className='btn btn-primary btn-responsive btn-block mt-4'>Check Email</button>
+        </form>
+        {matchedProfile && (
+        <div>
+          <hr />
+          <h2>Profile Information:</h2>
+          <p className="lead">Matching Profile: <b>{message}</b></p>
+          <p className="lead">UserName: {matchedProfile.username}</p>
+          <p className="lead">Id: {matchedProfile._id}</p>
+          <p className="lead">Email: {matchedProfile.email}</p>
+          <p className="lead">Password: ************ </p>
+          <p className="lead">Gender: {matchedProfile.gender}</p>
+          <p className="lead">Age: {matchedProfile.age}</p>
+          <p className="lead">Ethnicity: {matchedProfile.ethnicity}</p>
+          <p className="lead">Community: {matchedProfile.community}</p>
+          <p className="lead">Date Created: {matchedProfile.createdAt}</p>
+          <p className="lead">Role: {matchedProfile.roleType}</p>
+          <label className="lead">
+              <input 
+                type="checkbox"
+                checked={matchedProfile.roleType === 'admin'}
+                onChange={(isChecked) =>
+                    handleCheckboxChange(matchedProfile._id, isChecked)
+                  }
+              />
+              {" "}Admin
+            </label>
+            <br />
+        </div>
+        )}
+        {!matchedProfile && inputEmail && (
+            <p>No matching profile found.</p>
+            )}
+
             <hr />
-            {<Displayprofileinformation />}
-            <hr />
-                <p className="lead my-4">Here you will be able to upload, delete, and update videos! Just fill out the form below.</p>
-                {/* Insert input form that takes in video URL &/or file and updates the database */}
-                <form>
-                <label for="uploadVideoFile" class="form-label">Upload Video URL &/or file</label>
-                <input class="form-control" type="file" id="uploadVideoFile" multiple />
-                <button type="submit" class="btn btn-primary btn-responsive btn-block mt-4">Submit</button>
-                </form>
-            
+            <Videocomponent />
+
+            {
+            //Displays all user profiles
+            /*
+            {users.map((e, index) => (
+                <div key={index}>
+                    <span>{e.username}</span><br />
+                    <span>{e.email}</span><br />
+                </div>
+            ))}
+            */ 
+            }
+
+
             </div>
             </div>
             </div>
 
         </div>
-    )
+    );
+
+
 }
 
 export default AdminManager;

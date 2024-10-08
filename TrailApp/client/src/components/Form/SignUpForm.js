@@ -1,4 +1,3 @@
-// src/components/Authorization/SignUpForm.js
 import React from 'react';
 import Input from '../Authorization/input.js';
 
@@ -12,6 +11,13 @@ const SignUpForm = ({ formData, handleChange, showPassword }) => {
                 handleChange={handleChange} 
                 autoFocus 
                 type="text" 
+            />
+            <Input 
+                id="email-input" 
+                name="email" 
+                label="Email Address" 
+                handleChange={handleChange} 
+                type="email" 
             />
             <div className="form-group">
                 <label htmlFor="gender-input"><strong>Gender</strong></label>
@@ -61,6 +67,13 @@ const SignUpForm = ({ formData, handleChange, showPassword }) => {
                     <option value="no">No</option>
                 </select>
             </div>
+            <Input 
+                id="password-input" 
+                name="password" 
+                label="Password" 
+                handleChange={handleChange} 
+                type={showPassword ? "text" : "password"} 
+            />
             <Input 
                 id="confirm-password-input" 
                 name="confirmPassword" 

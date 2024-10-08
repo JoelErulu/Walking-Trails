@@ -16,11 +16,11 @@ const AdminHome = () => {
                 <Col md={4} className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
-                            <Card.Title><strong>User Management</strong></Card.Title>
+                            <Card.Title><strong>Role Management</strong></Card.Title>
                             <Card.Text>
-                                Manage user accounts, view user profiles, reset passwords, and assign roles.
+                                View registered user profiles and assign roles.
                             </Card.Text>
-                            <a href="/admin/user-management" className="btn btn-primary">
+                            <a href="/AdminManager" className="btn btn-primary">
                                 Manage Users
                             </a>
                         </Card.Body>
@@ -31,11 +31,11 @@ const AdminHome = () => {
                 <Col md={4} className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
-                            <Card.Title><strong>Content Management</strong></Card.Title>
+                            <Card.Title><strong>Media Management</strong></Card.Title>
                             <Card.Text>
-                                Add, update, or delete content, including pages, posts, and media uploads.
+                                Add, update, or delete videos.
                             </Card.Text>
-                            <a href="/admin/content-management" className="btn btn-primary">
+                            <a href="/AdminManager" className="btn btn-primary">
                                 Manage Content
                             </a>
                         </Card.Body>
@@ -46,11 +46,11 @@ const AdminHome = () => {
                 <Col md={4} className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
-                            <Card.Title><strong>Site Settings</strong></Card.Title>
+                            <Card.Title><strong>Statistics</strong></Card.Title>
                             <Card.Text>
-                                Configure global settings, manage themes, and adjust site security preferences.
+                                Analyze site and user statistics
                             </Card.Text>
-                            <a href="/admin/settings" className="btn btn-primary">
+                            <a href="/adminStatistics" className="btn btn-primary">
                                 Adjust Settings
                             </a>
                         </Card.Body>

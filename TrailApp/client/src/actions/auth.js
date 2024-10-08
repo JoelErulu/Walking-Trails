@@ -15,6 +15,10 @@ export const signin = (formData, navigate) => async (dispatch) => {
         } else {
             navigate('/');
         }
+
+        // Refresh the page to apply changes
+        window.location.reload();
+
     } catch (err) {
         console.log(err);
     }

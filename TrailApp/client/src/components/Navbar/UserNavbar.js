@@ -28,6 +28,8 @@ const UserNavbar = () => {
         dispatch({ type: 'LOGOUT' });
         setUser(null);
         navigate('/#');
+        window.location.reload();  // Reload the page after navigating
+
     };
 
     useEffect(() => {

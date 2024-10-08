@@ -1,9 +1,10 @@
-// Import React components
+// src/components/Authorization/Authorization.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
-import Input from '../components/Authorization/input.js';
+import SignInForm from '../components/Form/SignInForm.js'; // Correct relative path
+import SignUpForm from '../components/Form/SignUpForm.js';
+import ForgotPasswordForm from '../components/Form/ForgotPasswordForm.js'; 
 import { signin, signup } from '../actions/auth.js';
 import '../interfaceSettings.css';
 
@@ -69,110 +70,12 @@ const Authorization = () => {
                     
                     <form onSubmit={handleSubmit}>
                         <div id="sign-in-form-group" className="form-group">
-                            {!showForgotPassword && isSignup && (
-                                <>
-                                    <Input 
-                                        id="username-input" 
-                                        name="username" 
-                                        label="Username" 
-                                        handleChange={handleChange} 
-                                        autoFocus 
-                                        type="text" 
-                                    />
-                                    <div className="form-group">
-                                        <label htmlFor="gender-input"><strong>Gender</strong></label>
-                                        <select 
-                                            id="gender-input" 
-                                            name="gender" 
-                                            value={formData.gender} 
-                                            onChange={handleChange} 
-                                            className="form-control">
-                                            <option value="">Select Gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
-                                        </select>
-                                    </div>
-                                    <Input 
-                                        id="age-input" 
-                                        name="age" 
-                                        label="Age" 
-                                        handleChange={handleChange} 
-                                        type="number" 
-                                    />
-                                    <div className="form-group">
-                                        <label htmlFor="ethnicity-input"><strong>Ethnicity</strong></label>
-                                        <select 
-                                            id="ethnicity-input" 
-                                            name="ethnicity" 
-                                            value={formData.ethnicity} 
-                                            onChange={handleChange} 
-                                            className="form-control">
-                                            <option value="">Select Ethnicity</option>
-                                            <option value="hispanic">Hispanic</option>
-                                            <option value="white">White</option>
-                                            <option value="black">Black American or African</option>
-                                            <option value="asian">Asian</option>
-                                        </select>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="community-input"><strong>Part of GGC Community</strong></label>
-                                        <select 
-                                            id="community-input" 
-                                            name="community" 
-                                            value={formData.dommunity} 
-                                            onChange={handleChange} 
-                                            className="form-control">
-                                            <option value="">Select Yes or No</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
-                                </>
-                            )}
-
-                            {/* Sign In / Sign Up form */}
-                            {!showForgotPassword && (
-                                <>
-                                    <Input 
-                                        id="email-input" 
-                                        name="email" 
-                                        label="Email Address" 
-                                        handleChange={handleChange} 
-                                        type="email" 
-                                    />
-                                    <Input
-                                        id="password-input"
-                                        name="password"
-                                        label={isSignup ? "New Password" : "Password"}
-                                        handleChange={handleChange}
-                                        type={showPassword ? "text" : "password"}
-                                        handleShowPassword={handleShowPassword}
-                                    />
-                                    {isSignup && 
-                                        <Input 
-                                            id="confirm-password-input" 
-                                            name="confirmPassword" 
-                                            label="Repeat Password" 
-                                            handleChange={handleChange} 
-                                            type={showPassword ? "text" : "password"}
-                                        />
-                                    }
-                                </>
-                            )}
-
-                            {/* Forgot Password form */}
-                            {showForgotPassword && (
-                                <div className="form-group">
-                                    <label htmlFor="reset-email"><strong>Enter your email to reset password</strong></label>
-                                    <input 
-                                        id="reset-email" 
-                                        type="email" 
-                                        className="form-control" 
-                                        value={resetEmail} 
-                                        onChange={(e) => setResetEmail(e.target.value)} 
-                                        required 
-                                    />
-                                </div>
+                            {showForgotPassword ? (
+                                <ForgotPasswordForm resetEmail={resetEmail} setResetEmail={setResetEmail} />
+                            ) : isSignup ? (
+                                <SignUpForm formData={formData} handleChange={handleChange} showPassword={showPassword} />
+                            ) : (
+                                <SignInForm formData={formData} handleChange={handleChange} handleShowPassword={handleShowPassword} showPassword={showPassword} />
                             )}
                         </div>
 

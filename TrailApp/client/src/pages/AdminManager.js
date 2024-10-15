@@ -22,9 +22,9 @@ const AdminManager = () => {
         dispatch(getUsers());
     }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(getVideos());
-    }, [dispatch]);
+    //useEffect(() => {
+    //    dispatch(getVideos());
+    //}, [dispatch]);
 
     const handleCheckboxChange = (userId, isChecked) => {
         console.log(userId);
@@ -102,9 +102,9 @@ const AdminManager = () => {
     }
   
     return (
-        <div className="container-xl">
-        <div className="container">
-        <div className="row align-items-center">
+        <div className="container-xl justify-content-center">
+        <div className="container justify-content-center">
+        <div className="d-flex row justify-content-center">
         <div className="col-lg-6 col-md-12 p-3">
             <h2>Admin Management Portal</h2>
             <p className="lead my-4">Here you will be able to change a registered user's role! Just fill out the form below.</p>
@@ -162,8 +162,8 @@ const AdminManager = () => {
             <hr />
             <Videocomponent />
 
+            
             {
-            //Displays all user profiles
             /*
             {users.map((e, index) => (
                 <div key={index}>
@@ -171,8 +171,9 @@ const AdminManager = () => {
                     <span>{e.email}</span><br />
                 </div>
             ))}
-            */ 
+            */
             }
+            
 
 
             </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
 
-const UserInfoForm = ({ userId }) => {
+const UserInfoForm = ({ id }) => {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -14,17 +15,17 @@ const UserInfoForm = ({ userId }) => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const { data } = await axios.get(`/api/${userId}`);
+                const { data } = await axios.get(`/api/users/${id}`);
                 setFormData(data);
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }
         };
 
-        if (userId) {
+        if (id) {
             fetchUserData(); // Fetch user data only if userId exists
         }
-    }, [userId]);
+    }, [id]);
 
     return (
         <div className="user-info">

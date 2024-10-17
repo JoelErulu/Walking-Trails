@@ -1,8 +1,11 @@
 import React from 'react';
 import UserInfoForm from '../components/Form/UserInfoForm.js';
 import UpdateProfileForm from '../components/Form/UpdateProfile.js'; // Ensure you import the UpdateProfileForm
+import { getUser, updateUserRole } from '../actions/users';
+
 
 const ProfileManagement = () => {
+    
     return (
         <div className="container mt-4">
             <h1>Profile Management</h1>

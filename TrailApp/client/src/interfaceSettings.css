@@ -190,6 +190,8 @@
 
 h1, h2 {
   font-size: var(--font-size-heading); /* Using global heading size */
+  text-align: center;
+
 }
 
 h3 {
@@ -229,10 +231,18 @@ p.lead {
   color: green; 
 }
 
-/* Image Styling */
+/* Centering Images */
+.img-container {
+  display: flex;              /* Enable flexbox */
+  justify-content: center;    /* Center images horizontally */
+  align-items: center;        /* Center images vertically */
+  margin: auto;              /* Center container within parent */
+}
+
 .img-fluid {
   max-width: var(--image-max-width-md); /* Using global image width */
-  height: var(--image-height-auto); /* Using global image height */
+  height: var(--image-height-auto);      /* Using global image height */
+  display: block;                     /* Make the image a block element */
 }
 
 /* Adjust image sizes for smaller screens */
@@ -241,6 +251,7 @@ p.lead {
     max-width: 95%;
   }
 }
+
 
 /* Further adjustments for extra small screens */
 @media (max-width: 650px) {
@@ -506,3 +517,4 @@ p.lead {
     width: 100%;
   }
 }
+

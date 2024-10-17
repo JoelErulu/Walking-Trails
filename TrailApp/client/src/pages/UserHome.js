@@ -14,56 +14,53 @@ import pic5 from '../assets/images/Landing5.jpg';
 const UserHome = () => {
 
   return (
-
     <div className="container-xl">
       {/* Showcase Section */}
-      <section>
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 col-md-12 p-3">
-              <h1>Fitness/Walking Trails App</h1>
-              <p className="lead my-4">
-                The Walking Trails App is a mobile application designed to enhance the walking experience on Georgia Gwinnett College (GGC) trails through interactive and educational content focused on fitness, health, and wellness. This project is a collaborative effort between ITEC students, who are responsible for app development, and EXSC students, who create the content.
-              </p>
-              <Link to="/authorization" className="btn btn-primary btn-responsive btn-block">Sign In</Link>
-            </div>
-            <div className="col-lg-6 col-md-12">
-              <img
-                src={pic1}
-                alt="GGC Trails"
-                className="img-fluid"
-              />
+      <section id="showcase">
+        <div className="container my-4">
+          <div className="card shadow-sm">
+            <div className="row align-items-center">
+              <div className="col-md-6 text-center">
+                <img
+                  src={pic1}
+                  alt="GGC Trails"
+                  className="img-fluid rounded mx-auto"
+                />
+              </div>
+              <div className="col-md-6 p-3 p-md-5">
+                <h1>Walking Trails</h1>
+                <p className="lead my-4">
+                  The Walking Trails App is a mobile application designed to enhance the walking experience on Georgia Gwinnett College (GGC) trails through interactive and educational content focused on fitness, health, and wellness. This project is a collaborative effort between ITEC students, who are responsible for app development, and EXSC students, who create the content.
+                </p>
+                <Link to="/authorization" className="btn btn-primary mt-3 btn-responsive btn-block">
+                  <i className="bi bi-chevron-right"></i> <span>Sign In</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-        <hr />
       </section>
 
       {/* Exercise Section */}
-      <section id="Exercise">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-6">
-              <img
-                src={pic2}
-                alt="Exercise"
-                className="img-fluid"
-              />
-            </div>
-            <div className="col-md-6 p-3 p-md-5">
-              <div className="card-body">
+      <section id="exercise">
+        <div className="container my-4">
+          <div className="card shadow-sm">
+            <div className="row align-items-center">
+              <div className="col-md-6 text-center">
+                <img
+                  src={pic2}
+                  alt="Personalized workout tutorials"
+                  className="img-fluid rounded mx-auto"
+                />
+              </div>
+              <div className="col-md-6 p-3 p-md-5">
                 <h2>Exercises</h2>
                 <p className="lead">
                   Personalized workout tutorials and tailored workout spaces represent a revolution in the fitness world, a shift towards a more individualized approach to health and wellness.
                 </p>
-                <a href="/exercises" className="btn btn-primary mt-3 btn-responsive btn-block">
-                  <i className="bi bi-chevron-right"></i> Exercises
-                </a>
-                {/*
-                  <button onClick={() => handleAuthRedirect("/exercise")} className="btn btn-primary mt-3">
-                    <i className="bi bi-chevron-right"></i> Exercises
-                  </button>
-                */}
+                <Link to="/exercises" className="btn btn-primary mt-3 btn-responsive btn-block">
+                  <i className="bi bi-chevron-right"></i> <span>Exercises</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -72,29 +69,24 @@ const UserHome = () => {
 
       {/* Hydration Section */}
       <section id="hydration">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-6">
-              <img
-                src={pic3}
-                alt="Hydration"
-                className="img-fluid"
-              />
-            </div>
-            <div className="col-md-6 p-3 p-md-5">
-              <div className="card-body">
+        <div className="container my-4">
+          <div className="card shadow-sm">
+            <div className="row align-items-center">
+              <div className="col-md-6 text-center">
+                <img
+                  src={pic3}
+                  alt="Hydration importance"
+                  className="img-fluid rounded mx-auto"
+                />
+              </div>
+              <div className="col-md-6 p-3 p-md-5">
                 <h2>Hydration</h2>
                 <p className="lead">
                   Hydration is crucial for maintaining the body's balance, especially during physical activities. Proper hydration supports energy levels, helps regulate body temperature, and enhances overall physical performance.
                 </p>
-                <a href="/hydration" className="btn btn-primary mt-3 btn-responsive btn-block">
-                  <i className="bi bi-chevron-right"></i> Hydration
-                </a>
-                {/*
-                  <button onClick={() => handleAuthRedirect("/hydration")} className="btn btn-primary mt-3">
-                    <i className="bi bi-chevron-right"></i> Hydration
-                  </button>
-                */}
+                <Link to="/hydration" className="btn btn-primary mt-3 btn-responsive btn-block">
+                  <i className="bi bi-chevron-right"></i> <span>Hydration</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -103,29 +95,24 @@ const UserHome = () => {
 
       {/* Nutrition Section */}
       <section id="nutrition">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-6">
-              <img
-                src={pic4}
-                alt="Nutrition"
-                className="img-fluid"
-              />
-            </div>
-            <div className="col-md-6 p-3 p-md-5">
-              <div className="card-body">
+        <div className="container my-4">
+          <div className="card shadow-sm">
+            <div className="row align-items-center">
+              <div className="col-md-6 text-center">
+                <img
+                  src={pic4}
+                  alt="Nutrition for a healthy lifestyle"
+                  className="img-fluid rounded mx-auto"
+                />
+              </div>
+              <div className="col-md-6 p-3 p-md-5">
                 <h2>Nutrition</h2>
                 <p className="lead">
                   Nutrition is the cornerstone of a healthy lifestyle, providing the essential nutrients needed to fuel your body. Proper nutrition can enhance performance, speed up recovery, and improve overall health.
                 </p>
-                <a href="/nutrition" className="btn btn-primary mt-3 btn-responsive btn-block">
-                  <i className="bi bi-chevron-right"></i> Nutrition
-                </a>
-                {/*
-                  <button onClick={() => handleAuthRedirect("/nutrition")} className="btn btn-primary mt-3">
-                    <i className="bi bi-chevron-right"></i> Nutrition
-                  </button>
-                */}
+                <Link to="/nutrition" className="btn btn-primary mt-3 btn-responsive btn-block">
+                  <i className="bi bi-chevron-right"></i> <span>Nutrition</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -134,29 +121,24 @@ const UserHome = () => {
 
       {/* Climate Section */}
       <section id="climate">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-6">
-              <img
-                src={pic5}
-                alt="Climate"
-                className="img-fluid"
-              />
-            </div>
-            <div className="col-md-6 p-3 p-md-5">
-              <div className="card-body">
+        <div className="container my-4">
+          <div className="card shadow-sm">
+            <div className="row align-items-center">
+              <div className="col-md-6 text-center">
+                <img
+                  src={pic5}
+                  alt="Climate and outdoor activities"
+                  className="img-fluid rounded mx-auto"
+                />
+              </div>
+              <div className="col-md-6 p-3 p-md-5">
                 <h2>Climate and Environment</h2>
                 <p className="lead">
                   Climate and environmental conditions play a significant role in outdoor physical activities. Understanding how weather affects your performance, from heat and humidity to cold and wind, allows you to adjust your workouts and take precautions for safe and effective exercise.
                 </p>
-                <a href="/climate" className="btn btn-primary mt-3 btn-responsive btn-block">
-                  <i className="bi bi-chevron-right"></i> Climate
-                </a>
-                {/*
-                  <button onClick={() => handleAuthRedirect("/climate")} className="btn btn-primary mt-3">
-                    <i className="bi bi-chevron-right"></i> Climate
-                  </button>
-                */}
+                <Link to="/climate" className="btn btn-primary mt-3 btn-responsive btn-block">
+                  <i className="bi bi-chevron-right"></i> <span>Climate</span>
+                </Link>
               </div>
             </div>
           </div>

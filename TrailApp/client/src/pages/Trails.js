@@ -9,6 +9,9 @@ import '../interfaceSettings.css';
 import gold from '../assets/images/gold.png';
 import green from '../assets/images/green.png';
 import gray from '../assets/images/gray.png';
+import greenThumb from '../assets/images/greenMapThumbnail.png';
+import goldThumb from '../assets/images/goldMapThumbnail.png';
+import greyThumb from '../assets/images/grayMapThumbnail.png';
 
 // Google Maps components
 import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
@@ -34,44 +37,43 @@ const Home = () => {
     const mapID = { mapId: "1ed395dbcf77ef66" };
 
     return (
-        <div className="container" style={{ background: '#ffffff' }}>
-            <h2 className="text-center">TRAILS</h2>
+        <div className="container-xl" style={{ background: '#ffffff' }}>
+        <section id="trailmaps">
+        <div className="container my-4">
+          <div className="card shadow-sm">
             <div className="pb-3 text-center">
                 <div className="col-sm">
-                    <h5 className="trailsCollapseText" onClick={() => setOpenGold(!openGold)}>
-                        Gold Trail
-                    </h5>
+                    <br />
+                    <img className="img-fluid rounded mx-auto trailsCollapse" src={goldThumb} alt="Gold Trail" onClick={() => setOpenGold(!openGold)}/>
                     {openGold && (
                         <Link to="/goldTrail">
-                            <img className="image" src={gold} alt="Gold Trail" />
+                            <img className="img-fluid rounded mx-auto" src={gold} alt="Gold Trail" />
                         </Link>
                     )}
                     <hr />
                 </div>
                 <div className="col-sm">
-                    <h5 className="trailsCollapseText" onClick={() => setOpenGreen(!openGreen)}>
-                        Green Trail
-                    </h5>
+                    <img className="img-fluid rounded mx-auto trailsCollapse" src={greenThumb} alt="Green Trail" onClick={() => setOpenGreen(!openGreen)}/>
                     {openGreen && (
                         <Link to="/greenTrail">
-                            <img className="image" src={green} alt="Green Trail" />
+                            <img className="img-fluid rounded mx-auto" src={green} alt="Green Trail" />
                         </Link>
                     )}
                     <hr />
                 </div>
                 <div className="col-sm">
-                    <h5 className="trailsCollapseText" onClick={() => setOpenGrey(!openGrey)}>
-                        Gray Trail
-                    </h5>
+                    <img className="img-fluid rounded mx-auto trailsCollapse" src={greyThumb} alt="Grey Trail" onClick={() => setOpenGrey(!openGrey)}/>
                     {openGrey && (
                         <Link to="/grayTrail">
-                            <img className="image" src={gray} alt="Gray Trail" />
+                            <img className="img-fluid rounded mx-auto" src={gray} alt="Gray Trail" />
                         </Link>
                     )}
-                    <hr />
                 </div>
             </div>
-            <div className="col-xl text-center" style={{ display: "inline-block", height: "80vh", width: "100%" }}>
+          </div>
+        </div>
+      </section>
+            <div className="col-xl text-center container my-4 align-items-center shadow-sm" style={{ display: "center", height: "80vh", width: "100%" }}>
                 <LoadScript
                     googleMapsApiKey="AIzaSyCKEd9gY2vA4IAZdBmZkhvrrfofT2KZfyU"
                 >

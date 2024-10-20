@@ -14,7 +14,6 @@ Walking Trail
 
 ### Team Members
 1. Ginette Wilson Bahun😊
-
 2. Mathews Binny 🙀
 3. Joel Erulu
 4. Josiah Haines
@@ -55,7 +54,6 @@ The Walking Trails App is a mobile application designed to enhance the walking e
   https://nodejs.org/en/
 - React
   https://reactjs.org/
-
 - Google Maps API
 - https://developers.google.com/maps
 - (IMPORTANT)
@@ -91,14 +89,14 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 6. Enter the following commands:  
    npm i bcrypt
    npm i body-parser  
-   npm i cors  
+   npm i cors 
+   npm i dotenv 
    npm i express  
    npm i jsonwebtoken  
    npm i mongoose  
    npm i nodemon
    npm i google-auth-library
    npm install bcrypt
-
 
 ### How to Run
 
@@ -112,11 +110,23 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 1. Authentication - Create an account, store credentials in Mongoose, and access user-specific data. Log in to existing accounts.
 2. Interactive Map - markers that contain content
 3. Admin view - Admin can assign privleges, create content, update content, delete content.
-4. Video upload - Users can upload video to markers, and video is stored on MongoDB
+4. Video retrieval - Users can access videos is stored on MongoDB attached to map markers
 
-### Features for the future
+### Features our team developed
 
-In progress
+1. User Registration & Authentication was broken previously. We re-implemented it, and changed the schema to accomodate for new requirements.
+2. Custom navbar that generate based on user role
+3. All new pages and site map
+4. Using embedded videos from cloud data solutions (Google Drive), previous groups used MongoDB & local storage options for handling video pins on maps. We left their work intact and functional, but needed to create new video gallery pages.
+
+### Features in progress
+
+- Password reset through email
+- Role based access on pages for security
+- Ability to add/like videos & track views
+- Ability to edit user profile information
+- Ability to upgrade/downgrade a user's role from administrator portal
+- Ability to upload & delete embedded videos to DB
 
 ### Link to the demo of the app running
 

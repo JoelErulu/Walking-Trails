@@ -8,7 +8,7 @@
 
 User Interface/User Experience
 - (Priority: High) Redesign page layouts to conform with requirements and mobile user experience -> components/Trails/
-                                     -> AdminHome.js | AdminManager.js | AdminStatistics.js | UserHome.js | Authorization.js | ProfileManagement.js | Trails.js
+                                     -> AdminManager.js | AdminStatistics.js | ProfileManagement.js | Trails.js
 - (Priority: High) Add ability for password reset through email
 
 User Authentication & Role based access
@@ -18,5 +18,3 @@ User Authentication & Role based access
 Miscellaneous Tasks
 - (Priority: High) Fix Google Maps API connection & replace key -> Trails/
 - (Priority: High) Implement statistics tracking for admins -> AdminStatistics.js
-
-- (Priority: Low) Complete pages -> About.js | Privacy.js

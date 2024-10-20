@@ -68,25 +68,29 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 
 1. Open the terminal
 2. Move to the "client" directory (cd C:/../WalkingTrailApp/TrailApp/client)
-3. Enter the following commands:    
-   npm i @react-oauth/google  
+3. Run 'npm install' for automatic installation of project dependencies. Run 'npm update' to update them to latest versions, but be aware - some things might be out-of-date & deprecated with no replacements.
+   
+   Alternatively, enter the following commands:
+   npm i @react-oauth/google
    npm i axios
    npm i bootstrap
-   npm i jwt-decode  
+   npm i jwt-decode
    npm i react
    npm i react-bootstrap
-   npm i react-dom  
-   npm i react-redux  
-   npm i react-router-dom  
-   npm i react-scripts  
-   npm i redux  
-   npm i redux-thunk  
-   npm i --legacy-peer-deps  
+   npm i react-dom
+   npm i react-redux
+   npm i react-router-dom
+   npm i react-scripts
+   npm i redux
+   npm i redux-thunk
+   npm i --legacy-peer-deps
    npm i -S @react-google-maps/api
    npm install react-bootstrap bootstrap
 
 5. Move to the "server" directory (cd C:/../WalkingTrailApp/TrailApp/server)
-6. Enter the following commands:  
+6. Run 'npm install' for automatic installation of project dependencies. Run 'npm update' to update them to latest versions, but be aware - some things might be out-of-date & deprecated with no replacements.
+   
+   Alternatively, enter the following commands: 
    npm i bcrypt
    npm i body-parser  
    npm i cors 

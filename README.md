@@ -120,13 +120,13 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 
 1. User Registration & Authentication: This feature was broken when we first accessed the project. We re-implemented it, and changed the schema to accomodate for new requirements, and tested it to ensure functionality.
 2. Custom navbar that generate based on user role. We wanted to lock certain pages so they could only be accessed by users who are signed in, and also for security purposes.
-3. All new pages and site map. We heavily modified the landing page, and kept only the trails pages from the previous group, with modified UI design.
-4. The previous groups had developed video upload and retrieval for markers on the trail maps. However, our new requirements required video galleries and not map-marker based videos. We kept their previous groups work, and implemented our solution in parallel on new pages using embedded links & Google Drive for right now for proof of concept.
+3. Role-based access for all pages. This is great for security, as we wouldn't want non-signed in users to access content they shouldn't be able to see.
+4. All new site map. We heavily modified the landing page, and kept only the trails pages from the previous group, with modified UI design.
+5. The previous groups had developed video upload and retrieval for markers on the trail maps. However, our new requirements required video galleries and not map-marker based videos. We kept their previous groups work, and implemented our solution in parallel on new pages using embedded links & Google Drive for right now for proof of concept.
 
 ### Features in progress
 
 - Password reset through email
-- Role based access on pages for security
 - Ability to add/like videos & track views
 - Ability to edit user profile information
 - Ability to upgrade/downgrade a user's role from administrator portal

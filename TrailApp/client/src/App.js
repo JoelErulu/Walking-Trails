@@ -9,6 +9,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/Footer.js';
+import PrivateRoute from './api/PrivateRoutes.js';
 
 // Import pages
 import Landing from './pages/Landing.js';
@@ -40,23 +41,32 @@ const App = () => {
             <div className="pages">
                 <Navbar />
                 <Routes>
+                    {/* Public Routes */}
                     <Route path="/" element={< Landing />} />
                     <Route path="/authorization" element={< Authorization />} />
-                    <Route path="/adminHome" element={< AdminHome />} />
-                    <Route path="/adminManager" element={< AdminManager />} />
-                    <Route path="/adminStatistics" element={< AdminStatistics />} />
-                    <Route path="/userHome" element={< UserHome />} />
-                    <Route path="/profileManagement" element={< ProfileManagement />} />
-                    <Route path ="/trails" element = {< Trails />}/>
-                    <Route path ="/climate" element = {< Climate />}/>
-                    <Route path ="/hydration" element = {< Hydration />}/>
-                    <Route path ="/exercises" element = {< Exercises />}/>
-                    <Route path="/nutrition" element={< Nutrition />} />
                     <Route path="/about" element={< About />} />
                     <Route path="/privacy" element={< Privacy />} />
-                    <Route path="/goldTrail" element={< GoldTrail />} />
-                    <Route path="/greenTrail" element={< GreenTrail />} />
-                    <Route path="/grayTrail" element={< GrayTrail />} />
+
+                    {/* Authorized Routes */}
+                    <Route element={<PrivateRoute allowedRoles={['Admin', 'User']} />}>
+                        <Route path="/userHome" element={< UserHome />} />
+                        <Route path="/profileManagement" element={< ProfileManagement />} />
+                        <Route path ="/trails" element = {< Trails />}/>
+                        <Route path ="/climate" element = {< Climate />}/>
+                        <Route path ="/hydration" element = {< Hydration />}/>
+                        <Route path ="/exercises" element = {< Exercises />}/>
+                        <Route path="/nutrition" element={< Nutrition />} />
+                        <Route path="/goldTrail" element={< GoldTrail />} />
+                        <Route path="/greenTrail" element={< GreenTrail />} />
+                        <Route path="/grayTrail" element={< GrayTrail />} />
+                    </Route>
+
+                    {/* Admin Routes */}
+                    <Route element={<PrivateRoute allowedRoles={['Admin']} />}>
+                        <Route path="/adminHome" element={< AdminHome />} />
+                        <Route path="/adminManager" element={< AdminManager />} />
+                        <Route path="/adminStatistics" element={< AdminStatistics />} />
+                    </Route>
                 </Routes>
                 <Footer />
             </div>

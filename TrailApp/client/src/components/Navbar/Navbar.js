@@ -9,21 +9,31 @@ const Navbar = () => {
     const [navbar, setNavbar] = useState(<LandingNavbar />);
 
     // Function to check the user is of Admin/User roleType before generating their Navbars
-    // TODO: Revise this JSON check once schemas redone
-    // TODO: Revise this with a try/catch block instead of if-else
     const checkUserStatus = () => {
-        const userProfile = JSON.parse(localStorage.getItem('roleType'));
+        try {
+            const storedData = localStorage.getItem('roleType');
+        
+            // If there's no data, show the LandingNavbar
+            if (!storedData) {
+                setNavbar(<LandingNavbar />);
+                return;
+            }
 
-        // 
-        if (userProfile) {
-            const userRole = userProfile.result.roleType;
+            const userProfile = JSON.parse(storedData);
+            const userRole = userProfile?.result?.roleType;
+
+            // Set navbar based on roleType
             if (userRole === 'Admin') {
                 setNavbar(<AdminNavbar />);
             } else if (userRole === 'User') {
                 setNavbar(<UserNavbar />);
+            } else {
+                // Default to LandingNavbar if roleType is not recognized
+                setNavbar(<LandingNavbar />);
             }
-        } else {
-            setNavbar(<LandingNavbar />);
+        } catch (error) {
+            console.error('Error checking user status:', error);
+            setNavbar(<LandingNavbar />); // Default to LandingNavbar on error
         }
     };
 

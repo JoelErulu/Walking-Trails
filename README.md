@@ -42,7 +42,7 @@ Run app Spring 2023: [Walking App, Spring 2023 version](https://ggctrail.onrende
 
 ### Description
 
-The Walking Trails App is a mobile application designed to enhance the walking experience on Georgia Gwinnett College (GGC) trails through interactive and educational content focused on fitness, health, and wellness. The app is accessible via QR codes placed on signs along the trails. By scanning a QR code, users are directed to the app, where they can access instructional videos, trail maps, exercise guides, and nutrition information, among other features.We are currently  implementing user feedback options for videos (like/dislike), collection of user statistics, and administrator functionalities regarding media management, as well as video retrieval based on category/subcategory.
+The Walking Trails App is a mobile application designed to enhance the walking experience on Georgia Gwinnett College (GGC) trails through interactive and educational content focused on fitness, health, and wellness. The app is accessible via QR codes placed on signs along the trails. By scanning a QR code, users are directed to the app, where they can access instructional videos, trail maps, exercise guides, and nutrition information, among other features. On the App users currently have the ability to register, sign in, edit their profiles, and view the different trails and videos. We are currently  implementing user feedback options for videos (like/dislike), collection of user statistics, and administrator functionalities regarding media management, as well as video retrieval based on category/subcategory.
 
 ### Technologies
 

@@ -24,8 +24,10 @@ const Navbar = () => {
 
             // Set navbar based on roleType
             if (userRole === 'Admin') {
+                console.log("Accessor is an admin")
                 setNavbar(<AdminNavbar />);
             } else if (userRole === 'User') {
+                console.log("Accessor is an user")
                 setNavbar(<UserNavbar />);
             } else {
                 // Default to LandingNavbar if roleType is not recognized

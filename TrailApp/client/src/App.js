@@ -2,9 +2,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// Import components like the GoogleAuthProvider for OAuth functionality
-import { GoogleOAuthProvider } from '@react-oauth/google';
-
 // Import page components & styling
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar/Navbar';
@@ -31,12 +28,8 @@ import GreenTrail from './components/Trails/GreenTrail.js';
 import GrayTrail from './components/Trails/GrayTrail.js';
 
 const App = () => {
-    //TODO: Replace below value in clientID with an updated one.
-    const TOKEN = "222736919095-8clp3t7ndllhnf6jt0n1buveh6a97i62.apps.googleusercontent.com";
 
     return (
-    //The clientId is the unique identifier for the Google OAuth client, enabling the app to integrate Google login.
-    <GoogleOAuthProvider clientId = {TOKEN}>
         <BrowserRouter>
             <div className="pages">
                 <Navbar />
@@ -71,7 +64,6 @@ const App = () => {
                 <Footer />
             </div>
         </BrowserRouter>
-    </GoogleOAuthProvider>
     );
 }
 

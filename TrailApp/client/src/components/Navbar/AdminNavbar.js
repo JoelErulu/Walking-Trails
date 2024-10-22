@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Navbar, Container, Nav, Offcanvas } from 'react-bootstrap';
+
 
 // Import styling & header logo
 import '../../interfaceSettings.css';
@@ -46,60 +48,51 @@ const AdminNavbar = () => {
     // HTML/JSX web page
     // TODO: Redesign page with necessary links for admininstration portals with front end for video handler/statistics viewer REST APIs
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-white">
-            <div className="container-fluid">
-                {/* Logo and "WALKING TRAILS" Header */}
-                <Link className="navbar-brand d-flex align-items-center" to={user ? "/adminHome" : "/"}>
+        <Navbar expand={false} className="navbar-custom mb-3">
+            <Container fluid>
+                <Navbar.Brand as={Link} to="/userHome" className="d-flex align-items-center">
                     <img src={GwinnettLogo} alt="Gwinnett Logo" className="logo me-2" />
-                    <span className="heading">WALKING TRAILS</span>
-                </Link>
+                    <span className="heading-gradient">WALKING TRAILS</span>
+                </Navbar.Brand>
 
-                {/* Navbar menu toggle button & handler for mobile */}
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    onClick={handleMenuToggle}
-                    aria-controls="navbarNav"
-                    aria-expanded={isMenuOpen ? "true" : "false"}
-                    aria-label="Toggle navigation">
-
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                {/* Collapsible navbar menu - visibility toggled by isMenuOpen */}
-                <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/adminHome">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/exercises">Workout</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/hydration">Hydration</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/nutrition">Nutrition</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/climate">Climate</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/statistics">User Statistics</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/profileManagement">Manage Profile</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/adminManager">Admin Management</Link>
-                        </li>
-                        <li className="nav-item">
-                            <button className="btn btn-outline-danger" onClick={logout}>Logout</button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                <Navbar.Toggle
+                    aria-controls="offcanvas-navbar"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                />
+                <Navbar.Offcanvas
+                    id="offcanvas-navbar"
+                    placement="end"
+                    show={isMenuOpen}
+                    onHide={() => setIsMenuOpen(false)}
+                >
+                    <Offcanvas.Header closeButton>
+                        <Offcanvas.Title>Menu</Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        <Nav className="justify-content-end flex-grow-1 pe-3">
+                            <Nav.Link as={Link} to="/userHome" onClick={() => setIsMenuOpen(false)}>
+                                Home
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/exercises" onClick={() => setIsMenuOpen(false)}>
+                                Exercises
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/nutrition" onClick={() => setIsMenuOpen(false)}>
+                                Nutrition
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/hydration" onClick={() => setIsMenuOpen(false)}>
+                                Hydration
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/climate" onClick={() => setIsMenuOpen(false)}>
+                                Climate
+                            </Nav.Link>
+                            <Nav.Link onClick={logout}>
+                                Logout
+                            </Nav.Link>
+                        </Nav>
+                    </Offcanvas.Body>
+                </Navbar.Offcanvas>
+            </Container>
+        </Navbar>
     );
 };
 

@@ -25,7 +25,6 @@ Miscellaneous Tasks
 These are a quick list of the remaining features that need to be implemented:
 
 - Password reset through email
-- Role based access on pages for security
 - Ability to add/like videos & track views
 - Ability to update user profile information
 - Ability to upgrade/downgrade a user's role from administrator portal

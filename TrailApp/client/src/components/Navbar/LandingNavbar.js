@@ -21,7 +21,7 @@ const LandingNavbar = () => {
     return (
         <Navbar expand={false} className="navbar-custom mb-3">
             <Container fluid>
-                <Navbar.Brand href="#" className="d-flex align-items-center">
+                <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
                     <img src={GwinnettLogo} alt="Gwinnett Logo" className="logo me-2" />
                     <span className="heading-gradient">WALKING TRAILS</span>
                 </Navbar.Brand>
@@ -36,7 +36,7 @@ const LandingNavbar = () => {
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
                             <Nav.Link href="/privacy">Privacy</Nav.Link>
-                            <Nav.Link href="/authorization">Log in</Nav.Link>
+                            <Nav.Link href="/authorization">Login</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>

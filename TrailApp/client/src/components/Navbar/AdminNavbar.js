@@ -50,7 +50,7 @@ const AdminNavbar = () => {
     return (
         <Navbar expand={false} className="navbar-custom mb-3">
             <Container fluid>
-                <Navbar.Brand as={Link} to="/userHome" className="d-flex align-items-center">
+                <Navbar.Brand as={Link} to="/adminHome" className="d-flex align-items-center">
                     <img src={GwinnettLogo} alt="Gwinnett Logo" className="logo me-2" />
                     <span className="heading-gradient">WALKING TRAILS</span>
                 </Navbar.Brand>
@@ -70,8 +70,11 @@ const AdminNavbar = () => {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
-                            <Nav.Link as={Link} to="/userHome" onClick={() => setIsMenuOpen(false)}>
+                            <Nav.Link as={Link} to="/adminHome" onClick={() => setIsMenuOpen(false)}>
                                 Home
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/trails" onClick={() => setIsMenuOpen(false)}>
+                                Trails
                             </Nav.Link>
                             <Nav.Link as={Link} to="/exercises" onClick={() => setIsMenuOpen(false)}>
                                 Exercises
@@ -84,6 +87,15 @@ const AdminNavbar = () => {
                             </Nav.Link>
                             <Nav.Link as={Link} to="/climate" onClick={() => setIsMenuOpen(false)}>
                                 Climate
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/profileManagement" onClick={() => setIsMenuOpen(false)}>
+                                User Profile
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/adminManager" onClick={() => setIsMenuOpen(false)}>
+                                Media Manager
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/adminStatistics" onClick={() => setIsMenuOpen(false)}>
+                                Analytics
                             </Nav.Link>
                             <Nav.Link onClick={logout}>
                                 Logout

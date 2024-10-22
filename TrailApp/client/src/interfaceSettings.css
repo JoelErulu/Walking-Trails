@@ -114,6 +114,24 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* Navbar white background */
+.navbar-custom {
+  background-color: white !important; /* Ensure the background stays white */
+  padding: 10px 20px; /* Optional padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+}
+
+/* Gradient text styling */
+.heading-gradient {
+  background: linear-gradient(#3e8c3e, #808080, darkgreen); /* Green, gray, yellow */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 2.5rem; /* Adjust as needed */
+}
+
 /* Navbar menu items */
 
 .navbar-nav .nav-link {

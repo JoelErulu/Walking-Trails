@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from '../Authorization/input.js';
 
-const UpdateProfileForm = ({ formData, handleChange, showPassword }) => {
+const UpdateProfileForm = ({ formData, handleChange, showPassword, handleDelete }) => {
     return (
         <>
             <h2>Update Profile</h2>
@@ -85,6 +85,15 @@ const UpdateProfileForm = ({ formData, handleChange, showPassword }) => {
                 handleChange={handleChange} 
                 type={showPassword ? "text" : "password"}
             />
+            <div className="form-group">
+                <button 
+                    type="button" 
+                    className="btn btn-danger" 
+                    onClick={handleDelete} 
+                >
+                    Delete Profile
+                </button>
+            </div>
         </>
     );
 };

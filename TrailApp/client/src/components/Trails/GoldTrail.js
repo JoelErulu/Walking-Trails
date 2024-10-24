@@ -61,7 +61,7 @@ const Gold = () => {
         <Container fluid>
             <Row className="mt-4">
                 <Col xs={12} sm={6} md={3} className="bg-white p-4">
-                    <h6>Grey Trail</h6>
+                    <h6>Gold Trail</h6>
                     <TrailNavbar />
                     {!selectedMarker && !isVideoOpen && (
                         <p>CLICK MARKER TO VIEW VIDEO</p>

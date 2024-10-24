@@ -67,6 +67,9 @@ const UserNavbar = () => {
                             <Nav.Link as={Link} to="/userHome" onClick={() => setIsMenuOpen(false)}>
                                 Home
                             </Nav.Link>
+                            <Nav.Link as={Link} to="/trails" onClick={() => setIsMenuOpen(false)}>
+                                Trails
+                            </Nav.Link>
                             <Nav.Link as={Link} to="/exercises" onClick={() => setIsMenuOpen(false)}>
                                 Exercises
                             </Nav.Link>

@@ -1,4 +1,3 @@
-// src/components/Authorization/Authorization.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +7,6 @@ import ForgotPasswordForm from '../components/Form/ForgotPasswordForm.js';
 import { signin, signup } from '../actions/auth.js';
 import '../interfaceSettings.css';
 
-// Initial state with updated fields
 const initialState = { 
     username: '', 
     email: '', 
@@ -27,6 +25,7 @@ const Authorization = () => {
     const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [formData, setFormData] = useState(initialState);
     const [resetEmail, setResetEmail] = useState('');
+    const [successMessage, setSuccessMessage] = useState(''); // Success message state
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -39,7 +38,12 @@ const Authorization = () => {
             alert(`Password reset link has been sent to ${resetEmail}`);
             setShowForgotPassword(false); // Go back to Sign In after submission
         } else {
-            isSignup ? dispatch(signup(formData, navigate)) : dispatch(signin(formData, navigate));
+            if (isSignup) {
+                dispatch(signup(formData, navigate));
+                setSuccessMessage('Account created successfully!'); // Set success message on signup
+            } else {
+                dispatch(signin(formData, navigate));
+            }
         }
     };
 
@@ -52,12 +56,14 @@ const Authorization = () => {
         setIsSignup((prev) => !prev);
         setShowPassword(false);
         setShowForgotPassword(false); // Ensure forgot password form is hidden when switching modes
+        setSuccessMessage(''); // Reset success message when switching modes
     };
 
     const showForgotPasswordForm = () => {
         setShowForgotPassword(true);
         setIsSignup(false); // Ensure it exits sign-up mode
         setShowPassword(false); // Hide password visibility toggle
+        setSuccessMessage(''); // Reset success message when switching to forgot password form
     };
 
     return (
@@ -67,6 +73,12 @@ const Authorization = () => {
                     <h5 id="sign-in-title" className="card-title text-center">
                         {showForgotPassword ? 'Reset Password' : (isSignup ? 'Sign Up' : 'Sign In')}
                     </h5>
+
+                    {successMessage && ( // Display the success message if it's set
+                        <div className="alert alert-success text-center">
+                            {successMessage}
+                        </div>
+                    )}
                     
                     <form onSubmit={handleSubmit}>
                         <div id="sign-in-form-group" className="form-group">
@@ -109,7 +121,6 @@ const Authorization = () => {
                             </div>
                         )}
 
-                        {/* Option to go back to Sign In from Forgot Password form */}
                         {showForgotPassword && (
                             <div className="text-center mt-3">
                                 <button 

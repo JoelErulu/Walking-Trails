@@ -86,6 +86,20 @@
 
   /* Heading Gradient */
   --heading-gradient: linear-gradient(#3e8c3e, #808080, #ffcc00); /* Green, gray, yellow */
+
+  /* Typography Variables (Viewport Scaled) */
+  --font-size-heading: clamp(1.75rem, 2.5vw, 3rem);
+  --font-size-lead: clamp(1rem, 2vw, 1.25rem);
+  --font-size-medium: clamp(1.25rem, 1.75vw, 2rem);
+  --font-size-small: clamp(0.875rem, 1.25vw, 1rem);
+
+  /* Button Sizing for Mobile Responsiveness */
+  --btn-padding: clamp(0.5rem, 2.5vw, 0.75rem) clamp(1rem, 4vw, 1.5rem);
+  --btn-margin: 0 auto; /* Keep button center aligned */
+  
+  /* Image Sizes for Responsive Layouts */
+  --image-max-width-md: 80%;
+  --image-max-width-lg: 90%;
 }
 
 /* Navbar Styles */
@@ -101,6 +115,38 @@
   width: 150px;
   height: var(--image-height-auto); /* Using global image height */
   background-color: transparent;
+}
+/*new update */
+/* Ensure a Flexible Grid System with Flexbox */
+.toolbar, .menuContainer, .textContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow content to wrap in smaller screens */
+  justify-content: space-between;
+}
+
+/* Responsive Navbar */
+
+
+.img-fluid {
+  max-width: 100%; /* Make sure images are fully responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+p.lead {
+  font-size: var(--font-size-lead);
+  text-align: justify; /* Helps with readability on small screens */
+}
+
+.btn-primary {
+  padding: var(--btn-padding);
+  display: inline-block;
+}
+
+/* Responsive Footer */
+.footer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items on small screens */
 }
 
 /* "WALKING TRAILS" text styling */
@@ -123,7 +169,7 @@
 
 /* Gradient text styling */
 .heading-gradient {
-  background: linear-gradient(#3e8c3e, #808080, darkgreen); /* Green, gray, yellow */
+  background: linear-gradient(#3e8c3e, #808080, #e5f719); /* Green, gray, yellow */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -323,9 +369,7 @@ p.lead {
         transition: color 0.3s ease;
     }
 
-    .navbar-nav .nav-link:hover {
-        color: white; /* Change text color to white when hovered */
-    }
+    
 
     .btn-outline-danger {
         margin: 10px 0; /* Adjust margin for logout button on mobile */
@@ -539,3 +583,52 @@ p.lead {
   }
 }
 
+/* Improve Typography on Very Small Screens */
+@media (max-width: 360px) {
+  .heading, .btn-primary {
+    font-size: var(--font-size-small); /* Smaller font sizes */
+  }
+
+  .logo {
+    width: 80px; /* Shrink logo for smaller screens */
+  }
+
+  /* Responsive Images */
+  .img-fluid {
+    max-width: 90%; /* Ensure images fit smaller screens */
+  }
+}
+
+/* Ensure Better Readability for Texts */
+@media (max-width: 360px) {
+  h1, h2, h3 {
+    font-size: var(--font-size-small);
+  }
+
+  p {
+    font-size: var(--font-size-small);
+  }
+
+  /* Add Spacing in Footer for Smaller Screens */
+  .footer-card {
+    padding: 10px;
+  }
+}
+
+/* Center Buttons and Links on Mobile */
+@media (max-width: 360px) {
+  .btn-primary, .btn-outline-danger {
+    width: 90%;
+    margin: 10px auto; /* Center align buttons */
+  }
+}
+
+@media (max-width: 360px) {
+  h1, h2, h3, span, .heading-gradient {
+    font-size: var(--font-size-small);
+  }
+
+  p {
+    font-size: var(--font-size-small);
+  }
+}

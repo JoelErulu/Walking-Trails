@@ -1,34 +1,215 @@
 import axios from 'axios';
 
+// Create an Axios instance with a base URL
 const API = axios.create({ baseURL: 'http://localhost:5000' });
 
-export const signUp = (formData) => API.post('/api/user/signup', formData);
-export const signIn = (formData) => API.post('/api/user/signin', formData);
-export const logOut = (token) => API.post('/api/user/logout', token);
+// User API Calls
+export const signUp = async (formData) => {
+    try {
+        const response = await API.post('/api/user/signup', formData);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
 
-// TODO: Integrate with pages & test for functionality
-export const updateUserRole = (id, roleType) => API.patch(`/api/user/updateRole/${id}`, roleType);
-export const updateProfile = (id, formData) => API.patch(`/api/user/updateProfile/${id}`, formData);
-export const deleteUser = (id) => API.delete(`/api/user/${id}`);
-export const fetchUsers = () => API.get('/api/user/users');
-export const fetchUser = (id) => API.get(`/api/user/${id}`)
-export const googleLogin = (token) => API.post('/api/user/googleLogin', token);
+export const signIn = async (formData) => {
+    try {
+        const response = await API.post('/api/user/signin', formData);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
 
-// README: May not need. Keep anyway for now.
-export const fetchTrails = () => API.get('/trails');
-export const createTrail = (newTrail) => API.post('/trails', newTrail);
-export const updateTrail = (id, updatedTrail) => API.patch(`/trails/${id}`, updatedTrail);
-export const deleteTrail = (id) => API.delete(`/trails/${id}`);
+export const logOut = async (token) => {
+    try {
+        const response = await API.post('/api/user/logout', { token });
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
 
-export const fetchMarkers = () => API.get('/marker');
-export const createMarker = (newMarker) => API.post('/marker', newMarker);
-export const updateMarker = (id, updatedMarker) => API.patch(`/marker/${id}`, updatedMarker);
-export const deleteMarker = (id) => API.delete(`/marker/${id}`);
+export const updateUserRole = async (id, roleType) => {
+    try {
+        const response = await API.patch(`/api/user/updateRole/${id}`, { roleType });
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
 
-// TODO: Need to be tested and API functions need to be created server side
-export const fetchVideos = () => API.get('/api/video/videos');
-export const postVideo = (videoData) => API.post('/api/video/upload', videoData);
-export const updateVideo = (id, videoData) => API.patch(`/api/video/${id}`, videoData);
-export const addLike = (id, like) => API.patch(`/api/video/like/${id}`, like);
-export const addDislike = (id, dislike) => API.patch(`/api/video/dislike/${id}`, dislike);
-export const deleteVideo = (id) => API.delete(`/api/video/${id}`);
+export const updateProfile = async (id, formData) => {
+    try {
+        const response = await API.patch(`/api/user/updateProfile/${id}`, formData);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const deleteUser = async (id) => {
+    try {
+        const response = await API.delete(`/api/user/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const fetchUsers = async () => {
+    try {
+        const response = await API.get('/api/user/users');
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const fetchUser = async (id) => {
+    try {
+        const response = await API.get(`/api/user/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const googleLogin = async (token) => {
+    try {
+        const response = await API.post('/api/user/googleLogin', { token });
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+// Trail API Calls
+export const fetchTrails = async () => {
+    try {
+        const response = await API.get('/trails');
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const createTrail = async (newTrail) => {
+    try {
+        const response = await API.post('/trails', newTrail);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const updateTrail = async (id, updatedTrail) => {
+    try {
+        const response = await API.patch(`/trails/${id}`, updatedTrail);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const deleteTrail = async (id) => {
+    try {
+        const response = await API.delete(`/trails/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+// Marker API Calls
+export const fetchMarkers = async () => {
+    try {
+        const response = await API.get('/marker');
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const createMarker = async (newMarker) => {
+    try {
+        const response = await API.post('/marker', newMarker);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const updateMarker = async (id, updatedMarker) => {
+    try {
+        const response = await API.patch(`/marker/${id}`, updatedMarker);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const deleteMarker = async (id) => {
+    try {
+        const response = await API.delete(`/marker/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+// Video API Calls
+export const fetchVideos = async () => {
+    try {
+        const response = await API.get('/api/video/videos');
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const postVideo = async (videoData) => {
+    try {
+        const response = await API.post('/api/video/upload', videoData);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const updateVideo = async (id, videoData) => {
+    try {
+        const response = await API.patch(`/api/video/${id}`, videoData);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const addLike = async (id, like) => {
+    try {
+        const response = await API.patch(`/api/video/like/${id}`, like);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const addDislike = async (id, dislike) => {
+    try {
+        const response = await API.patch(`/api/video/dislike/${id}`, dislike);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};
+
+export const deleteVideo = async (id) => {
+    try {
+        const response = await API.delete(`/api/video/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : error;
+    }
+};

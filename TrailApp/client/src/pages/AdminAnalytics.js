@@ -12,7 +12,10 @@ const AdminAnalytics = () => {
 
     return (
         <div>
-            <h2>Analytics</h2>
+            <h2>Video Analytics</h2>
+            <div></div>
+            <h2>User Demographics</h2>
+            <div></div>
         </div>
     );
 };

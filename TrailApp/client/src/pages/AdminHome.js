@@ -15,9 +15,9 @@ const AdminHome = () => {
                         <Card.Body>
                             <Card.Title><strong>Role Management</strong></Card.Title>
                             <Card.Text>
-                                View registered user profiles and assign roles.
+                                View registered user profiles & assign roles.
                             </Card.Text>
-                            <a href="/AdminManager" className="btn btn-primary">
+                            <a href="/AdminControlPanel" className="btn btn-primary">
                                 Manage Users
                             </a>
                         </Card.Body>
@@ -29,9 +29,9 @@ const AdminHome = () => {
                         <Card.Body>
                             <Card.Title><strong>Media Management</strong></Card.Title>
                             <Card.Text>
-                                Add, update, or delete videos.
+                                Manage videos & how they're listed.
                             </Card.Text>
-                            <a href="/AdminManager" className="btn btn-primary">
+                            <a href="/AdminControlPanel" className="btn btn-primary">
                                 Manage Content
                             </a>
                         </Card.Body>
@@ -41,12 +41,12 @@ const AdminHome = () => {
                 <Col md={4} className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
-                            <Card.Title><strong>Statistics</strong></Card.Title>
+                            <Card.Title><strong>Analytics</strong></Card.Title>
                             <Card.Text>
-                                Analyze site and user statistics
+                                View video & user analytics
                             </Card.Text>
-                            <a href="/adminStatistics" className="btn btn-primary">
-                                Adjust Settings
+                            <a href="/AdminAnalytics" className="btn btn-primary">
+                                View Analytics
                             </a>
                         </Card.Body>
                     </Card>

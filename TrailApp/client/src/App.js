@@ -44,10 +44,10 @@ const App = () => {
                     <Route element={<PrivateRoute allowedRoles={['Admin', 'User']} />}>
                         <Route path="/userHome" element={< UserHome />} />
                         <Route path="/userControlPanel" element={< UserControlPanel />} />
-                        <Route path ="/trails" element = {< Trails />}/>
-                        <Route path ="/climate" element = {< Climate />}/>
-                        <Route path ="/hydration" element = {< Hydration />}/>
-                        <Route path ="/exercises" element = {< Exercises />}/>
+                        <Route path="/trails" element = {< Trails />}/>
+                        <Route path="/climate" element = {< Climate />}/>
+                        <Route path="/hydration" element = {< Hydration />}/>
+                        <Route path="/exercises" element = {< Exercises />}/>
                         <Route path="/nutrition" element={< Nutrition />} />
                         <Route path="/goldTrail" element={< GoldTrail />} />
                         <Route path="/greenTrail" element={< GreenTrail />} />

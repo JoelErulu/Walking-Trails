@@ -5,7 +5,6 @@ import React from 'react';
 import '../interfaceSettings.css';
 import { Card, Row, Col } from 'react-bootstrap';
 
-// TODO: Change link on Role Manager & Media Manager to direct to particular sections on AdminManager page. Or create separate components for both.
 const AdminHome = () => {
     return (
         <div className="container mt-5">

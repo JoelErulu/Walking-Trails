@@ -4,7 +4,11 @@ import React, { useState } from 'react';
 // Import global stylesheet
 import '../interfaceSettings.css';
 
-//README: Proposal for redesign, where all videos appear in YouTube-style grid
+// TODO:
+//      Have videos fetched from DB into arrays by category/subcategory & populate page with video cards.
+//      Upload any new videos clients have prepared through AdminControlPanel.js or Postman
+//      Connect like/dislike button with routing & test functionality. Also add logic to retrieve latest like count, iterate, & send update
+//      Figure out way to track views, maybe scrape from Youtube/Google Drive API
 const Climate = () => {
     const [likeCount, setLikeCount] = useState(0); // Track likes for the video
     const [dislikeCount, setDislikeCount] = useState(0); // Track dislikes for the video
@@ -39,12 +43,6 @@ const Climate = () => {
                     <button onClick={handleDislike}>👎 {dislikeCount}</button>
                 </div>
             </div>
-
-            {/* Add more content as needed */}
-            {/* Provide short blurb for each heading & link to gallery of videos. 
-            Perhaps create a Gallery.js that pulls up a grid of videos, 
-            with backend for filtering based on a specific tag reated to particular category
-            Video.js that pulls up a video player element when thumbnail selected*/}
         </section>
     );
 };

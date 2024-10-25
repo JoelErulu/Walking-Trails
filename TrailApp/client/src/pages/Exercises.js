@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import '../interfaceSettings.css';
 
+// TODO:
+//      Have videos fetched from DB into arrays by category/subcategory & populate page with video cards.
+//      Upload any new videos clients have prepared through AdminControlPanel.js or Postman
+//      Connect like/dislike button with routing & test functionality. Also add logic to retrieve latest like count, iterate, & send update
+//      Figure out way to track views, maybe scrape from Youtube/Google Drive API
 const Exercises = () => {
     const [likeCounts, setLikeCounts] = useState(Array(7).fill(0)); // Adjust based on number of videos
     const [dislikeCounts, setDislikeCounts] = useState(Array(7).fill(0));

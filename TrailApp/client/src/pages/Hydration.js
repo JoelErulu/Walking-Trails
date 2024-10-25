@@ -4,6 +4,11 @@ import React, { useState } from 'react';
 // Import global stylesheet
 import '../interfaceSettings.css';
 
+// TODO:
+//      Have videos fetched from DB into arrays by category/subcategory & populate page with video cards.
+//      Upload any new videos clients have prepared through AdminControlPanel.js or Postman
+//      Connect like/dislike button with routing & test functionality. Also add logic to retrieve latest like count, iterate, & send update
+//      Figure out way to track views, maybe scrape from Youtube/Google Drive API
 // Data for videos
 const videos = [
     {

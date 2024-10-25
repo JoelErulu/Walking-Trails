@@ -9,9 +9,16 @@ import { getVideos, postVideo, deleteVideo, updateVideo } from '../actions/video
 // Import global stylesheet
 import '../interfaceSettings.css';
 
-// TODO: Need to have form to handle video CRUD functionalities
-// TODO: Need to have form to handle user role management
-// TODO: Testing 
+// TODO:
+//       Utilize Bootstrap components for mobile friendly design
+//
+//       Create table to view, edit, delete all videos
+//       COLUMNS: title, category (dropdown select box), subcategory (dropdown select box), url, toggle listing/delisting, delete button
+//       Create "Add Video" button at top of form, with form with these categories in same format
+//
+//       Create table to view & edit role for all registered users
+//       COLUMNS: username, email, roleType (dropdown select box)
+//       Manual Testing: Make sure everything is routed correctly & validated
 const AdminControlPanel = () => {
 
     const dispatch = useDispatch();
@@ -173,17 +180,11 @@ const AdminControlPanel = () => {
             ))}
             */
             }
-            
-
-
             </div>
             </div>
             </div>
-
         </div>
     );
-
-
 }
 
 export default AdminControlPanel;

@@ -5,7 +5,7 @@ import UpdateProfileForm from '../components/Form/UpdateProfile.js'; // Ensure y
 import { getUser, updateUserRole } from '../actions/users';
 
 
-const ProfileManagement = () => {
+const UserControlPanel = () => {
     
     return (
         <div className="container mt-4">
@@ -36,4 +36,4 @@ const ProfileManagement = () => {
     );
 };
 
-export default ProfileManagement;
+export default UserControlPanel;

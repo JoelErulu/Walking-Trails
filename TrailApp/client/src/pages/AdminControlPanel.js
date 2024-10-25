@@ -12,7 +12,7 @@ import '../interfaceSettings.css';
 // TODO: Need to have form to handle video CRUD functionalities
 // TODO: Need to have form to handle user role management
 // TODO: Testing 
-const AdminManager = () => {
+const AdminControlPanel = () => {
 
     const dispatch = useDispatch();
     const users = useSelector((state) => state.users.users);
@@ -186,4 +186,4 @@ const AdminManager = () => {
 
 }
 
-export default AdminManager;
+export default AdminControlPanel;

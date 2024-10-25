@@ -15,7 +15,9 @@ import { Card, Container, Row, Col, Spinner } from 'react-bootstrap';
 const AdminAnalytics = () => {
 
     return (
-        <h1>Analytics</h1>
+        <div>
+            <h2>Analytics</h2>
+        </div>
     );
 };
 

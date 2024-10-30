@@ -134,3 +134,30 @@ export const dislikeVideo = async (req, res) => {
 
     res.status(200).json(videos)
 }
+
+// INCREMENT VIEW COUNT
+export const incrementViewCount = async (req, res) => {
+    const { id } = req.params;
+
+    // Check to see if id is valid
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'No such video.' });
+    }
+
+    try {
+        // Increment views
+        const video = await Videos.findOneAndUpdate(
+            { _id: id },
+            { $inc: { views: 1 } }, // Increment the views field by 1
+            { new: true } // Return the updated document
+        );
+
+        if (!video) {
+            return res.status(404).json({ error: 'No such video.' });
+        }
+
+        res.status(200).json(video);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error occurred.' });
+    }
+};

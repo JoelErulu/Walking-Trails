@@ -5,7 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +23,12 @@
     "nodemon": "^3.1.7",
     "npm": "^10.9.0",
     "server": "file:"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/register": "^7.25.9",
+    "jasmine": "^5.4.0",
+    "jest": "^29.7.0",
+    "mocha": "^10.8.2"
   }
 }

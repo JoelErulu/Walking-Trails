@@ -9,24 +9,29 @@ import {
     deleteVideo,
     updateVideo,
     likeVideo,
-    dislikeVideo
+    dislikeVideo,
+    incrementViewCount 
+
 } from '../controllers/videoController.js'
 
-const router = express.Router()
+
+const router = express.Router();
 
 // GET all videos
-router.get('/videos', getAllVideos)
+router.get('/videos', getAllVideos);
 // GET a single video
-router.get('/:id', getVideo)
+router.get('/:id', getVideo);
 // POST a new video || ADMIN ONLY
-router.post('/upload', createVideo)
+router.post('/upload', createVideo);
 // DELETE a video || ADMIN ONLY
-router.delete('/:id', deleteVideo)
+router.delete('/:id', deleteVideo);
 // UPDATE a video || ADMIN ONLY
-router.patch('/:id', updateVideo)
+router.patch('/:id', updateVideo);
 // LIKE a video || ADMIN ONLY
-router.patch('/like/:id', likeVideo)
+router.patch('/like/:id', likeVideo);
 // DISLIKE a video || ADMIN ONLY
-router.patch('/dislike/:id', dislikeVideo)
+router.patch('/dislike/:id', dislikeVideo);
+// INCREMENT VIEW COUNT
+router.patch('/view/:id', incrementViewCount); 
 
 export default router;

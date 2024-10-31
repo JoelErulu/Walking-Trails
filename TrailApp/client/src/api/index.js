@@ -34,4 +34,6 @@ export const addLike = (id, like) => API.patch(`/api/video/like/${id}`, like);
 export const addDislike = (id, dislike) => API.patch(`/api/video/dislike/${id}`, dislike);
 export const deleteVideo = (id) => API.delete(`/api/video/${id}`);
 export const incrementViewCount = (id) => API.patch(`/api/video/view/${id}`);
+export const getVideoViewsByUrl = (url) => API.get(`/api/video/views/${encodeURIComponent(url)}`);
+
 

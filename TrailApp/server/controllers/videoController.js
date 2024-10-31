@@ -1,43 +1,44 @@
-import Videos from '../models/videoModel.js'
-import mongoose from 'mongoose'
+import Videos from '../models/videoModel.js';
+import mongoose from 'mongoose';
 
-// TODO: Add and test API functions for like/dislike
-// TODO: Add the form validity checks from UserController.js
-// GET all video
+// GET all videos
 export const getAllVideos = async (req, res) => {
-    const videos = await Videos.find({}).sort({createdAt: -1})
-    res.status(200).json(videos)
-}
+    try {
+        const videos = await Videos.find({}).sort({ createdAt: -1 });
+        res.status(200).json(videos);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error occurred.' });
+    }
+};
 
 // GET a single video
 export const getVideo = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
 
-    //Check to see if id valid
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'No such video.'})
-    } 
-
-    const videos = await Videos.findById(id)
-    
-    if (!videos) {
-        return res.status(404).json({ error: 'No such video.' })
+        return res.status(404).json({ error: 'No such video.' });
     }
-    res.status(200).json(videos)
-}
+
+    try {
+        const video = await Videos.findById(id);
+        if (!video) {
+            return res.status(404).json({ error: 'No such video.' });
+        }
+        res.status(200).json(video);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error occurred.' });
+    }
+};
 
 // GET videos by category
 export const getVideoByCategory = async (req, res) => {
     const { category } = req.params;
 
     try {
-        // Find videos by category (if category is a string, no need to check ObjectId)
-        const videos = await Videos.find({ category: category });
-
+        const videos = await Videos.find({ category });
         if (!videos || videos.length === 0) {
-            return res.status(404).json({ error: 'No such video.' });
+            return res.status(404).json({ error: 'No videos found in this category.' });
         }
-
         res.status(200).json(videos);
     } catch (error) {
         res.status(500).json({ error: 'Server error occurred.' });
@@ -46,117 +47,121 @@ export const getVideoByCategory = async (req, res) => {
 
 // CREATE a new video
 export const createVideo = async (req, res) => {
-    const { title, url, category, subCategory, totLikes, totDislikes } = req.body
-    
-    //Add document to MongoDB collection
+    const { title, url, category, subCategory, totLikes, totDislikes } = req.body;
+
     try {
-        const videos = await Videos.create({ title, url, category, subCategory, totLikes, totDislikes })
-        res.status(200).json(videos)
+        const video = await Videos.create({ title, url, category, subCategory, totLikes, totDislikes });
+        res.status(201).json(video);
     } catch (error) {
-        res.status(400).json({ mssg: error.message })
+        res.status(400).json({ message: error.message });
     }
-}
+};
 
 // DELETE a video
 export const deleteVideo = async (req, res) => {
-    const { id } = req.params
-
-    //Check to see if id valid
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'No such video.'})
-    }
-
-    const videos = await Videos.findOneAndDelete({_id: id})
-
-    if (!videos) {
-        return res.status(404).json({ error: 'No such video.' })
-    }
-
-    res.status(200).json(videos)
-}
-
-// UPDATE a video
-export const updateVideo = async (req, res) => {
-    const { id } = req.params
-    
-    //Check to see if id valid
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'No such video.'})
-    } 
-
-    const videos = await Videos.findOneAndUpdate({_id: id}, {
-        ...req.body
-    })
-
-    if (!videos) {
-        return res.status(404).json({ error: 'No such video.' })
-    }
-
-    res.status(200).json(videos)
-}
-
-// LIKE a video
-export const likeVideo = async (req, res) => {
-    const { id } = req.params
-    
-    //Check to see if id valid
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'No such video.'})
-    } 
-
-    const videos = await Videos.findOneAndUpdate({_id: id}, {
-        ...req.body
-    })
-
-    if (!videos) {
-        return res.status(404).json({ error: 'No such video.' })
-    }
-
-    res.status(200).json(videos)
-}
-
-// DISLIKE a video
-export const dislikeVideo = async (req, res) => {
-    const { id } = req.params
-    
-    //Check to see if id valid
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'No such video.'})
-    } 
-
-    const videos = await Videos.findOneAndUpdate({_id: id}, {
-        ...req.body
-    })
-
-    if (!videos) {
-        return res.status(404).json({ error: 'No such video.' })
-    }
-
-    res.status(200).json(videos)
-}
-
-// INCREMENT VIEW COUNT
-export const incrementViewCount = async (req, res) => {
     const { id } = req.params;
 
-    // Check to see if id is valid
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ error: 'No such video.' });
     }
 
     try {
-        // Increment views
-        const video = await Videos.findOneAndUpdate(
-            { _id: id },
-            { $inc: { views: 1 } }, // Increment the views field by 1
-            { new: true } // Return the updated document
-        );
-
+        const video = await Videos.findByIdAndDelete(id);
         if (!video) {
             return res.status(404).json({ error: 'No such video.' });
         }
-
         res.status(200).json(video);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error occurred.' });
+    }
+};
+
+// UPDATE a video
+export const updateVideo = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'No such video.' });
+    }
+
+    try {
+        const video = await Videos.findByIdAndUpdate(id, { ...req.body }, { new: true });
+        if (!video) {
+            return res.status(404).json({ error: 'No such video.' });
+        }
+        res.status(200).json(video);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error occurred.' });
+    }
+};
+
+// LIKE a video
+export const likeVideo = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'No such video.' });
+    }
+
+    try {
+        const video = await Videos.findByIdAndUpdate(id, { $inc: { totLikes: 1 } }, { new: true });
+        if (!video) {
+            return res.status(404).json({ error: 'No such video.' });
+        }
+        res.status(200).json(video);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error occurred.' });
+    }
+};
+
+// DISLIKE a video
+export const dislikeVideo = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'No such video.' });
+    }
+
+    try {
+        const video = await Videos.findByIdAndUpdate(id, { $inc: { totDislikes: 1 } }, { new: true });
+        if (!video) {
+            return res.status(404).json({ error: 'No such video.' });
+        }
+        res.status(200).json(video);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error occurred.' });
+    }
+};
+
+// INCREMENT VIEW COUNT
+export const incrementViewCount = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'No such video.' });
+    }
+
+    try {
+        const video = await Videos.findByIdAndUpdate(id, { $inc: { views: 1 } }, { new: true });
+        if (!video) {
+            return res.status(404).json({ error: 'No such video.' });
+        }
+        res.status(200).json(video);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error occurred.' });
+    }
+};
+
+// GET video views by URL
+export const getVideoViewsByUrl = async (req, res) => {
+    const { url } = req.params;
+
+    try {
+        const video = await Videos.findOne({ url }).select('views');
+        if (!video) {
+            return res.status(404).json({ error: 'No such video.' });
+        }
+        res.status(200).json({ views: video.views });
     } catch (error) {
         res.status(500).json({ error: 'Server error occurred.' });
     }

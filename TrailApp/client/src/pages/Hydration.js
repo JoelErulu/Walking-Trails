@@ -71,7 +71,7 @@ const Hydration = () => {
                             <div className="feedback mt-2">
                                 <button className="btn btn-outline-success" onClick={() => handleLike(index)}>👍 {likeCounts[index]}</button>
                                 <button className="btn btn-outline-danger" onClick={() => handleDislike(index)}>👎 {dislikeCounts[index]}</button>
-                                <p>Views: {video.viewCount || 0}</p> {/* Display view count */}
+                                <p>Views: {video.views}</p> {/* Display view count */}
                             </div>
                         </div>
                     </div>

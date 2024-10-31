@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as api from '../api/index.js'; // Ensure the path is correct
 import { useDispatch } from 'react-redux'; // Import useDispatch for dispatching actions
-import { incrementViewCount } from '../actions/videos.js'; // Import the increment view count action
+import { incrementViewCount, fetchVideos } from '../actions/videos.js'; // Import the increment view count action
 
 const Climate = () => {
     const [videos, setVideos] = useState([]); // State to hold video data
@@ -82,7 +82,7 @@ const Climate = () => {
                                 <div className="feedback">
                                     <button onClick={() => handleLike(video._id)}>👍 {likeCounts[video._id] || 0}</button>
                                     <button onClick={() => handleDislike(video._id)}>👎 {dislikeCounts[video._id] || 0}</button>
-                                    <p>Views: {video.viewCount || 0}</p> {/* Display view count */}
+                                    <p>Views: {video.views}</p> {/* Display view count */}
                                 </div>
                             </div>
                         ))

@@ -368,6 +368,37 @@ p.lead {
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
+/* Tables */
+.table-wrapper {
+  max-height: 30%;
+  width: 100%;
+  overflow: scroll;
+  display:inline-block;
+}
+
+.btn-secondary {
+  background-color: var(--primary-color);
+  border-radius: var(--btn-border-radius);
+  
+  border-color: var(--btn-border-color); 
+  margin-bottom: '10px';
+
+}
+
+.btn-secondary:hover
+{
+    background-color: var(--btn-hover-color);
+    transition: 0.24s;
+}
+
+.btn-secondary:active
+{
+    color: var(--btn-active-color);
+    transition: 0.24s;
+}
+
+
+
 /* Responsive Buttons */
 @media (min-width: 360px) and (max-width: 992px) {
   .btn-responsive {

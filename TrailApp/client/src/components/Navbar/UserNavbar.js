@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 // Import styling & header logo
 import '../../interfaceSettings.css';
-import GwinnettLogo from '../../assets/images/ggclogo.png';
+import GwinnettLogo from '../../assets/images/ggclogo.svg';
 import { Navbar, Container, Nav, Offcanvas } from 'react-bootstrap';
 
 

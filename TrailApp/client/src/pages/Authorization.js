@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import SignInForm from '../components/Form/SignInForm.js';
 import SignUpForm from '../components/Form/SignUpForm.js';
-import ForgotPasswordForm from '../components/Form/ForgotPasswordForm.js'; 
+import ForgotPasswordForm from '../components/Form/ForgotPasswordForm.js';
 import { signin, signup } from '../actions/auth.js';
+import { sendResetLink } from '../api/index.js';  // Import the reset link API function
 import '../interfaceSettings.css';
 
 const initialState = { 
@@ -25,22 +26,32 @@ const Authorization = () => {
     const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [formData, setFormData] = useState(initialState);
     const [resetEmail, setResetEmail] = useState('');
-    const [successMessage, setSuccessMessage] = useState(''); // Success message state
+    const [successMessage, setSuccessMessage] = useState(''); 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleShowPassword = () => setShowPassword((prev) => !prev);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (showForgotPassword) {
-            // Handle forgot password submit
-            alert(`Password reset link has been sent to ${resetEmail}`);
-            setShowForgotPassword(false); // Go back to Sign In after submission
+            try {
+                console.log("Attempting to send reset link for email:", resetEmail);
+                const response = await sendResetLink(resetEmail);
+                if (response.status === 200) {
+                    setSuccessMessage("Password reset link has been sent to your email.");
+                    setShowForgotPassword(false); // Return to Sign In view
+                } else {
+                    console.error("Unexpected response:", response);
+                }
+            } catch (error) {
+                console.error("Error sending reset link:", error);
+                alert(error.response?.data?.message || "Email not found. Please try again.");
+            }
         } else {
             if (isSignup) {
                 dispatch(signup(formData, navigate));
-                setSuccessMessage('Account created successfully!'); // Set success message on signup
+                setSuccessMessage('Account created successfully!');
             } else {
                 dispatch(signin(formData, navigate));
             }
@@ -55,15 +66,15 @@ const Authorization = () => {
     const switchMode = () => {
         setIsSignup((prev) => !prev);
         setShowPassword(false);
-        setShowForgotPassword(false); // Ensure forgot password form is hidden when switching modes
-        setSuccessMessage(''); // Reset success message when switching modes
+        setShowForgotPassword(false);
+        setSuccessMessage('');
     };
 
     const showForgotPasswordForm = () => {
         setShowForgotPassword(true);
-        setIsSignup(false); // Ensure it exits sign-up mode
-        setShowPassword(false); // Hide password visibility toggle
-        setSuccessMessage(''); // Reset success message when switching to forgot password form
+        setIsSignup(false);
+        setShowPassword(false);
+        setSuccessMessage('');
     };
 
     return (
@@ -74,7 +85,7 @@ const Authorization = () => {
                         {showForgotPassword ? 'Reset Password' : (isSignup ? 'Sign Up' : 'Sign In')}
                     </h5>
 
-                    {successMessage && ( // Display the success message if it's set
+                    {successMessage && (
                         <div className="alert alert-success text-center">
                             {successMessage}
                         </div>

@@ -33,4 +33,24 @@ router.post('/logout', logout);
 // TODO: Google OAuth
 // router.post('/googleLogin', googleSignIn);
 
+
+//handle password update
+router.post('/forgotPassword', async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const user = await User.findOne({ email: new RegExp(`^${email}$`, 'i') });
+
+        if (!user) {
+            return res.status(404).json({ message: "Email not found" });
+        }
+
+        // Logic to send the reset email...
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: "Server error" });
+    }
+
+});
+
 export default router;

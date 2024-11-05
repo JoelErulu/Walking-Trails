@@ -10,6 +10,9 @@ export const logOut = (token) => API.post('/api/user/logout', token);
 // TODO: Integrate with pages & test for functionality
 export const updateUserRole = (id, roleType) => API.patch(`/api/user/updateRole/${id}`, roleType);
 export const updateProfile = (id, formData) => API.patch(`/api/user/updateProfile/${id}`, formData);
+export const sendResetLink = (emailData) => API.post('/api/user/reset-password', emailData);
+export const updatePassword = (token, newPassword) => API.post(`/api/user/updatePassword`, { token, newPassword });
+
 export const deleteUser = (id) => API.delete(`/api/user/${id}`);
 export const fetchUsers = () => API.get('/api/user/users');
 export const fetchUser = (id) => API.get(`/api/user/${id}`)

@@ -581,6 +581,8 @@ p.lead {
   .section {
     width: 100%;
   }
+
+  
 }
 
 /* Improve Typography on Very Small Screens */
@@ -601,7 +603,7 @@ p.lead {
 
 /* Ensure Better Readability for Texts */
 @media (max-width: 360px) {
-  h1, h2, h3 {
+  h1, h2, h3{
     font-size: var(--font-size-small);
   }
 

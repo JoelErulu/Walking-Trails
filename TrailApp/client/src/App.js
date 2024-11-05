@@ -23,9 +23,6 @@ import Nutrition from './pages/Nutrition.js';
 import Exercises from './pages/Exercises.js';
 import About from './pages/About.js'
 import Privacy from './pages/Privacy.js'
-import GoldTrail from './components/Trails/GoldTrail.js';
-import GreenTrail from './components/Trails/GreenTrail.js';
-import GrayTrail from './components/Trails/GrayTrail.js';
 
 const App = () => {
 
@@ -49,9 +46,6 @@ const App = () => {
                         <Route path="/hydration" element = {< Hydration />}/>
                         <Route path="/exercises" element = {< Exercises />}/>
                         <Route path="/nutrition" element={< Nutrition />} />
-                        <Route path="/goldTrail" element={< GoldTrail />} />
-                        <Route path="/greenTrail" element={< GreenTrail />} />
-                        <Route path="/grayTrail" element={< GrayTrail />} />
                     </Route>
 
                     {/* Admin Routes */}

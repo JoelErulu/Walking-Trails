@@ -3,7 +3,7 @@
 /* Reusable Styles */
 :root {
   /* Color Variables */
-  --primary-color: green;
+  --primary-color: darkgreen;
   --secondary-color: #6c757d;
 
   /* Font Variables */
@@ -27,11 +27,11 @@
   --btn-hover-color: rgb(0, 90, 0);
   --btn-active-color: rgb(0, 120, 0);
 
-  --menu-button-bg-color: #3e8c3e; /* Green background for menu button */
+  --menu-button-bg-color: darkgreen; /* Green background for menu button */
   --menu-button-text-color: white; /* White text color for menu button */
 
   /* Heading Gradient */
-  --heading-gradient: linear-gradient(#3e8c3e, #808080, #ffcc00); /* Green, gray, yellow */
+  --heading-gradient: linear-gradient(darkgreen, #808080, white); /* Green, gray, yellow */
 
   /* Typography Variables (Viewport Scaled) */
   --font-size-heading: clamp(1.75rem, 2.5vw, 3rem);

@@ -1,31 +1,15 @@
-// Import dependency
 import mongoose from 'mongoose';
 
-// Schema
-const videoSchema = mongoose.Schema({
-    title: { 
-        type: String, 
-        required: true 
-    },
-    url: { 
-        type: String, 
-        required: true,
-        unique: true
-    },
-    category: { 
-        type: String, 
-        required: true 
-    },
-    subCategory: {
-        type: String,
-        required: true
-    },
-    totLikes: { 
-        type: String 
-    },
-    totDislikes: { 
-        type: String 
-    },
-}, { timestamps: true }); 
+const videoSchema = new mongoose.Schema({
+    title: { type: String, required: true },
+    url: { type: String, required: true },
+    category: { type: String, required: true },
+    subCategory: { type: String, required: true },
+    totLikes: { type: Number, default: 0 },
+    totDislikes: { type: Number, default: 0 },
+    views: { type: Number, default: 0 }, 
+}, { timestamps: true });
 
-export default mongoose.model('video', videoSchema);
+const Videos = mongoose.model('Videos', videoSchema);
+
+export default Videos;

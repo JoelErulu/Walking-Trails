@@ -1,24 +1,16 @@
 // Import dependencies
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import mongoose from 'mongoose';
 mongoose.set('strictQuery', false);
 import dotenv from 'dotenv';
 dotenv.config();
-import cors from 'cors';
-// TODO: Could possible reuse this if we store videos on Mongo
-//import Grid  from 'gridfs-stream';
-
-// README: May need later.
-import OAuth2Client from 'google-auth-library';
-import GoogleAuth from 'google-auth-library';
-import {auth} from 'google-auth-library'
 
 
 // Import routes
 import trailRoutes from './routes/trails.js';
 import markerRoutes from './routes/marker.js';
-
 import userRoutes from './routes/userRoutes.js'
 import videoRoutes from './routes/videoRoutes.js'
 

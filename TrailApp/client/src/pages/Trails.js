@@ -17,7 +17,7 @@ import greyThumb from '../assets/images/grayMapThumbnail.png';
 import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
 import { GoldCoords, GreenCoords, GreyCoords } from '../components/Trails/Coords.js';
 
-// README: This entire page needs to be restyled.
+// TODO: This entire page needs to be restyled.
 const Home = () => {
     const navigate = useNavigate();
 

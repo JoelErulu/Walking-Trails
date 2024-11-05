@@ -12,10 +12,10 @@ import PrivateRoute from './api/PrivateRoutes.js';
 import Landing from './pages/Landing.js';
 import Authorization from './pages/Authorization.js';
 import AdminHome from './pages/AdminHome.js'
-import AdminManager from './pages/AdminManager.js'
-import AdminStatistics from './pages/AdminStatistics.js'
+import AdminControlPanel from './pages/AdminControlPanel.js'
+import AdminAnalytics from './pages/AdminAnalytics.js'
 import UserHome from './pages/UserHome.js'
-import ProfileManagement from './pages/ProfileManagement.js';
+import UserControlPanel from './pages/UserControlPanel.js';
 import Trails from './pages/Trails.js';
 import Climate from './pages/Climate.js';
 import Hydration from './pages/Hydration.js';
@@ -43,11 +43,11 @@ const App = () => {
                     {/* Authorized Routes */}
                     <Route element={<PrivateRoute allowedRoles={['Admin', 'User']} />}>
                         <Route path="/userHome" element={< UserHome />} />
-                        <Route path="/profileManagement" element={< ProfileManagement />} />
-                        <Route path ="/trails" element = {< Trails />}/>
-                        <Route path ="/climate" element = {< Climate />}/>
-                        <Route path ="/hydration" element = {< Hydration />}/>
-                        <Route path ="/exercises" element = {< Exercises />}/>
+                        <Route path="/userControlPanel" element={< UserControlPanel />} />
+                        <Route path="/trails" element = {< Trails />}/>
+                        <Route path="/climate" element = {< Climate />}/>
+                        <Route path="/hydration" element = {< Hydration />}/>
+                        <Route path="/exercises" element = {< Exercises />}/>
                         <Route path="/nutrition" element={< Nutrition />} />
                         <Route path="/goldTrail" element={< GoldTrail />} />
                         <Route path="/greenTrail" element={< GreenTrail />} />
@@ -57,8 +57,8 @@ const App = () => {
                     {/* Admin Routes */}
                     <Route element={<PrivateRoute allowedRoles={['Admin']} />}>
                         <Route path="/adminHome" element={< AdminHome />} />
-                        <Route path="/adminManager" element={< AdminManager />} />
-                        <Route path="/adminStatistics" element={< AdminStatistics />} />
+                        <Route path="/adminControlPanel" element={< AdminControlPanel />} />
+                        <Route path="/adminAnalytics" element={< AdminAnalytics />} />
                     </Route>
                 </Routes>
                 <Footer />

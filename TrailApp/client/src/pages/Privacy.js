@@ -4,7 +4,6 @@ import React from 'react';
 // Import global stylesheet
 import '../interfaceSettings.css';
 
-/* This is copied over from the GGC.edu privacy policy as a temporary placeholder. */
 const Privacy = () => {
     return (
         <section id="privacy" className="container mt-5">

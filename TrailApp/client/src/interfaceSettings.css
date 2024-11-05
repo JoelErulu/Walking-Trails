@@ -1,60 +1,6 @@
 /* Global Stylesheet */
-/* Navbar Styles */
-
-.toolbar {
-    display: flex;
-    justify-content: space-between; /* Spread content to left and right */
-    width: 100%;
-}
-
-.menuContainer {
-    display: flex;
-    justify-content: flex-start; /* Align menu button to the left */
-    flex: 1; /* Take up space on the left side */
-}
-
-.textContainer {
-    display: flex;
-    justify-content: flex-end; /* Align text to the right */
-    flex: 1; /* Take up space on the right side */
-}
-
-.heading {
-    color: #000; /* Change the text color to black or as needed */
-    font-size: 2rem;
-    text-decoration: none;
-}
-
-.menuButton {
-    color: white;
-    background-color: green; /* Button color */
-}
-
-.menuButton:hover {
-    background-color: #283593; /* Hover color */
-}
-
-.menu {
-    background-color: #f5f5f5; /* Background color of dropdown */
-}
-
-.pic {
-    width: 50px; /* Adjust the size as needed */
-    height: 50px;
-    margin-right: 16px; /* Space between the logo and text */
-}
-
-.trailsCollapse {
-    text-align: center;
-}
-
-.trailsCollapse:hover {
-  cursor: pointer;
-}
-
 
 /* Reusable Styles */
-
 :root {
   /* Color Variables */
   --primary-color: green;
@@ -95,37 +41,28 @@
 
   /* Button Sizing for Mobile Responsiveness */
   --btn-padding: clamp(0.5rem, 2.5vw, 0.75rem) clamp(1rem, 4vw, 1.5rem);
-  --btn-margin: 0 auto; /* Keep button center aligned */
+  --btn-margin: 0 auto;
   
   /* Image Sizes for Responsive Layouts */
   --image-max-width-md: 80%;
   --image-max-width-lg: 90%;
 }
 
-/* Navbar Styles */
+/* Trails.js */
+.trailsCollapse {
+    text-align: center;
+}
 
-.navbar {
-  border: none;
-  padding: 10px 20px;
+.trailsCollapse:hover {
+  cursor: pointer;
 }
 
 /* Gwinnett logo styling */
-
 .logo {
   width: 150px;
   height: var(--image-height-auto); /* Using global image height */
   background-color: transparent;
 }
-/*new update */
-/* Ensure a Flexible Grid System with Flexbox */
-.toolbar, .menuContainer, .textContainer {
-  display: flex;
-  flex-wrap: wrap; /* Allow content to wrap in smaller screens */
-  justify-content: space-between;
-}
-
-/* Responsive Navbar */
-
 
 .img-fluid {
   max-width: 100%; /* Make sure images are fully responsive */
@@ -142,15 +79,7 @@ p.lead {
   display: inline-block;
 }
 
-/* Responsive Footer */
-.footer-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center items on small screens */
-}
-
 /* "WALKING TRAILS" text styling */
-
 .heading {
   font-size: var(--font-size-large); /* Using global font size */
   font-weight: bold;
@@ -160,61 +89,17 @@ p.lead {
   -webkit-text-fill-color: transparent;
 }
 
-/* Navbar white background */
-.navbar-custom {
-  background-color: white !important; /* Ensure the background stays white */
-  padding: 10px 20px; /* Optional padding */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
-}
-
 /* Gradient text styling */
 .heading-gradient {
   background: linear-gradient(#3e8c3e, #808080, #e5f719); /* Green, gray, yellow */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
   font-weight: bold;
   font-size: 2.5rem; /* Adjust as needed */
 }
 
-/* Navbar menu items */
-
-.navbar-nav .nav-link {
-  font-size: var(--font-size-small); /* Using global font size */
-  font-weight: bold;
-  color: #000;
-  transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: var(--primary-color); /* Using global primary color */
-}
-
-.underline-link {
-  text-decoration: underline;
-  text-decoration-thickness: .5px; /* Thickness of the underline */
-  text-decoration-color: var(--underline-style); /* Use the global variable */
-  text-underline-offset: 5px; /* Offset the underline from the text */
-}
-
-:root {
-  --underline-style: 2px solid #3498db; /* Global underline style */
-}
-
-/* Menu button styling */
-
-.navbar-toggler {
-  border: none;
-}
-
-.navbar-toggler-icon {
-  background-color: var(--menu-button-bg-color); /* Using global variable for background */
-  color: var(--menu-button-text-color); /* Using global variable for text color */
-}
-
 /* Custom button for "Logout" */
-
 .btn-outline-danger {
   color: var(--menu-button-text-color);
   background-color: var(--primary-color);
@@ -228,7 +113,6 @@ p.lead {
 }
 
 /* General button styling */
-
 .btn-primary {
   background-color: var(--primary-color);
   padding: var(--btn-padding);
@@ -254,9 +138,8 @@ p.lead {
 }
 
 /* Heading and Paragraph Styling */
-
 h1, h2 {
-  font-size: var(--font-size-heading); /* Using global heading size */
+  font-size: var(--font-size-heading);
   text-align: center;
 
 }
@@ -266,15 +149,17 @@ h3 {
 }
 
 p.lead {
-  font-size: var(--font-size-lead); /* Using global lead text size */
+  font-size: var(--font-size-lead);
 }
 
 /* Footer Styling */
-
 .footer-card {
   background-color: #f8f9fa;
   padding: 20px;
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-card .card-text {
@@ -300,16 +185,16 @@ p.lead {
 
 /* Centering Images */
 .img-container {
-  display: flex;              /* Enable flexbox */
-  justify-content: center;    /* Center images horizontally */
-  align-items: center;        /* Center images vertically */
-  margin: auto;              /* Center container within parent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 .img-fluid {
-  max-width: var(--image-max-width-md); /* Using global image width */
-  height: var(--image-height-auto);      /* Using global image height */
-  display: block;                     /* Make the image a block element */
+  max-width: var(--image-max-width-md);
+  height: var(--image-height-auto);
+  display: block;
 }
 
 /* Adjust image sizes for smaller screens */
@@ -336,13 +221,33 @@ p.lead {
   }
 }
 
-
 /* Mobile Menu Button */
 .navbar-toggler {
   border: none;
   background-color: var(--menu-button-bg-color); /* Green background */
   color: var(--menu-button-text-color); /* White text */
   display: block; /* Display on mobile */
+}
+
+.navbar-toggler-icon {
+  background-color: var(--menu-button-bg-color); /* Using global variable for background */
+  color: var(--menu-button-text-color); /* Using global variable for text color */
+}
+
+.navbar-nav .nav-link {
+  font-size: var(--font-size-small); /* Using global font size */
+  font-weight: bold;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color); /* Using global primary color */
+}
+
+.navbar {
+  border: none;
+  padding: 10px 20px;
 }
 
 /* Collapsible navbar styles for mobile */
@@ -376,18 +281,7 @@ p.lead {
     }
 }
 
-/* Custom menu toggle button */
-.navbar-toggler {
-    border: none;
-    background-color: var(--menu-button-bg-color); /* Green background */
-    color: var(--menu-button-text-color); /* White text */
-    display: block; /* Display on mobile */
-}
-
-
-
-/* Authorization Page Styles */
-
+/* Authorization.js */
 #sign-in-container {
   max-width: 500px;
   margin: auto;
@@ -408,8 +302,7 @@ p.lead {
   font-weight: bold;
 }
 
-#sign-in-submit-btn,
-#google-signin-btn {
+#sign-in-submit-btn {
   border-radius: 8px;
   padding: 10px;
   font-weight: 600;
@@ -419,12 +312,6 @@ p.lead {
 
 #sign-in-submit-btn {
   background-color: green;
-  color: white;
-  padding: 5px;
-}
-
-#google-signin-btn {
-  background-color: 1px solid green;
   color: white;
   padding: 5px;
 }
@@ -457,36 +344,62 @@ p.lead {
   padding: 5px;
 }
 
-/* Input.css */
-
+/* Input.js & AdminManager.js */
 .input-label {
-  font-weight: bold;  /* Makes label text bold */
-  margin-bottom: 3px;  /* Adds spacing below the label */
-  color: #333;  /* Custom color for the label */
-  text-align: center;  /* Center-align the label text */
+  font-weight: bold;
+  margin-bottom: 3px;
+  color: #333;
+  text-align: center;
 }
 
 .input-field {
-  border: 1px solid #ced4da;  /* Custom border color */
-  border-radius: 0.25rem;  /* Rounded corners */
-  transition: border-color 0.2s;  /* Smooth transition for focus effect */
-  text-align: center;  /* Center-align the input text */
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.2s;
+  text-align: center;
 }
 
 .input-field:focus {
-  border-color: #007bff;  /* Change border color on focus */
-  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);  /* Add shadow on focus */
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
 
 .input-toggle {
-  /* Style for the show/hide password button */
-  border-radius: 0 0.25rem 0.25rem 0;  /* Round only right side */
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
-/* Responsive Elements */
+/* Tables */
+.table-wrapper {
+  max-height: 30%;
+  width: 100%;
+  overflow: scroll;
+  display:inline-block;
+}
+
+.btn-secondary {
+  background-color: var(--primary-color);
+  border-radius: var(--btn-border-radius);
+  
+  border-color: var(--btn-border-color); 
+  margin-bottom: '10px';
+
+}
+
+.btn-secondary:hover
+{
+    background-color: var(--btn-hover-color);
+    transition: 0.24s;
+}
+
+.btn-secondary:active
+{
+    color: var(--btn-active-color);
+    transition: 0.24s;
+}
+
+
 
 /* Responsive Buttons */
-
 @media (min-width: 360px) and (max-width: 992px) {
   .btn-responsive {
     padding:10px;
@@ -516,7 +429,6 @@ p.lead {
 }
 
 /*Responsive Headers*/
-
 @media (min-width: 161px) and (max-width: 359px) {
   .h1, .h2, h3 {
     padding:8px;
@@ -536,7 +448,6 @@ p.lead {
 }
 
 /* Responsive Paragraphs */
-
 @media (min-width: 161px) and (max-width: 359px) {
   .p, .p-lead, .card-text, .navbar-nav, .nav-link, #sign-in-card, #sign-in-container {
     padding:8px;
@@ -588,16 +499,16 @@ p.lead {
 /* Improve Typography on Very Small Screens */
 @media (max-width: 360px) {
   .heading, .btn-primary {
-    font-size: var(--font-size-small); /* Smaller font sizes */
+    font-size: var(--font-size-small);
   }
 
   .logo {
-    width: 80px; /* Shrink logo for smaller screens */
+    width: 80px;
   }
 
   /* Responsive Images */
   .img-fluid {
-    max-width: 90%; /* Ensure images fit smaller screens */
+    max-width: 90%;
   }
 }
 
@@ -621,7 +532,7 @@ p.lead {
 @media (max-width: 360px) {
   .btn-primary, .btn-outline-danger {
     width: 90%;
-    margin: 10px auto; /* Center align buttons */
+    margin: 10px auto;
   }
 }
 

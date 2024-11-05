@@ -82,8 +82,8 @@ const UserNavbar = () => {
                             <Nav.Link as={Link} to="/climate" onClick={() => setIsMenuOpen(false)}>
                                 Climate
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/profileManagement" onClick={() => setIsMenuOpen(false)}>
-                                User Profile
+                            <Nav.Link as={Link} to="/userControlPanel" onClick={() => setIsMenuOpen(false)}>
+                                My Profile
                             </Nav.Link>
                             <Nav.Link onClick={logout}>
                                 Logout

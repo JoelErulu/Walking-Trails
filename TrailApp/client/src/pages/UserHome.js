@@ -3,9 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Import global stylesheet & images
-// TODO: Replace with GGC approved imagery
 import '../interfaceSettings.css';
-import pic1 from '../assets/images/Landing1.jpg';
+import pic1 from '../assets/images/Landing7.jpg';
 import pic2 from '../assets/images/Landing2.jpg';
 import pic3 from '../assets/images/Landing3.jpg';
 import pic4 from '../assets/images/Landing4.jpg';
@@ -15,7 +14,7 @@ const UserHome = () => {
 
   return (
     <div className="container-xl">
-      {/* Showcase Section */}
+      {/* Trails Section */}
       <section id="showcase">
         <div className="container my-4">
           <div className="card shadow-sm">
@@ -29,11 +28,11 @@ const UserHome = () => {
               </div>
               <div className="col-md-6 p-3 p-md-5">
                 <h1>Walking Trails</h1>
-                <p className="lead my-4">
-                  The Walking Trails App is a mobile application designed to enhance the walking experience on Georgia Gwinnett College (GGC) trails through interactive and educational content focused on fitness, health, and wellness. This project is a collaborative effort between ITEC students, who are responsible for app development, and EXSC students, who create the content.
+                <p className="lead my-4" style={{ textAlign: 'center' }}>
+                  Explore the different walking trails on campus!
                 </p>
-                <Link to="/authorization" className="btn btn-primary mt-3 btn-responsive btn-block">
-                  <i className="bi bi-chevron-right"></i> <span>Sign In</span>
+                <Link to="/trails" className="btn btn-primary mt-3 btn-responsive btn-block">
+                  <i className="bi bi-chevron-right"></i> <span>Trails</span>
                 </Link>
               </div>
             </div>

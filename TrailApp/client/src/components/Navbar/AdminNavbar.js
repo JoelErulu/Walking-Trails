@@ -88,13 +88,13 @@ const AdminNavbar = () => {
                             <Nav.Link as={Link} to="/climate" onClick={() => setIsMenuOpen(false)}>
                                 Climate
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/profileManagement" onClick={() => setIsMenuOpen(false)}>
-                                User Profile
+                            <Nav.Link as={Link} to="/userControlPanel" onClick={() => setIsMenuOpen(false)}>
+                                My Profile
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/adminManager" onClick={() => setIsMenuOpen(false)}>
-                                Media Manager
+                            <Nav.Link as={Link} to="/adminControlPanel" onClick={() => setIsMenuOpen(false)}>
+                                Admin Control Panel
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/adminStatistics" onClick={() => setIsMenuOpen(false)}>
+                            <Nav.Link as={Link} to="/adminAnalytics" onClick={() => setIsMenuOpen(false)}>
                                 Analytics
                             </Nav.Link>
                             <Nav.Link onClick={logout}>

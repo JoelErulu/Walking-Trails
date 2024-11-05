@@ -1,13 +1,12 @@
 // Import React component
 import React from 'react';
+
+// Import global stylesheet
+import '../interfaceSettings.css';
 import pic1 from '../assets/images/drKaren.png';
 import pic2 from '../assets/images/drWals.png';
 import pic3 from '../assets/images/drCorey.png';
 
-// Import global stylesheet
-import '../interfaceSettings.css';
-
-// TODO: Communicate with clients for details on this.
 const About = () => {
     return (
         <section id="about" className="container mt-5">
@@ -22,7 +21,6 @@ const About = () => {
             American College of Sports Medicine (ACSM). This project was supported, in part through GGC STEC 
             4500 research mini grant and a GGC Research SEED grant funds.
             </p>
-            {/* List out credits of all participants? */}
             <h3>Dr. Karen Lee Perell-Gerson</h3>
             <img
                 src={pic1}

@@ -60,3 +60,13 @@ export const deleteVideo = (id) => async (dispatch) => {
         console.log(err);
     }
 }
+
+export const incrementViewCount = (id) => async (dispatch) => {
+    try {
+        const { data } = await api.incrementViewCount(id); 
+        console.log(data);
+        dispatch({ type: UPDATE, payload: data });
+    } catch (err) {
+        console.log(err);
+    }
+};

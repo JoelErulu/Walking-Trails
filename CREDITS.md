@@ -2,13 +2,13 @@
 
 ### Team Members Fall 2022
 
-1. **Serena** - _Lead Programmer, Team Manager_
+1. **Serena Bonsu** - _Lead Programmer, Team Manager_
 
-2. **Jared** - _Database Modeler / Documentation Lead_
+2. **Jared Perry** - _Database Modeler / Documentation Lead_
 
-3. **Ti** - _UI/UX Design / Testing_
+3. **Ti Nguyen** - _UI/UX Design / Testing_
 
-4. **Charlie** - _Testing Lead / Client Liason_
+4. **Charlie Chae** - _Testing Lead / Client Liason_
 
 
 
@@ -60,4 +60,4 @@
 
 3. **Josiah Haines** - _Code Architecture, Documentation Lead_
 
-4. **Ginette Wilson-Bahun** - _UI/UX, Client Liason_
+4. **Ayoko Ginette Wilson-Bahun** - _UI/UX, Client Liason_

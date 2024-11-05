@@ -7,7 +7,7 @@ import { Navbar, Container, Nav, Offcanvas } from 'react-bootstrap';
 
 // Import styling & header logo
 import '../../interfaceSettings.css';
-import GwinnettLogo from '../../assets/images/gwinnett.png';
+import GwinnettLogo from '../../assets/images/ggclogo.png';
 
 const AdminNavbar = () => {
 

@@ -9,6 +9,7 @@
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "axios": "^1.7.7",
+    "axios-mock-adapter": "^2.1.0",
     "bootstrap": "^5.3.3",
     "client": "file:",
     "google-map-react": "^2.2.0",
@@ -23,6 +24,7 @@
     "react-scripts": "^5.0.1",
     "react-test-renderer": "^18.2.0",
     "redux": "^4.2.1",
+    "redux-mock-store": "^1.5.5",
     "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4"
   },

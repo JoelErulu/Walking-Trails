@@ -17,10 +17,11 @@ import AdminAnalytics from './pages/AdminAnalytics.js'
 import UserHome from './pages/UserHome.js'
 import UserControlPanel from './pages/UserControlPanel.js';
 import Trails from './pages/Trails.js';
-import Climate from './pages/Climate.js';
-import Hydration from './pages/Hydration.js';
-import Nutrition from './pages/Nutrition.js';
-import Exercises from './pages/Exercises.js';
+import BodyWeightExercises from './pages/BodyWeightExercises.js';
+import ProperWalkingTechniques from './pages/ProperWalkingTechniques.js';
+import StrechesForWalking from './pages/StretchesForWalking.js';
+import InjuryPrevention from './pages/InjuryPrevention.js';
+import NutritionandHydration from './pages/Nutrition&Hydration.js';
 import About from './pages/About.js'
 import Privacy from './pages/Privacy.js'
 import GoldTrail from './components/Trails/GoldTrail.js';
@@ -45,10 +46,11 @@ const App = () => {
                         <Route path="/userHome" element={< UserHome />} />
                         <Route path="/userControlPanel" element={< UserControlPanel />} />
                         <Route path="/trails" element = {< Trails />}/>
-                        <Route path="/climate" element = {< Climate />}/>
-                        <Route path="/hydration" element = {< Hydration />}/>
-                        <Route path="/exercises" element = {< Exercises />}/>
-                        <Route path="/nutrition" element={< Nutrition />} />
+                        <Route path="/properWalkingTechniques" element = {< ProperWalkingTechniques />}/>
+                        <Route path="/strechesForWalking" element = {< StrechesForWalking />}/>
+                        <Route path="/bodyWeightExercises" element = {< BodyWeightExercises />}/>
+                        <Route path="/injuryPrevention" element={< InjuryPrevention />} />
+                        <Route path="/nutritionandHydration" element={< NutritionandHydration />} />
                         <Route path="/goldTrail" element={< GoldTrail />} />
                         <Route path="/greenTrail" element={< GreenTrail />} />
                         <Route path="/grayTrail" element={< GrayTrail />} />

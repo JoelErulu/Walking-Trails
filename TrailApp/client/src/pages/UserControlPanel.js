@@ -1,8 +1,9 @@
-import React from 'react';
-import UserInfoForm from '../components/Form/UserInfoForm.js';
+import React, { useState, useEffect } from 'react';
 
-import UpdateProfileForm from '../components/Form/UpdateProfile.js'; // Ensure you import the UpdateProfileForm
-import { getUser, updateUserRole } from '../actions/users';
+import UserInfoForm from '../components/Form/UserInfoForm.js';
+import UpdateProfileForm from '../components/Form/UpdateProfile.js';
+import { getUser, deleteUser } from '../actions/users.js';
+import { updateProfile } from '../actions/auth.js';
 
 // TODO:
 //      Add and test functionality of buttons for "Delete Profile" & "Submit" 
@@ -16,6 +17,54 @@ import { getUser, updateUserRole } from '../actions/users';
 //      Fix routing to fetch current user information.
 const UserControlPanel = () => {
     
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        gender: '',
+        age: '',
+        ethnicity: '',
+        community: '',
+        password: '',
+        confirmPassword: '',
+    });
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    // TODO: Implement handleSubmit and handleDelete as needed
+    const handleSubmit = async () => {
+        try {
+            // Call your update user API
+            await updateProfile(formData);
+            // Handle success (e.g., show a success message)
+        } catch (error) {
+            // Handle error (e.g., show an error message)
+        }
+    };
+    
+    const handleDelete = async () => {
+        // Show a confirmation dialog before deleting
+        const confirmed = window.confirm("Are you sure you want to delete your profile?");
+        if (confirmed) {
+            await deleteUser(formData);
+            // Handle success/error as needed
+        }
+    };
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            const userData = await getUser();
+            setFormData(userData); // Assuming getUser returns the user data object.
+        };
+        fetchUserData();
+    }, []);
+
     return (
         <div className="container mt-4">
             <h1>Profile Management</h1>
@@ -33,9 +82,11 @@ const UserControlPanel = () => {
                         <div className="card-body">
                             <h5 className="card-title">Update Profile</h5>
                             <UpdateProfileForm 
-                                formData={{ /* Pass the necessary form data here */ }} 
-                                handleChange={() => { /* Add your handleChange function here */ }} 
-                                showPassword={false} // or a state variable to control password visibility
+                                formData={formData}
+                                handleChange={handleChange}
+                                showPassword={showPassword}
+                                handleDelete={handleDelete}
+                                handleSubmit={handleSubmit}
                             />
                         </div>
                     </div>

@@ -24,9 +24,6 @@ import InjuryPrevention from './pages/InjuryPrevention.js';
 import NutritionandHydration from './pages/Nutrition&Hydration.js';
 import About from './pages/About.js'
 import Privacy from './pages/Privacy.js'
-import GoldTrail from './components/Trails/GoldTrail.js';
-import GreenTrail from './components/Trails/GreenTrail.js';
-import GrayTrail from './components/Trails/GrayTrail.js';
 
 const App = () => {
 
@@ -51,9 +48,6 @@ const App = () => {
                         <Route path="/bodyWeightExercises" element = {< BodyWeightExercises />}/>
                         <Route path="/injuryPrevention" element={< InjuryPrevention />} />
                         <Route path="/nutritionandHydration" element={< NutritionandHydration />} />
-                        <Route path="/goldTrail" element={< GoldTrail />} />
-                        <Route path="/greenTrail" element={< GreenTrail />} />
-                        <Route path="/grayTrail" element={< GrayTrail />} />
                     </Route>
 
                     {/* Admin Routes */}

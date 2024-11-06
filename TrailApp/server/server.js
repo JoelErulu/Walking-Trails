@@ -9,8 +9,6 @@ dotenv.config();
 
 
 // Import routes
-import trailRoutes from './routes/trails.js';
-import markerRoutes from './routes/marker.js';
 import userRoutes from './routes/userRoutes.js'
 import videoRoutes from './routes/videoRoutes.js'
 
@@ -28,9 +26,6 @@ app.use((req, res, next)  => {
 app.use(express.json())
 
 // Routes for API functions
-app.use('/api/trails', trailRoutes)
-app.use('/api/marker', markerRoutes)
-
 app.use('/api/user', userRoutes)
 app.use('/api/video', videoRoutes)
 

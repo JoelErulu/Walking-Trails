@@ -1,10 +1,9 @@
 import React from 'react';
 import Input from '../Authorization/input.js';
 
-const UpdateProfileForm = ({ formData, handleChange, showPassword, handleDelete }) => {
+const UpdateProfileForm = ({ formData, handleChange, showPassword, handleDelete, handleSubmit }) => {
     return (
         <>
-            <h2>Update Profile</h2>
             <Input 
                 id="username-input" 
                 name="username" 
@@ -92,6 +91,13 @@ const UpdateProfileForm = ({ formData, handleChange, showPassword, handleDelete 
                     onClick={handleDelete} 
                 >
                     Delete Profile
+                </button>
+                <button 
+                    type="button" 
+                    className="btn btn-danger" 
+                    onClick={handleSubmit} 
+                >
+                    Submit Changes
                 </button>
             </div>
         </>

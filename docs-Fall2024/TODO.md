@@ -12,9 +12,6 @@ These are all the tasks that must be completed:
 ##### CLIENT
 
 User Interface/User Experience
-- (Priority: High) Add page elements to conform with UI requirements and improve mobile user experience
-    -> GoldTrail.js | GrayTrail.js | GreenTrail.js
-    -> AdminControlPanel.js | AdminAnalytics.js
 - (Priority: High) Add and test functionality of buttons for "Delete Profile" & "Submit" 
     -> UserControlPanel.js
 - (Priority: High) When deleting profile, open form that prompts user to type in their username and current password & confirm deletion. 
@@ -29,13 +26,14 @@ User Interface/User Experience
 - (Priority: High) Create mechanism so password reset form link is sent to user's email when "Forgot Password" is clicked. Create page for that as well, which then navigates to /Authorization.js after password is updated.
 
 Miscellaneous Tasks
-- (Priority: Low) Fix Google Maps API connection & replace key -> Trails/
 - (Priority: Low) Design API calls & functionality for user/video statistics tracking for admins -> AdminStatistics.js
 
+
+##### Quick List
 These are a quick list of the remaining features that need to be implemented:
 
 - Password reset through email
-- Ability to add/like videos & track views
-- Ability to update user profile information
+- Fix add/like buttons & track views & likes
+- Fix submit & delete buttons to update user profile information
 - Ability to upgrade/downgrade a user's role from administrator portal
-- Ability to upload & delete embedded videos to DB
+- Ability to upload/delete videos from DB, and list/delist embedded videos on site

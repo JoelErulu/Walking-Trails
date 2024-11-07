@@ -55,11 +55,6 @@ The Walking Trails App is a mobile application designed to enhance the walking e
   https://nodejs.org/en/
 - React
   https://reactjs.org/
-- Google Maps API
-- https://developers.google.com/maps
-- (IMPORTANT)
-- The Google Maps API needs key access from Google through paid access.
-  Either a renewal of a access is needed or use a new Google account to obtain another key through free trial for the map to work.
 
 ### Installation Steps
 
@@ -72,7 +67,6 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 3. Run 'npm install' for automatic installation of project dependencies. Run 'npm update' to update them to latest versions, but be aware - some things might be out-of-date & deprecated with no replacements.
    
    Alternatively, enter the following commands:
-   npm i @react-oauth/google
    npm i axios
    npm i bootstrap
    npm i jwt-decode
@@ -85,7 +79,6 @@ The Walking Trails App is a mobile application designed to enhance the walking e
    npm i redux
    npm i redux-thunk
    npm i --legacy-peer-deps
-   npm i -S @react-google-maps/api
    npm install react-bootstrap bootstrap
 
 5. Move to the "server" directory (cd C:/../WalkingTrailApp/TrailApp/server)
@@ -100,7 +93,6 @@ The Walking Trails App is a mobile application designed to enhance the walking e
    npm i jsonwebtoken  
    npm i mongoose  
    npm i nodemon
-   npm i google-auth-library
    npm install bcrypt
 
 ### How to Run
@@ -123,7 +115,7 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 2. Custom navbar that generate based on user role. We wanted to lock certain pages so they could only be accessed by users who are signed in, and also for security purposes.
 3. Role-based access for all pages. This is great for security, as we wouldn't want non-signed in users to access content they shouldn't be able to see.
 4. All new site map. We heavily modified the landing page, and kept only the trails pages from the previous group, with modified UI design.
-5. The previous groups had developed video upload and retrieval for markers on the trail maps. However, our new requirements required video galleries and not map-marker based videos. We kept their previous groups work, and implemented our solution in parallel on new pages using embedded links & Google Drive for right now for proof of concept.
+5. The previous groups had developed video upload and retrieval for markers on the trail maps. However, our new requirements required video galleries and not map-marker based videos. We have since removed all previous code, but this code can be revisited by inspecting the Github's commit histories.
 
 ### Features in progress
 

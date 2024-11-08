@@ -8,7 +8,7 @@
 
   /* Font Variables */
   --font-size-heading: 2rem;
-  --font-size-lead: 1.25rem;
+  --font-size-lead: 0.5rem;
   --font-size-large: 2.5rem;
   --font-size-small: 1rem;
   --font-size-medium: 1.75rem;
@@ -71,7 +71,7 @@
 
 p.lead {
   font-size: var(--font-size-lead);
-  text-align: justify; /* Helps with readability on small screens */
+   /* Helps with readability on small screens */
 }
 
 .btn-primary {

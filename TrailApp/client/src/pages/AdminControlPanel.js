@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // Import components
 import { getUsers, updateUserRole } from '../actions/users';
 import { getVideos, postVideo, deleteVideo, updateVideo } from '../actions/videos';
-import ProfileControlPanel from '../components/Admin/ProfileControlPanel';
+import ProfileControlPanel from '../components/Admin/Profilecontrolpanel';
 
 // Import global stylesheet
 import '../interfaceSettings.css';

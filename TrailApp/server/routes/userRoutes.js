@@ -39,7 +39,7 @@ router.post('/forgotPassword', async (req, res) => {
     const { email } = req.body;
 
     try {
-        const user = await User.findOne({ email: new RegExp(`^${email}$`, 'i') });
+        const user = await User.findOne({ email: new RegExp(`^${email.trim()}$`, 'i') });
 
         if (!user) {
             return res.status(404).json({ message: "Email not found" });

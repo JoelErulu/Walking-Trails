@@ -1,42 +1,46 @@
+// Import React components
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// Import global stylesheet & images
 import '../interfaceSettings.css';
 import pic1 from '../assets/images/Landing1.jpg';
 import pic2 from '../assets/images/Landing2.jpg';
 import pic3 from '../assets/images/Landing3.jpg';
 import pic4 from '../assets/images/Landing4.jpg';
 import pic5 from '../assets/images/Landing5.jpg';
+import pic6 from '../assets/images/Landing6.jpg';
 
-const Landing = () => {
-  return (
-    <div className="container-xl">
-      {/* Showcase Section */}
-      <section id="showcase">
-        <div className="container my-4">
-          <div className="card shadow-sm">
-            <div className="row align-items-center">
-              <div className="col-md-6 text-center">
-                <img
-                  src={pic1}
-                  alt="GGC Trails"
-                  className="img-fluid rounded mx-auto"
-                />
-              </div>
-              <div className="col-md-6 p-3 p-md-5">
-                <h1>Walking Trails</h1>
-                <p className="lead my-4">
-                  The Walking Trails App is a mobile application designed to enhance the walking experience on Georgia Gwinnett College (GGC) trails through interactive and educational content focused on fitness, health, and wellness. This project is a collaborative effort between ITEC students, who are responsible for app development, and EXSC students, who create the content.
-                </p>
-                <Link to="/authorization" className="btn btn-primary mt-3 btn-responsive btn-block">
-                  <i className="bi bi-chevron-right"></i> <span>Sign In</span>
-                </Link>
+    const Landing = () => {
+      return (
+        <div className="container-xl">
+          {/* Showcase Section */}
+          <section id="showcase">
+            <div className="container my-4">
+              <div className="card shadow-sm">
+                <div className="row align-items-center">
+                  <div className="col-md-6 text-center">
+                    <img
+                      src={pic1}
+                      alt="GGC Trails"
+                      className="img-fluid rounded mx-auto"
+                    />
+                  </div>
+                  <div className="col-md-6 p-3 p-md-5">
+                    <h1>Walking Trails</h1>
+                    <p className="lead my-4">
+                      The Walking Trails App is a mobile application designed to enhance the walking experience on Georgia Gwinnett College (GGC) trails through interactive and educational content focused on fitness, health, and wellness. This project is a collaborative effort between ITEC students, who are responsible for app development, and EXSC students, who create the content.
+                    </p>
+                    <Link to="/authorization" className="btn btn-primary mt-3 btn-responsive btn-block">
+                      <i className="bi bi-chevron-right"></i> <span>Sign In</span>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Exercise Section */}
+      {/* Body Weight Exercises Section */}
       <section id="exercise">
         <div className="container my-4">
           <div className="card shadow-sm">
@@ -49,9 +53,9 @@ const Landing = () => {
                 />
               </div>
               <div className="col-md-6 p-3 p-md-5">
-                <h2>Exercises</h2>
+                <h2>Body Weight Exercises</h2>
                 <p className="lead">
-                  Personalized workout tutorials and tailored workout spaces represent a revolution in the fitness world, a shift towards a more individualized approach to health and wellness.
+                  Try a variety of body-weight exercises to build strength and endurance.
                 </p>
                 <Link to="/authorization" className="btn btn-primary mt-3 btn-responsive btn-block">
                   <i className="bi bi-chevron-right"></i> <span>Exercises</span>
@@ -62,25 +66,25 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Hydration Section */}
-      <section id="hydration">
+      {/* Proper Walking Techniques Section */}
+      <section id="properWalkingTechniques">
         <div className="container my-4">
           <div className="card shadow-sm">
             <div className="row align-items-center">
               <div className="col-md-6 text-center">
                 <img
                   src={pic3}
-                  alt="Hydration importance"
+                  alt="Proper Walking Techniques"
                   className="img-fluid rounded mx-auto"
                 />
               </div>
               <div className="col-md-6 p-3 p-md-5">
-                <h2>Hydration</h2>
+                <h2>Proper Walking Techniques</h2>
                 <p className="lead">
-                  Hydration is crucial for maintaining the body's balance, especially during physical activities. Proper hydration supports energy levels, helps regulate body temperature, and enhances overall physical performance.
+                  Learn techniques to improve your walking posture and efficiency.
                 </p>
                 <Link to="/authorization" className="btn btn-primary mt-3 btn-responsive btn-block">
-                  <i className="bi bi-chevron-right"></i> <span>Hydration</span>
+                  <i className="bi bi-chevron-right"></i> <span>Proper Walking Techniques</span>
                 </Link>
               </div>
             </div>
@@ -88,25 +92,25 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Nutrition Section */}
-      <section id="nutrition">
+      {/* Stretches For Walking Section */}
+      <section id="stretchesForWalking">
         <div className="container my-4">
           <div className="card shadow-sm">
             <div className="row align-items-center">
               <div className="col-md-6 text-center">
                 <img
                   src={pic4}
-                  alt="Nutrition for a healthy lifestyle"
+                  alt="Stretches for Walking"
                   className="img-fluid rounded mx-auto"
                 />
               </div>
               <div className="col-md-6 p-3 p-md-5">
-                <h2>Nutrition</h2>
+                <h2>Stretches For Walking</h2>
                 <p className="lead">
-                  Nutrition is the cornerstone of a healthy lifestyle, providing the essential nutrients needed to fuel your body. Proper nutrition can enhance performance, speed up recovery, and improve overall health.
+                  Enhance flexibility and prevent injuries with these essential stretches.
                 </p>
                 <Link to="/authorization" className="btn btn-primary mt-3 btn-responsive btn-block">
-                  <i className="bi bi-chevron-right"></i> <span>Nutrition</span>
+                  <i className="bi bi-chevron-right"></i> <span>Stretches For Walking</span>
                 </Link>
               </div>
             </div>
@@ -114,25 +118,51 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Climate Section */}
-      <section id="climate">
+      {/* Nutrition and Hydration Section */}
+      <section id="nutritionAndHydration">
+        <div className="container my-4">
+          <div className="card shadow-sm">
+            <div className="row align-items-center">
+              <div className="col-md-6 text-center">
+                <img
+                  src={pic6}
+                  alt="Nutrition and Hydration"
+                  className="img-fluid rounded mx-auto"
+                />
+              </div>
+              <div className="col-md-6 p-3 p-md-5">
+                <h2>Nutrition and Hydration</h2>
+                <p className="lead">
+                  Fuel your body with the right nutrients and stay hydrated for better performance.
+                </p>
+                <Link to="/authorization" className="btn btn-primary mt-3 btn-responsive btn-block">
+                  <i className="bi bi-chevron-right"></i> <span>Nutrition and Hydration</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Injury Prevention Section */}
+      <section id="injuryPrevention">
         <div className="container my-4">
           <div className="card shadow-sm">
             <div className="row align-items-center">
               <div className="col-md-6 text-center">
                 <img
                   src={pic5}
-                  alt="Climate and outdoor activities"
+                  alt="Injury Prevention"
                   className="img-fluid rounded mx-auto"
                 />
               </div>
               <div className="col-md-6 p-3 p-md-5">
-                <h2>Climate and Environment</h2>
+                <h2>Injury Prevention</h2>
                 <p className="lead">
-                  Climate and environmental conditions play a significant role in outdoor physical activities. Understanding how weather affects your performance, from heat and humidity to cold and wind, allows you to adjust your workouts and take precautions for safe and effective exercise.
+                  Learn tips and techniques to prevent injuries and stay active.
                 </p>
                 <Link to="/authorization" className="btn btn-primary mt-3 btn-responsive btn-block">
-                  <i className="bi bi-chevron-right"></i> <span>Climate</span>
+                  <i className="bi bi-chevron-right"></i> <span>Injury Prevention</span>
                 </Link>
               </div>
             </div>

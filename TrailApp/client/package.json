@@ -4,14 +4,13 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
-    "@react-google-maps/api": "^2.20.1",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "axios": "^1.7.7",
+    "axios-mock-adapter": "^2.1.0",
     "bootstrap": "^5.3.3",
     "client": "file:",
-    "google-map-react": "^2.2.0",
     "i": "^0.3.7",
     "jwt-decode": "^3.1.2",
     "npm": "^10.9.0",
@@ -23,6 +22,7 @@
     "react-scripts": "^5.0.1",
     "react-test-renderer": "^18.2.0",
     "redux": "^4.2.1",
+    "redux-mock-store": "^1.5.5",
     "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4"
   },

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // Import components
 import { getUsers, updateUserRole } from '../actions/users';
 import { getVideos, postVideo, deleteVideo, updateVideo } from '../actions/videos';
-import Profilecontrolpanel from '../components/Admin/Profilecontrolpanel';
+import ProfileControlPanel from '../components/Admin/ProfileControlPanel';
 
 // Import global stylesheet
 import '../interfaceSettings.css';
@@ -71,7 +71,7 @@ const AdminControlPanel = () => {
           {/* Insert input form that takes in user email & searches for them in database to update their roleType */}
           {/* Reuse code from oldDirectory/admin/AdminPrivilege*/}
 
-          <Profilecontrolpanel />
+          <ProfileControlPanel />
        
           <hr />
           <Videocomponent />

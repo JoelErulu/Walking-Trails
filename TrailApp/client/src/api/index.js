@@ -16,18 +16,6 @@ export const updatePassword = (token, newPassword) => API.post(`/api/user/update
 export const deleteUser = (id) => API.delete(`/api/user/${id}`);
 export const fetchUsers = () => API.get('/api/user/users');
 export const fetchUser = (id) => API.get(`/api/user/${id}`)
-export const googleLogin = (token) => API.post('/api/user/googleLogin', token);
-
-// README: May not need. Keep anyway for now.
-export const fetchTrails = () => API.get('/trails');
-export const createTrail = (newTrail) => API.post('/trails', newTrail);
-export const updateTrail = (id, updatedTrail) => API.patch(`/trails/${id}`, updatedTrail);
-export const deleteTrail = (id) => API.delete(`/trails/${id}`);
-
-export const fetchMarkers = () => API.get('/marker');
-export const createMarker = (newMarker) => API.post('/marker', newMarker);
-export const updateMarker = (id, updatedMarker) => API.patch(`/marker/${id}`, updatedMarker);
-export const deleteMarker = (id) => API.delete(`/marker/${id}`);
 
 // TODO: Need to be tested and API functions need to be created server side
 export const fetchVideos = () => API.get('/api/video/videos');

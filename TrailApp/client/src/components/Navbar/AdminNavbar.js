@@ -7,7 +7,7 @@ import { Navbar, Container, Nav, Offcanvas } from 'react-bootstrap';
 
 // Import styling & header logo
 import '../../interfaceSettings.css';
-import GwinnettLogo from '../../assets/images/ggclogo.png';
+import GwinnettLogo from '../../assets/images/ggclogo.svg';
 
 const AdminNavbar = () => {
 
@@ -76,17 +76,20 @@ const AdminNavbar = () => {
                             <Nav.Link as={Link} to="/trails" onClick={() => setIsMenuOpen(false)}>
                                 Trails
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/exercises" onClick={() => setIsMenuOpen(false)}>
-                                Exercises
+                            <Nav.Link as={Link} to="/bodyWeightExercises" onClick={() => setIsMenuOpen(false)}>
+                                Body Weight Exercises
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/nutrition" onClick={() => setIsMenuOpen(false)}>
-                                Nutrition
+                            <Nav.Link as={Link} to="/strechesForWalking" onClick={() => setIsMenuOpen(false)}>
+                                Stretches For Walking
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/hydration" onClick={() => setIsMenuOpen(false)}>
-                                Hydration
+                            <Nav.Link as={Link} to="/properWalkingTechniques" onClick={() => setIsMenuOpen(false)}>
+                                Proper Walking Techniques
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/climate" onClick={() => setIsMenuOpen(false)}>
-                                Climate
+                            <Nav.Link as={Link} to="/nutritionandHydration" onClick={() => setIsMenuOpen(false)}>
+                                Nutrition and Hydration
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/injuryPrevention" onClick={() => setIsMenuOpen(false)}>
+                                Injury Prevention
                             </Nav.Link>
                             <Nav.Link as={Link} to="/userControlPanel" onClick={() => setIsMenuOpen(false)}>
                                 My Profile

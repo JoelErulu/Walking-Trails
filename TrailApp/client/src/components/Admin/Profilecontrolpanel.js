@@ -68,7 +68,7 @@ const Profilecontrolpanel = () => {
 
 
     return (
-        <div className="container col-lg-10 col-md-12 p-3 pb-3 text-center card shadow-sm">
+        <div className="container col-lg-12 col-md-12 p-3 pb-3 text-center card shadow-sm">
             {/* Insert input form that takes in user email & searches for them in database to update their roleType */}
             {/* Reuse code from oldDirectory/admin/AdminPrivilege*/}
 
@@ -81,7 +81,7 @@ const Profilecontrolpanel = () => {
                     className="input-field"
                     value={searchTerm}
                     onChange={handleSearchChange}
-                    placeholder="Enter email"
+                    placeholder="Search Profiles"
                     required
                     style={{ marginRight: '8px' }}
                 />
@@ -89,13 +89,12 @@ const Profilecontrolpanel = () => {
             </form>
             </div>
             <hr />
-
             <table class="table table-hover table-responsive table-wrapper">
             <thead>
             <tr>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Date Created</th>
+                {/*<th>Date Created</th>*/}
                 <th>Role</th>
                 <th>Actions</th>
             </tr>
@@ -108,7 +107,7 @@ const Profilecontrolpanel = () => {
                 <tr key={index}>
                     <td>{e.username}</td>
                     <td>{e.email}</td>
-                    <td>{e.createdAt}</td>
+                    {/*<td>{e.createdAt}</td>*/}
                     <td>{e.roleType}</td>
                     <td><button onClick={() => handleButtonClick(e.username, e.email)} className='btn btn-secondary btn-responsive btn-block'>Action</button></td>
                 </tr>
@@ -123,32 +122,6 @@ const Profilecontrolpanel = () => {
         }
         </tbody>
         </table>
-        {matchedProfile && (
-        <div>
-        <h2>Profile Information:</h2>
-        <p className="lead">Matching Profile: <b>{message}</b></p>
-        <p className="lead">UserName: {matchedProfile.username}</p>
-        <p className="lead">Email: {matchedProfile.email}</p>
-        <p className="lead">Date Created: {matchedProfile.createdAt}</p>
-        <p className="lead">Role: {matchedProfile.roleType}</p>
-        <label className="lead">
-            <input 
-                type="checkbox"
-                checked={matchedProfile.roleType === 'admin'}
-                onChange={(isChecked) =>
-                    handleCheckboxChange(matchedProfile._id, isChecked)
-                }
-            />
-            {" "}Admin
-            </label>
-            <br />
-        </div>
-        )}
-        {!matchedProfile && inputEmail && (
-            <p>No matching profile found.</p>
-            )}
-
-
         </div>
 
     );

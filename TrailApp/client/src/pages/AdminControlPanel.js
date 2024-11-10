@@ -1,11 +1,10 @@
 // Import React components
 import React, { useState, useEffect, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+//import { useDispatch, useSelector } from 'react-redux';
 
 // Import components
-import { getUsers, updateUserRole } from '../actions/users';
-import { getVideos, postVideo, deleteVideo, updateVideo } from '../actions/videos';
-import ProfileControlPanel from '../components/Admin/Profilecontrolpanel';
+import Profilecontrolpanel from '../components/Admin/Profilecontrolpanel';
+import Videocontrolpanel from '../components/Admin/Videocontrolpanel';
 
 // Import global stylesheet
 import '../interfaceSettings.css';
@@ -22,60 +21,48 @@ import '../interfaceSettings.css';
 //       Manual Testing: Make sure everything is routed correctly & validated
 const AdminControlPanel = () => {
 
-    const videos = getVideos();
+    const [selectedOption, setSelectedOption] = useState('profiles');
 
-    const [videoFiles, setVideoFiles] = useState([]);
-    
-    const handleFileChange = (event) => {
-        const files = Array.from(event.target.files); // Convert FileList to an array
-        setVideoFiles(prevFiles => [...prevFiles, ...files]); // Add new files to the existing array
+    const handleOptionChange = (option) => {
+      setSelectedOption(option);
     };
 
-    const handleVideoSubmit = (event) => {
-        event.preventDefault();
-
-        console.log('Uploaded Video Files:', videos);
-    };
-
-    const Videocomponent = () => {
-        return(
-        <div>
-            <p className="lead my-4">Here you will be able to upload, delete, and update videos! Just fill out the form below.</p>
-            <form onSubmit={handleVideoSubmit}>
-                <input
-                type="file"
-                className="form-control"
-                accept="video/*"
-                multiple
-                onChange={handleFileChange}
-                />
-                <br />
-                <button type="submit" className="btn btn-primary btn-responsive btn-block">Upload Videos</button>
-            </form>
-            <br />
-            <h3>Uploaded Videos:</h3>
-            <ul>
-                {videoFiles.map((file, index) => (
-                <li key={index}>{file.name}</li>
-                ))}
-            </ul>
-
-         </div>
-        );
-    }
   
     return (
-          <div className="container-xl" style={{ background: '#ffffff' }}>
-          <div className="container my-4">
+      <div className="container-xl" style={{ background: '#ffffff' }}>
+      <div className="container my-4">
           {/*Sidepane*/}
+          <div style={{ display: 'flex' }}>
+      <div style={{ width: '200px', borderRight: '1px solid #ddd', padding: '10px' }}>
+        <h2>Sidebar</h2>
+        <button className="btn btn-secondary btn-responsive btn-block" onClick={() => handleOptionChange('profiles')}>Employees</button>
+        <button className="btn btn-secondary btn-responsive btn-block" onClick={() => handleOptionChange('videos')}>Customers</button>
+      </div>
+      <div style={{ padding: '10px', flex: 1 }}>
+        {selectedOption === 'profiles' ? (
+          <div>
+              <Profilecontrolpanel />
+          </div>
+        ) : (
+          <div>
+              <Videocontrolpanel />
+          </div>
+        )}
+      </div>
+    </div>
+          
+          
+          
+          
+          
           {/* Insert input form that takes in user email & searches for them in database to update their roleType */}
-          {/* Reuse code from oldDirectory/admin/AdminPrivilege*/}
-
-          <ProfileControlPanel />
+          {/* Reuse code from oldDirectory/admin/AdminPrivilege*
+          <SidebarWithTables />
+          <Profilecontrolpanel />
        
           <hr />
           <Videocomponent />
-
+/}
           
           {
           /*

@@ -11,7 +11,7 @@
     // ... proceed with sending reset email
     res.status(200).json({ message: "Reset link sent" });
 });
-*/
+
 
 import nodemailer from 'nodemailer';
 import crypto from 'crypto';  // For generating a reset token
@@ -80,4 +80,4 @@ app.get('/api/user/verify-reset-token/:token', async (req, res) => {
     }
 });
 
-export default usercontroller;
+export default usercontroller; */

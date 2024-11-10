@@ -403,7 +403,7 @@ p.lead {
 @media (min-width: 360px) and (max-width: 992px) {
   .btn-responsive {
     padding:10px;
-    font-size:font-size-medium;
+    font-size:var(--font-size-small);
     line-height: 1.2;
   }
 }
@@ -411,20 +411,23 @@ p.lead {
 @media (min-width: 161px) and (max-width: 359px) {
   .btn-responsive, .footer-card, .collapse.navbar-collapse, .textContainer {
     padding:8px;
-    font-size:--font-size-small;
+    font-size:var(--font-size-small);
     line-height: 1;
     width: 90%;
   }
 }
 
 
+
+
 @media (max-width: 160px) {
   .btn-responsive, .footer-card, .collapse.navbar-collapse, .textContainer {
     padding:4px;
-    font-size:70%;
+    font-size:var(--font-size-small);
     line-height: 1;
     text-align: center;
     width: 140px;
+    font-size: var(--font-size-small);
   }
 }
 
@@ -442,8 +445,11 @@ p.lead {
 @media (max-width: 160px) {
   .h1, .h2, h3 {
     padding:4px;
-    font-size:70%;
+    font-size:var(--font-size-small);
     line-height: 1;
+  }
+  span.heading-gradient{
+    font-size: var(--font-size-small);
   }
 }
 
@@ -455,24 +461,36 @@ p.lead {
     line-height: 1;
     width: 90%;
   }
+
+  span.heading-gradient{
+    font-size: var(--font-size-small);
+  }
 }
 
 
 @media (max-width: 160px) {
   .p, .lead, .card-text, .navbar-nav, .nav-link, #sign-in-card, #sign-in-container {
     padding:2px;
-    font-size:50%;
+    font-size:var(--font-size-small);
     line-height: 1;
     text-overflow: clip;
+  }
+
+  span.heading-gradient{
+    font-size: var(--font-size-small);
   }
 }
 
 @media (min-width: 161px) and (max-width: 359px) {
   #sign-in-card, #sign-in-container {
     padding:8px;
-    font-size:--font-size-small;
+    font-size:var(--font-size-small);
     line-height: 1;
     width: 90%;
+  }
+
+  span.heading-gradient{
+    font-size: var(--font-size-small);
   }
 }
 
@@ -480,7 +498,7 @@ p.lead {
 @media (max-width: 160px) {
   #sign-in-card, #sign-in-container {
     padding:4px;
-    font-size:70%;
+    font-size:var(--font-size-small);
     line-height: 1;
     text-align: center;
     width: 190px;
@@ -493,14 +511,13 @@ p.lead {
     width: 100%;
   }
 
-  
+  span.heading-gradient{
+    font-size: var(--font-size-small);
+  }
 }
 
 /* Improve Typography on Very Small Screens */
 @media (max-width: 360px) {
-  .heading, .btn-primary {
-    font-size: var(--font-size-small);
-  }
 
   .logo {
     width: 80px;
@@ -518,10 +535,6 @@ p.lead {
     font-size: var(--font-size-small);
   }
 
-  p {
-    font-size: var(--font-size-small);
-  }
-
   /* Add Spacing in Footer for Smaller Screens */
   .footer-card {
     padding: 10px;
@@ -534,10 +547,8 @@ p.lead {
     width: 90%;
     margin: 10px auto;
   }
-}
 
-@media (max-width: 360px) {
-  h1, h2, h3, span, .heading-gradient {
+  span.heading-gradient{
     font-size: var(--font-size-small);
   }
 
@@ -546,3 +557,75 @@ p.lead {
   }
 }
 
+
+body {
+  font-size: 18px;
+}
+
+.navbar-text {
+  font-size: 16px;
+}
+
+.hamburger-icon {
+  font-size: 24px; /* or width/height as needed */
+}
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .navbar-text {
+    font-size: 14px;
+  }
+
+  .hamburger-icon {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-menu {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .navbar-text {
+    font-size: 12px;
+  }
+
+  .hamburger-icon {
+    font-size: 18px; /* Adjust this to make it smaller */
+    padding: 8px; /* Reduce padding if needed */
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-menu {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Adjusts alignment on smaller screens if necessary */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+  }
+}

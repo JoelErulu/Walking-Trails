@@ -24,6 +24,7 @@ import InjuryPrevention from './pages/InjuryPrevention.js';
 import NutritionandHydration from './pages/Nutrition&Hydration.js';
 import About from './pages/About.js'
 import Privacy from './pages/Privacy.js'
+import ResetPassword from './pages/ResetPassword.js';
 
 const App = () => {
 
@@ -37,6 +38,7 @@ const App = () => {
                     <Route path="/authorization" element={< Authorization />} />
                     <Route path="/about" element={< About />} />
                     <Route path="/privacy" element={< Privacy />} />
+                    <Route path="/reset/:token" element={<ResetPassword />} /> {/* Reset Password Route */}
 
                     {/* Authorized Routes */}
                     <Route element={<PrivateRoute allowedRoles={['Admin', 'User']} />}>

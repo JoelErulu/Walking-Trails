@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { resetPassword } from '../actions/auth';
-import '../../interfaceSettings.css';
 
 const ResetPassword = () => {
     const [newPassword, setNewPassword] = useState('');

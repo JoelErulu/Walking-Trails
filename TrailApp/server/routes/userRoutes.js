@@ -56,10 +56,9 @@ router.post('/logout', logout);
 
 
 // Import dependencies
-const express = require('express');
-const crypto = require('crypto');
-const nodemailer = require('nodemailer');
-const User = require('../models/User');  // Assuming a User model for managing users
+//const crypto = require('crypto');
+//const nodemailer = require('nodemailer');
+//const User = require('../models/User');  // Assuming a User model for managing users
 //const router = express.Router();
 
 // Password reset request handler
@@ -67,7 +66,7 @@ router.post('/send-reset-link', async (req, res) => {
     const { email } = req.body;
     
     try {
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ email: new RegExp(`^${email.trim()}$`, 'i') });
         if (!user) return res.status(404).json({ message: 'User not found' });
         
         // Generate a token

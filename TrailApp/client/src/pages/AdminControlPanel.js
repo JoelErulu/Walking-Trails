@@ -1,5 +1,5 @@
 // Import React components
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 //import { useDispatch, useSelector } from 'react-redux';
 
 // Import components
@@ -27,54 +27,23 @@ const AdminControlPanel = () => {
       setSelectedOption(option);
     };
 
-  
     return (
-      <div className="container-xl" style={{ background: '#ffffff' }}>
-      <div className="container my-4">
-          {/*Sidepane*/}
-          <div style={{ display: 'flex' }}>
-      <div style={{ width: '200px', borderRight: '1px solid #ddd', padding: '10px' }}>
-        <h2>Sidebar</h2>
-        <button className="btn btn-secondary btn-responsive btn-block" onClick={() => handleOptionChange('profiles')}>User Manager</button>
-        <button className="btn btn-secondary btn-responsive btn-block" onClick={() => handleOptionChange('videos')}>Video Manager</button>
-      </div>
-      <div style={{ padding: '10px', flex: 1 }}>
-        {selectedOption === 'profiles' ? (
-          <div>
+      <div className="container-xl bg-white">
+        <div className="row my-4">
+          {/* Sidepane */}
+          <div className="col-12 col-md-3 mb-4 mb-md-0">
+            <h2>Sidebar</h2>
+            <button className="btn btn-secondary btn-block mb-2" onClick={() => handleOptionChange('profiles')}>User Manager</button>
+            <button className="btn btn-secondary btn-block" onClick={() => handleOptionChange('videos')}>Video Manager</button>
+          </div>
+          <div className="col-12 col-md-9">
+            {selectedOption === 'profiles' ? (
               <Profilecontrolpanel />
-          </div>
-        ) : (
-          <div>
+            ) : (
               <Videocontrolpanel />
+            )}
           </div>
-        )}
-      </div>
-    </div>
-          
-          
-          
-          
-          
-          {/* Insert input form that takes in user email & searches for them in database to update their roleType */}
-          {/* Reuse code from oldDirectory/admin/AdminPrivilege*
-          <SidebarWithTables />
-          <Profilecontrolpanel />
-       
-          <hr />
-          <Videocomponent />
-/}
-          
-          {
-          /*
-          {users.map((e, index) => (
-              <div key={index}>
-                  <span>{e.username}</span><br />
-                  <span>{e.email}</span><br />
-              </div>
-          ))}
-          */
-          }
-          </div>
+        </div>
       </div>
     );
 }

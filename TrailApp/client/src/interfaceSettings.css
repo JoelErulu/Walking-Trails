@@ -250,6 +250,9 @@ p.lead {
   padding: 10px 20px;
 }
 
+
+
+
 /* Collapsible navbar styles for mobile */
 @media (max-width: 768px) {
     .collapse.navbar-collapse {
@@ -595,9 +598,6 @@ body {
 
 
 @media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
 
   .navbar-text {
     font-size: 12px;
@@ -609,11 +609,11 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .hamburger-menu {
-    width: 30px;
-    height: 30px;
-    padding: 5px;
+    width: 18px;
+    height: 18px;
+    
   }
 }
 
@@ -627,5 +627,43 @@ body {
 @media (max-width: 480px) {
   .navbar {
     padding: 10px;
+  }
+}
+
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .navbar-custom .heading-gradient {
+      font-size: 0.75rem; /* Adjust the font size for smaller screens */
+  }
+
+  .navbar-custom .navbar-toggler {
+      padding: 0.25rem 0.5rem; /* Adjust the padding for the menu button */
+      font-size: 0.875rem; /* Adjust the font size for the menu button */
+  }
+
+  .navbar-custom .navbar-brand {
+    flex-grow: 2;
+    justify-content: center; /* Center the brand logo and text */
+}
+
+.navbar-custom .navbar-toggler {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+}
+}
+
+
+/* Media query for extra small screens */
+@media (max-width: 576px) {
+  .navbar-custom .heading-gradient {
+      font-size: 0.875rem; /* Further adjust the font size for extra small screens */
+  }
+
+  .navbar-custom .navbar-toggler {
+      padding: 0.2rem 0.4rem; /* Further adjust the padding for the menu button */
+      font-size: 0.75rem; /* Further adjust the font size for the menu button */
   }
 }

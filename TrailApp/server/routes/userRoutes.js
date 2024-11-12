@@ -52,7 +52,7 @@ router.post('/logout', logout);
     }
 
 });
-*/
+
 
 
 // Import dependencies
@@ -132,3 +132,4 @@ router.post('/reset/:token', async (req, res) => {
 });
 
 export default router;
+*/

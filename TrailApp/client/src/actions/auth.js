@@ -47,7 +47,7 @@ export const updateProfile = (formData, navigate) => async (dispatch) => {
 
 
 // New: Reset password action
-export const resetPassword = (token, newPassword, navigate) => async (dispatch) => {
+export const resetPassword = (token, newPassword, navigate) => async () => {
     try {
         // Call the API to reset the password
         const { data } = await api.resetPassword(token, newPassword);

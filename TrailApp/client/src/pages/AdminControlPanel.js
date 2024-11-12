@@ -35,8 +35,8 @@ const AdminControlPanel = () => {
           <div style={{ display: 'flex' }}>
       <div style={{ width: '200px', borderRight: '1px solid #ddd', padding: '10px' }}>
         <h2>Sidebar</h2>
-        <button className="btn btn-secondary btn-responsive btn-block" onClick={() => handleOptionChange('profiles')}>Employees</button>
-        <button className="btn btn-secondary btn-responsive btn-block" onClick={() => handleOptionChange('videos')}>Customers</button>
+        <button className="btn btn-secondary btn-responsive btn-block" onClick={() => handleOptionChange('profiles')}>User Manager</button>
+        <button className="btn btn-secondary btn-responsive btn-block" onClick={() => handleOptionChange('videos')}>Video Manager</button>
       </div>
       <div style={{ padding: '10px', flex: 1 }}>
         {selectedOption === 'profiles' ? (

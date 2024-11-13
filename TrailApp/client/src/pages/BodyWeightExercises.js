@@ -5,6 +5,7 @@ import * as api from '../api/index.js';
 const BodyWeightExercises = () => {
     const [likeCounts, setLikeCounts] = useState([]);
     const [dislikeCounts, setDislikeCounts] = useState([]);
+    const [userReactions, setUserReactions] = useState([]); // State to track user reactions
     const [videos, setVideos] = useState([]); // State to hold fetched videos
     const [loading, setLoading] = useState(true); // Loading state
 
@@ -15,6 +16,7 @@ const BodyWeightExercises = () => {
                 setVideos(data); // Set videos from response
                 setLikeCounts(Array(data.length).fill(0)); // Initialize like counts
                 setDislikeCounts(Array(data.length).fill(0)); // Initialize dislike counts
+                setUserReactions(Array(data.length).fill(null)); // Initialize user reactions
             } catch (error) {
                 console.error('Error fetching videos:', error);
             } finally {
@@ -26,16 +28,30 @@ const BodyWeightExercises = () => {
     }, []);
 
     const handleLike = (index) => {
+        if (userReactions[index] !== null) return; // Prevent multiple reactions
+
         const newLikes = [...likeCounts];
+        const newUserReactions = [...userReactions];
+
         newLikes[index]++;
+        newUserReactions[index] = 'like';
+
         setLikeCounts(newLikes);
+        setUserReactions(newUserReactions);
         // Add logic here to update the like count on the server if necessary
     };
 
     const handleDislike = (index) => {
+        if (userReactions[index] !== null) return; // Prevent multiple reactions
+
         const newDislikes = [...dislikeCounts];
+        const newUserReactions = [...userReactions];
+
         newDislikes[index]++;
+        newUserReactions[index] = 'dislike';
+
         setDislikeCounts(newDislikes);
+        setUserReactions(newUserReactions);
         // Add logic here to update the dislike count on the server if necessary
     };
 
@@ -76,8 +92,20 @@ const BodyWeightExercises = () => {
                                         </div>
                                         <p>Views: {video.views}</p> {/* Displaying the view count */}
                                         <div className="feedback mt-2">
-                                            <button className="btn btn-outline-success" onClick={() => handleLike(index)}>👍 {likeCounts[index]}</button>
-                                            <button className="btn btn-outline-danger" onClick={() => handleDislike(index)}>👎 {dislikeCounts[index]}</button>
+                                            <button
+                                                className={`btn ${userReactions[index] === 'like' ? 'btn-success' : 'btn-outline-success'}`}
+                                                onClick={() => handleLike(index)}
+                                                disabled={userReactions[index] !== null}
+                                            >
+                                                👍 {likeCounts[index]}
+                                            </button>
+                                            <button
+                                                className={`btn ${userReactions[index] === 'dislike' ? 'btn-danger' : 'btn-outline-danger'}`}
+                                                onClick={() => handleDislike(index)}
+                                                disabled={userReactions[index] !== null}
+                                            >
+                                                👎 {dislikeCounts[index]}
+                                            </button>
                                         </div>
                                     </div>
                                 ))}

@@ -130,6 +130,6 @@ router.post('/reset/:token', async (req, res) => {
         res.status(500).json({ message: 'Error resetting password' });
     }
 });
+*/
 
 export default router;
-*/

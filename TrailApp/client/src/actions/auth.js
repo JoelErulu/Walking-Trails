@@ -1,5 +1,6 @@
 import { AUTH } from '../constants/actionTypes.js';
 import * as api from '../api/index.js';
+import axios from 'axios';
 
 export const signin = (formData, navigate) => async (dispatch) => {
     try {
@@ -46,16 +47,15 @@ export const updateProfile = (formData, navigate) => async (dispatch) => {
 }
 
 
-// New: Reset password action
-export const resetPassword = (token, newPassword, navigate) => async () => {
+// actions/auth.js
+
+
+export const resetPassword = (token, newPassword, navigate) => async (dispatch) => {
     try {
-        // Call the API to reset the password
-        const { data } = await api.resetPassword(token, newPassword);
-        
-        // Dispatch success if needed, handle it however you prefer
-        console.log("Password reset successful:", data);
-        navigate('/signin');
-    } catch (err) {
-        console.error("Error resetting password:", err.response?.data || err);
+        const response = await axios.post(`/api/auth/reset-password/${token}`, { newPassword });
+        dispatch({ type: 'RESET_PASSWORD_SUCCESS', payload: response.data });
+        navigate('/login'); // Redirect to login page after successful reset
+    } catch (error) {
+        dispatch({ type: 'RESET_PASSWORD_FAIL', payload: error.response.data });
     }
 };

@@ -7,6 +7,7 @@ const SendResetLink = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log('Email to send:', email);
         try {
             const response = await axios.post('/api/send-reset-link', { email });
             setMessage(response.data);

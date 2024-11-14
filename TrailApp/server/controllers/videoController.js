@@ -166,3 +166,4 @@ export const getVideoViewsByUrl = async (req, res) => {
         res.status(500).json({ error: 'Server error occurred.' });
     }
 };
+

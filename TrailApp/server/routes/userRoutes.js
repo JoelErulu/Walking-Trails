@@ -34,5 +34,4 @@ router.post('/logout', logout);
 // router.post('/googleLogin', googleSignIn);
 
 
-
 export default router;

@@ -1,6 +1,5 @@
 // src/components/Authorization/ForgotPasswordForm.js
 import React from 'react';
-
 const ForgotPasswordForm = ({ resetEmail, setResetEmail }) => {
     return (
         <div className="form-group">

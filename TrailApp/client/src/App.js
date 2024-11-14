@@ -40,6 +40,7 @@ const App = () => {
                     <Route path="/about" element={< About />} />
                     <Route path="/privacy" element={< Privacy />} />
                     <Route path="/reset/:token" element={<ResetPassword />} /> {/* Reset Password Route */}
+                    <Route path="/send-reset-link" element={<SendResetLink />} /> {/* Send Reset Link Route */}
 
                     {/* Authorized Routes */}
                     <Route element={<PrivateRoute allowedRoles={['Admin', 'User']} />}>

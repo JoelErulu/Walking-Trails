@@ -154,3 +154,43 @@ export const logout = async(req,res) =>{
     res.redirect('/');
      
 }
+
+
+// SEND RESET LINK
+export const sendResetLink = async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const user = await Users.findOne({ email });
+
+        if (!user) {
+            return res.status(404).json({ message: 'Email not found' });
+        }
+
+        // Generate a reset token (you can use a library like crypto or uuid)
+        const resetToken = jwt.sign({ email: user.email, id: user._id }, 'resetSecret', { expiresIn: '1h' });
+
+        // Send email with reset link (using nodemailer or any email service)
+        const transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+                user: 'your-email@gmail.com',
+                pass: 'your-email-password',
+            },
+        });
+
+        const mailOptions = {
+            from: 'your-email@gmail.com',
+            to: email,
+            subject: 'Password Reset',
+            text: `You requested a password reset. Click the link to reset your password: http://localhost:3000/reset/${resetToken}`,
+        };
+
+        await transporter.sendMail(mailOptions);
+
+        res.status(200).json({ message: 'Password reset link has been sent to your email.' });
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong. Please try again later.' });
+    }
+};
+

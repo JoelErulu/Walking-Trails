@@ -2,6 +2,7 @@ import { AUTH } from '../constants/actionTypes.js';
 import * as api from '../api/index.js';
 import axios from 'axios';
 
+
 export const signin = (formData, navigate) => async (dispatch) => {
     try {
         const { data } = await api.signIn(formData);
@@ -59,3 +60,5 @@ export const resetPassword = (token, newPassword, navigate) => async (dispatch) 
         dispatch({ type: 'RESET_PASSWORD_FAIL', payload: error.response.data });
     }
 };
+
+

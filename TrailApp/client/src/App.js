@@ -24,7 +24,7 @@ import InjuryPrevention from './pages/InjuryPrevention.js';
 import NutritionandHydration from './pages/Nutrition&Hydration.js';
 import About from './pages/About.js'
 import Privacy from './pages/Privacy.js'
-import ResetPassword from './pages/resetPassword.js';
+import ResetPassword from './pages/ResetPassword.js';
 import SendResetLink from './components/Form/SendResetLink.js';
 
 const App = () => {

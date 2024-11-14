@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // Import components
 import * as api from '../../api/index.js';
+import { postVideo, deleteVideo } from '../../actions/videos.js';
+import {Form, InputGroup} from 'react-bootstrap';
 
 // Import global stylesheet
 import '../../interfaceSettings.css';
@@ -89,6 +91,32 @@ const Videocontrolpanel = () => {
     const handleButtonClick = (username, email) => {
         alert(`Username: ${username}\nEmail: ${email}`);
       };
+
+      // Function to handle delete button click
+    const handleDeleteButton = (video) => {
+        // Show confirmation alert
+        const confirmDelete = window.confirm(`Are you sure you want to delete: ${video.title}?`);
+        if (confirmDelete) {
+        // If user confirms, filter out the item from the array
+        try {
+            alert(`${video.title} was deleted.`);
+            //deleteVideo(video.id);
+        } catch (error) {
+            console.error('Error deleting video:', error);
+        }     
+        }
+    };
+    /*  
+    const handleDeleteButton = (video) => {
+        try {
+            alert(`Video Title: ${video.title}\nVideo Url: ${video.url} will be deleted.`);
+
+            //deleteVideo(video.id);
+        } catch (error) {
+            console.error('Error deleting video:', error);
+        } 
+    };
+    */
      
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -105,33 +133,28 @@ const Videocontrolpanel = () => {
     return (
         <div className="container col-lg-12 col-md-12 p-3 pb-3 text-center card shadow-sm">
 
-        <h1 style={{ display: 'flex', alignItems: 'left' }}>Profile Manager</h1>
-
             <div className="col-lg-10" style={{ display: 'flex', alignItems: 'center' }}>
             {/*<Videocomponent />*/}
             </div>
 
-            <div className="col-lg-10" style={{ display: 'flex', alignItems: 'center' }}>
+            <div className="col-lg-12 search-bar" style={{ display: 'flex', alignItems: 'center' }}>
             <form onSubmit={handleSubmit}>
-                <input
-                    type="video"
-                    className="input-field"
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                    placeholder="Search Videos"
-                    required
-                    style={{ marginRight: '8px' }}
+            <InputGroup>
+                <InputGroup.Text id="bg-body-tertiary justify-content-between basic-addon1">🔎</InputGroup.Text>
+                <Form.Control
+                   type="video"
+                   className="input-field"
+                   value={searchTerm}
+                   onChange={handleSearchChange}
+                   placeholder="Search Videos"
+                   required
+                   style={{ marginRight: '8px' }}
                 />
-                <button type="submit" className='btn btn-secondary btn-responsive btn-block'>Search Videos</button>
+            </InputGroup>
             </form>
+            
             </div>
             <hr />
-
-            <h1 style={{ display: 'flex', alignItems: 'left' }}>Video Manager</h1>
-            
-
-            <hr />
-
             <table class="table table-hover table-responsive table-wrapper">
             <thead>
             <tr>
@@ -161,12 +184,12 @@ const Videocontrolpanel = () => {
                     <td>{e.category}</td>
                     <td>{e.totLikes}</td>
                     <td>{e.totDislikes}</td>
-                    <td><button onClick={() => handleButtonClick(e.username, e.email)} className='btn btn-secondary btn-responsive btn-block'>Action</button></td>
+                    <td><button onClick={() => handleDeleteButton(e)} className='btn btn-secondary btn-responsive btn-block'>Delete</button></td>
                 </tr>
             ))
             ) : (
             <tr>
-            <td colSpan="2" style={{ textAlign: 'center', padding: '8px' }}>
+            <td colSpan="6" style={{ textAlign: 'center', padding: '8px' }}>
                 No results found
             </td>
             </tr>

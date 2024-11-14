@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import {Form, InputGroup} from 'react-bootstrap';
 
 // Import components
 import { getUsers, updateUserRole } from '../../actions/users';
+
 
 // Import global stylesheet
 import '../../interfaceSettings.css';
@@ -70,23 +72,23 @@ const Profilecontrolpanel = () => {
     return (
         <div className="container col-lg-12 col-md-12 p-3 pb-3 text-center card shadow-sm">
             {/* Insert input form that takes in user email & searches for them in database to update their roleType */}
-            {/* Reuse code from oldDirectory/admin/AdminPrivilege*/}
-
-            <h1 style={{ display: 'flex', alignItems: 'left' }}>Profile Manager</h1>
-            
-            <div className="col-lg-10" style={{ display: 'flex', alignItems: 'center' }}>
+            {/* Reuse code from oldDirectory/admin/AdminPrivilege*/}           
+            <div className="col-lg-12 search-bar" style={{ display: 'flex', alignItems: 'center' }}>
             <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    className="input-field"
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                    placeholder="Search Profiles"
-                    required
-                    style={{ marginRight: '8px' }}
+            <InputGroup>
+                <InputGroup.Text id="bg-body-tertiary justify-content-between basic-addon1">🔎</InputGroup.Text>
+                <Form.Control
+                   type="profile"
+                   className="input-field"
+                   value={searchTerm}
+                   onChange={handleSearchChange}
+                   placeholder="Search Profiles"
+                   required
+                   style={{ marginRight: '8px' }}
                 />
-                <button type="submit" className='btn btn-secondary btn-responsive btn-block'>Check Email</button>
+            </InputGroup>
             </form>
+
             </div>
             <hr />
             <table class="table table-hover table-responsive table-wrapper">
@@ -114,7 +116,7 @@ const Profilecontrolpanel = () => {
             ))
             ) : (
             <tr>
-            <td colSpan="2" style={{ textAlign: 'center', padding: '8px' }}>
+            <td colSpan="4" style={{ textAlign: 'center', padding: '8px' }}>
                 No results found
             </td>
             </tr>

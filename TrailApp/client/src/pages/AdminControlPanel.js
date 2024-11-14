@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 // Import components
 import Profilecontrolpanel from '../components/Admin/Profilecontrolpanel';
 import Videocontrolpanel from '../components/Admin/Videocontrolpanel';
+import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
+
 
 // Import global stylesheet
 import '../interfaceSettings.css';
@@ -29,14 +31,25 @@ const AdminControlPanel = () => {
 
     return (
       <div className="container-xl bg-white">
+        
         <div className="row my-4">
           {/* Sidepane */}
-          <div className="col-12 col-md-3 mb-4 mb-md-0">
-            <h2>Sidebar</h2>
-            <button className="btn btn-secondary btn-block mb-2" onClick={() => handleOptionChange('profiles')}>User Manager</button>
-            <button className="btn btn-secondary btn-block" onClick={() => handleOptionChange('videos')}>Video Manager</button>
+          <div className="col-4 col-md-3 mb-4 mb-md-0 sidebar">
+          <hr /> 
+          <Navbar className="bg-body-tertiary">
+            <Container>
+            <Nav.Link className="hover" onClick={() => handleOptionChange('profiles')}>👤 Profile Manager</Nav.Link>
+            </Container>
+          </Navbar>
+          <br />
+          <Navbar className="bg-body-tertiary">
+              <Container>
+              <Nav.Link className="hover" onClick={() => handleOptionChange('videos')}>🎞️ Video Manager</Nav.Link>
+              </Container>
+          </Navbar>
+          <hr />
           </div>
-          <div className="col-12 col-md-9">
+          <div className="col-12 col-md-9 content">
             {selectedOption === 'profiles' ? (
               <Profilecontrolpanel />
             ) : (

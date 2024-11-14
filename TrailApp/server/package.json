@@ -20,6 +20,7 @@
     "i": "^0.3.7",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^6.13.3",
+    "nodemailer": "^6.9.16",
     "npm": "^10.9.0",
     "server": "file:"
   },

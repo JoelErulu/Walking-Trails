@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Form, InputGroup} from 'react-bootstrap';
 
 // Import components
-import { getUsers, updateUserRole } from '../../actions/users';
+import { getUsers, updateUserRole, deleteUser } from '../../actions/users';
 
 
 // Import global stylesheet
@@ -68,6 +68,39 @@ const Profilecontrolpanel = () => {
         profile.email.toLowerCase().includes(searchTerm.toLowerCase())
       );
 
+    const handleDeleteButton = async (user) => {
+        // Show confirmation alert
+        const confirmDelete = window.confirm(`Are you sure you want to delete: ${user.username}?`);
+        if (confirmDelete) {
+        // If user confirms, filter out the item from the array
+        try {
+            console.log("handleDeleteButton Called.");
+            dispatch(deleteUser(user._id));
+            alert(`${user.username} was deleted.`);
+        } catch (error) {
+            console.error('Error deleting user:', error);
+        }     
+        }
+    };
+
+    const handleAdminUpdateButton = async (user) => {
+      // Show confirmation alert
+      const confirmUpdate = window.confirm(`Are you sure you want to change: ${user.username}'s role?`);
+      if (confirmUpdate) {
+      // If user confirms, filter out the item from the array
+      try {
+          console.log("handleAdminUpdateButton Called.");
+          console.log(user._id);
+          const newRole = user.roleType === 'User' ? 'Admin' : 'User';
+          console.log("Role " + user.roleType + " will be changed to " + newRole);
+          dispatch(updateUserRole(user._id, {roleType: newRole}));
+          alert(`${user.username}'s role was changed.`);
+      } catch (error) {
+          console.error('Error making user Admin:', error);
+      }     
+      }
+  };
+
 
     return (
         <div className="container col-lg-12 col-md-12 p-3 pb-3 text-center card shadow-sm">
@@ -110,8 +143,20 @@ const Profilecontrolpanel = () => {
                     <td>{e.username}</td>
                     <td>{e.email}</td>
                     {/*<td>{e.createdAt}</td>*/}
-                    <td>{e.roleType}</td>
-                    <td><button onClick={() => handleButtonClick(e.username, e.email)} className='btn btn-secondary btn-responsive btn-block'>Action</button></td>
+                    <td>Admin 
+                      <br />
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={e.roleType === 'Admin'}
+                            onChange={() => handleAdminUpdateButton(e)}
+                        />
+                    </label>
+                    {/*<button onClick={() => handleAdminUpdateButton(e)} className='btn btn-secondary btn-responsive btn-block'>Toggle</button>*/}
+                    </td>
+                    <td>
+                    <button onClick={() => handleDeleteButton(e)} className='btn btn-secondary btn-responsive btn-block'>Delete</button>
+                    </td>
                 </tr>
             ))
             ) : (

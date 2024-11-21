@@ -4,8 +4,10 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // Import components
 import * as api from '../../api/index.js';
-import { postVideo, deleteVideo } from '../../actions/videos.js';
 import {Form, InputGroup} from 'react-bootstrap';
+import { deleteVideo } from '../../actions/videos.js';
+import { useDispatch } from 'react-redux';
+
 
 // Import global stylesheet
 import '../../interfaceSettings.css';
@@ -62,9 +64,11 @@ const Videocontrolpanel = () => {
     const [likeCounts, setLikeCounts] = useState([]);
     const [dislikeCounts, setDislikeCounts] = useState([]);
 
-
     const [videos, setVideos] = useState([]); // State to hold fetched videos
     const [loading, setLoading] = useState(true); // Loading state
+
+    const dispatch = useDispatch();
+
 
     useEffect(() => {
         const fetchVideos = async () => {
@@ -88,36 +92,23 @@ const Videocontrolpanel = () => {
       };
 
 
-    const handleButtonClick = (username, email) => {
-        alert(`Username: ${username}\nEmail: ${email}`);
-      };
 
-      // Function to handle delete button click
-    const handleDeleteButton = (video) => {
+
+    // Function to handle delete button click
+    const handleDeleteButton = async (video) => {
         // Show confirmation alert
         const confirmDelete = window.confirm(`Are you sure you want to delete: ${video.title}?`);
         if (confirmDelete) {
         // If user confirms, filter out the item from the array
         try {
+            console.log("handleDeleteButton Called.");
+            dispatch(deleteVideo(video._id));
             alert(`${video.title} was deleted.`);
-            //deleteVideo(video.id);
         } catch (error) {
             console.error('Error deleting video:', error);
         }     
         }
-    };
-    /*  
-    const handleDeleteButton = (video) => {
-        try {
-            alert(`Video Title: ${video.title}\nVideo Url: ${video.url} will be deleted.`);
-
-            //deleteVideo(video.id);
-        } catch (error) {
-            console.error('Error deleting video:', error);
-        } 
-    };
-    */
-     
+    };    
 
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -196,18 +187,7 @@ const Videocontrolpanel = () => {
         )
         }
         </tbody>
-        </table>    
-          {
-          /*
-          {users.map((e, index) => (
-              <div key={index}>
-                  <span>{e.username}</span><br />
-                  <span>{e.email}</span><br />
-              </div>
-          ))}
-          */
-          }
-          
+        </table>             
       </div>
     );
 }

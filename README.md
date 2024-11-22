@@ -5,9 +5,6 @@ Fall 2024
 
 © Walking Trails, Fall 2024
 
-### Team Name
-
-YoungThugs
 
 ### Project Name
 

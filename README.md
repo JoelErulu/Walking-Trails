@@ -7,6 +7,8 @@ Fall 2024
 
 ### Team Name
 
+YoungThugs
+
 ### Project Name
 
 Walking Trail 
@@ -37,6 +39,8 @@ Discord
 3.   Ginette Wilson Bahun - *Lead UI/UX design & Client liaison*😊
 4.   Mathews Binny - *Lead Data Modeler & Testing Lead*
 
+Run app Spring 2023: [Walking App, Spring 2023 version](https://ggctrail.onrender.com/)
+
 ### Description
 
 The Walking Trails App is a mobile application designed to enhance the walking experience on Georgia Gwinnett College (GGC) trails through interactive and educational content focused on fitness, health, and wellness. The app is accessible via QR codes placed on signs along the trails. By scanning a QR code, users are directed to the app, where they can access instructional videos, trail maps, exercise guides, and nutrition information, among other features. On the App users currently have the ability to register, sign in, edit their profiles, and view the different trails and videos. We are currently  implementing user feedback options for videos (like/dislike), collection of user statistics, and administrator functionalities regarding media management, as well as video retrieval based on category/subcategory.
@@ -55,13 +59,17 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 ### Installation Steps
 
 --- Clone the Repository on your computer using the command https://github.com/GGC-SD/WalkingTrail-Fall24.git
+--- Make Sure that Node.js is installed aswell as Git
+
 
 \*\*\* Add --force at the end of the npm command when encountered with errors
 
 1. Open the terminal
 2. Move to the "client" directory (cd C:/../WalkingTrailApp/TrailApp/client)
 3. Run 'npm install' for automatic installation of project dependencies. Run 'npm update' to update them to latest versions, but be aware - some things might be out-of-date & deprecated with no replacements.
-   
+
+   Note - If npm.ps1 error: use powershell -ExecutionPolicy Bypass -Command "npm install" or use command prompt
+
    Alternatively, enter the following commands:
    npm i axios
    npm i bootstrap
@@ -77,9 +85,11 @@ The Walking Trails App is a mobile application designed to enhance the walking e
    npm i --legacy-peer-deps
    npm install react-bootstrap bootstrap
 
-5. Move to the "server" directory (cd C:/../WalkingTrailApp/TrailApp/server)
-6. Run 'npm install' for automatic installation of project dependencies. Run 'npm update' to update them to latest versions, but be aware - some things might be out-of-date & deprecated with no replacements.
-   
+4. Move to the "server" directory (cd C:/../WalkingTrailApp/TrailApp/server)
+5. Run 'npm install' for automatic installation of project dependencies. Run 'npm update' to update them to latest versions, but be aware - some things might be out-of-date & deprecated with no replacements.
+
+   Note - If npm.ps1 error: use powershell -ExecutionPolicy Bypass -Command "npm install" or use command prompt
+
    Alternatively, enter the following commands: 
    npm i bcrypt
    npm i body-parser  
@@ -98,10 +108,13 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 3. Move to the "server" directory inside of the TrailApp foler
 4. Enter "npm start" in the terminal
 
+   Note - If npm.ps1 error: use powershell -ExecutionPolicy Bypass -Command "npm start" or use command prompt
+
+
 ### List of working features
 
 1. Authentication - Create an account, store credentials in Mongoose, and access user-specific data. Log in to existing accounts.
-2. Interactive Map - markers that contain content
+2. Interactive Map - contains trails content
 3. Admin view - Admin can assign privleges, create content, update content, delete content.
 4. Video retrieval - Users can access videos is stored on MongoDB attached to map markers
 
@@ -112,6 +125,8 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 3. Role-based access for all pages. This is great for security, as we wouldn't want non-signed in users to access content they shouldn't be able to see.
 4. All new site map. We heavily modified the landing page, and kept only the trails pages from the previous group, with modified UI design.
 5. The previous groups had developed video upload and retrieval for markers on the trail maps. However, our new requirements required video galleries and not map-marker based videos. We have since removed all previous code, but this code can be revisited by inspecting the Github's commit histories.
+6. Video galleries connected to MongoDB, handled by URL to Google Drive where videos are hosted
+7. Admin Control with roles, with admin able to delete profile
 
 ### Features in progress
 
@@ -120,7 +135,12 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 - Ability to edit user profile information
 - Ability to upgrade/downgrade a user's role from administrator portal
 - Ability to upload & delete embedded videos to DB
+- Much more usable video storage option
 
 ### Link to the demo of the app running
 
 Youtube Link: demo https://www.youtube.com/watch?v=kqbiBXt9AgA
+
+### Link to the deployment
+
+Deployment Link https://walking-trails-xnla.vercel.app/

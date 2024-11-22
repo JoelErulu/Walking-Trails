@@ -7,8 +7,6 @@ Fall 2024
 
 ### Team Name
 
-YoungThugs
-
 ### Project Name
 
 Walking Trail 
@@ -127,4 +125,4 @@ The Walking Trails App is a mobile application designed to enhance the walking e
 
 ### Link to the demo of the app running
 
-Youtube Link:
+Youtube Link: demo https://www.youtube.com/watch?v=kqbiBXt9AgA

@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const API = axios.create({ baseURL: 'https://walking-trails-2.onrender.com' });
 
 
 export const signUp = (formData) => API.post('/api/user/signup', formData);
